@@ -1,0 +1,96 @@
+table _Measures
+	lineageTag: 7623411b-c1c5-4546-a2a6-4abdf8d832c6
+
+	measure 'Total Checks' = DISTINCTCOUNT(fact_qcchecks[Record ID])
+		formatString: #,##0
+		displayFolder: Volumes
+		lineageTag: a634c80f-f0d2-4a83-8865-3cf9b9cd9409
+
+	measure 'Compliant Checks' = CALCULATE([Total Checks], fact_qcchecks[Compliance Status] = "Compliant")
+		formatString: #,##0
+		displayFolder: Volumes
+		lineageTag: d7431529-684e-4787-b60f-0eeee1297b53
+
+	measure 'Non-Compliant Checks' = CALCULATE([Total Checks], fact_qcchecks[Compliance Status] = "Non compliant")
+		formatString: #,##0
+		displayFolder: Volumes
+		lineageTag: c34c95c0-c2a4-4f48-b813-1e6c8778d169
+
+	measure 'Compliance Rate %' = DIVIDE([Compliant Checks], [Total Checks])
+		formatString: 0.0%
+		displayFolder: Rates
+		lineageTag: 2c13e541-adf2-4142-8e32-d05752106134
+
+	measure 'Open Deviations' = CALCULATE(DISTINCTCOUNT(fact_qcchecks[Deviation #]), fact_qcchecks[Check Status] = "Finding detected")
+		formatString: #,##0
+		displayFolder: Deviations
+		lineageTag: 621df46d-b4ec-4838-a98d-a84e9c83bba0
+
+	measure 'Deviations Corrected' = CALCULATE([Total Checks], fact_qcchecks[Check Status] = "Finding corrected")
+		formatString: #,##0
+		displayFolder: Deviations
+		lineageTag: 60a1733a-d3b2-473d-b1b0-1ab284f3c120
+
+	measure 'Total Deviations' = CALCULATE(DISTINCTCOUNT(fact_qcchecks[Deviation #]), fact_qcchecks[Check Status] <> "No finding")
+		formatString: #,##0
+		displayFolder: Deviations
+		lineageTag: b85c8391-1dd7-45d5-a8b5-a49a91c64c33
+
+	measure 'Deviation Rate %' = DIVIDE([Total Deviations], [Total Checks])
+		formatString: 0.0%
+		displayFolder: Rates
+		lineageTag: 51191d24-7cb2-4cf2-8dce-41348d09745e
+
+	measure 'Correction Rate %' = DIVIDE([Deviations Corrected], [Total Deviations])
+		formatString: 0.0%
+		displayFolder: Rates
+		lineageTag: 27929432-7102-4466-841c-d23d747d8e5b
+
+	measure 'Distinct Deviations' = CALCULATE(DISTINCTCOUNT(fact_qcchecks[Deviation #]), fact_qcchecks[Deviation #] <> "")
+		formatString: #,##0
+		displayFolder: Deviations
+		lineageTag: 1440d5f4-a01b-4b53-a2dc-34717b29fe38
+
+	measure 'Avg Days to Correct' = AVERAGEX(FILTER(fact_qcchecks, fact_qcchecks[Check Status] = "Finding corrected"), DATEDIFF(fact_qcchecks[Detection Date], fact_qcchecks[Compliance Date], DAY))
+		formatString: 0.0
+		displayFolder: Timing
+		lineageTag: ab2c1685-27b4-416b-9dbc-36534b13c14d
+
+	measure 'Critical Open Deviations' = CALCULATE([Open Deviations], dim_process[Criticality] = "Critical")
+		formatString: #,##0
+		displayFolder: Deviations
+		lineageTag: 20809f89-3c54-460a-90ba-72fa3de7f0c3
+
+	measure 'Right First Time %' =
+			
+			
+			VAR __RFT =
+			CALCULATE(
+			    COUNTROWS(fact_qcchecks),
+			    fact_qcchecks[Right First Time] = TRUE
+			)
+			
+			RETURN
+			DIVIDE(
+			    __RFT,
+			    [Total Checks]
+			    )
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: Rates
+		lineageTag: 106f3c7f-c4a5-413d-8bf1-e9ac81811634
+
+	measure 'Non Compliance Rate %' = 1 - [Compliance Rate %]
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: Rates
+		lineageTag: 0549d087-dce9-409b-ada0-af727488de1e
+
+	column Column1
+		isHidden
+		lineageTag: 55859495-0bd7-44dc-8615-3ac2c610697c
+		isNameInferred
+		sourceColumn: [Column1]
+
+	partition _Measures = calculated
+		mode: import
+		source = ROW("Column1", 0)
+

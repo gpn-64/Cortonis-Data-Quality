@@ -1,0 +1,33 @@
+table dim_products
+	lineageTag: 66f52a37-f94e-4cc6-9df4-4064c2a7b21f
+
+	column Product
+		dataType: string
+		lineageTag: 66d95de9-0688-4f57-988e-93a0056efd5f
+		summarizeBy: none
+		sourceColumn: Product
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Type of Product'
+		dataType: string
+		lineageTag: a1d34e94-aee5-4ac5-acba-bbcbabe5820e
+		summarizeBy: none
+		sourceColumn: Type of Product
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_products = m
+		mode: import
+		source =
+				let
+				    Source = #"data export quality dashboard (fictional v2)",
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"Product", "Type of Product"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns")
+				in
+				    #"Removed Duplicates"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

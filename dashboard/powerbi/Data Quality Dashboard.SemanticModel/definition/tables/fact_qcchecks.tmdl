@@ -1,0 +1,151 @@
+table fact_qcchecks
+	lineageTag: c98ec659-77ac-47cc-8c0d-a0923d766675
+
+	column 'Compliance Status'
+		dataType: string
+		lineageTag: 4cdb1fc6-f763-4d7b-ac36-1a28cfd7227e
+		summarizeBy: none
+		sourceColumn: Compliance Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Deviation #'
+		dataType: string
+		lineageTag: 46614502-7c9a-412b-822c-48d484a3f336
+		summarizeBy: none
+		sourceColumn: Deviation #
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Detection Date'
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 40f984b2-263f-4f1a-9067-3979bfbd69f8
+		summarizeBy: none
+		sourceColumn: Detection Date
+
+		variation Variation
+			isDefault
+			relationship: dfaf07ae-9490-42ff-b725-a622ae7378fd
+			defaultHierarchy: LocalDateTable_ece7d50e-8635-431a-ba36-6b95e4ff55c0.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column Product
+		dataType: string
+		lineageTag: 466aec00-f470-465c-8987-d3155af8a93b
+		summarizeBy: none
+		sourceColumn: Product
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Check Status'
+		dataType: string
+		lineageTag: 85137ff6-f72e-46e7-b35e-20a093de012f
+		summarizeBy: none
+		sourceColumn: Check Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Record ID'
+		dataType: string
+		lineageTag: f1b5cb61-d5be-4678-b1ff-90b86a8d44d7
+		summarizeBy: none
+		sourceColumn: Record ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Check Name'
+		dataType: string
+		lineageTag: 61b81dfb-e9b8-4528-8149-49501ca5eed2
+		summarizeBy: none
+		sourceColumn: Check Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: 36e2e755-dd9a-4d2e-a9b5-995e0eee053f
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'QC Name - Country'
+		dataType: string
+		lineageTag: 1560c5ba-ba09-418b-aa74-38119b553e41
+		summarizeBy: none
+		sourceColumn: QC Name - Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column Search = fact_qcchecks[Check Name]&fact_qcchecks[Country]&fact_qcchecks[Product]&fact_qcchecks[Deviation #]
+		lineageTag: 267c5b2f-ca3b-450a-be41-15ed34dcb562
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Compliance Date'
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 7344b02b-fb55-40ae-bfd6-6ccec88e12a1
+		summarizeBy: none
+		sourceColumn: Compliance Date
+
+		variation Variation
+			isDefault
+			relationship: 0c2121d0-61c4-417f-9022-9c51a6d6f97d
+			defaultHierarchy: LocalDateTable_cd00ccff-cf91-42e8-ac39-505ba9ba1eac.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Created Date'
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 38087971-bf04-490e-821d-fb99797b6b2c
+		summarizeBy: none
+		sourceColumn: Created Date
+
+		variation Variation
+			isDefault
+			relationship: eedccafe-b114-4f82-8d79-29c1449c0900
+			defaultHierarchy: LocalDateTable_d6c6ea09-c02a-4924-96d5-193de3fa0bb2.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Right First Time' =
+			
+			if( fact_qcchecks[Compliance Date] = fact_qcchecks[Created Date],TRUE,FALSE)
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: bd56bf05-0795-40f9-a4fc-2960990645c2
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_qcchecks = m
+		mode: import
+		source =
+				let
+				    Source = #"data export quality dashboard (fictional v2)",
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"Compliance Status", "Deviation #", "Detection Date", "Compliance Date", "Product", "Check Name", "Check Status", "Record ID", "Country", "Created Date"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns"),
+				    #"Added Custom" = Table.AddColumn(#"Removed Duplicates", "QC Name - Country", each [Check Name]&" - "&[Country])
+				in
+				    #"Added Custom"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

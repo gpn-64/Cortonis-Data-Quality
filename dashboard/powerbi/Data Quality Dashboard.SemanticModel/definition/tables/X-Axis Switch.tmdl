@@ -1,0 +1,59 @@
+table 'X-Axis Switch'
+	lineageTag: 62e1cb6f-e777-4f2e-9066-755fed23829b
+
+	column 'X-Axis Switch'
+		lineageTag: fd77f926-7590-44f8-8b2a-2058a7fe3680
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'X-Axis Switch Order'
+
+		relatedColumnDetails
+			groupByColumn: 'X-Axis Switch Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'X-Axis Switch Fields'
+		isHidden
+		lineageTag: be67e193-173a-40ca-905d-07d644529665
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'X-Axis Switch Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'X-Axis Switch Order'
+		isHidden
+		formatString: 0
+		lineageTag: 64b50476-cbdf-4de6-b6b8-ba7ba3be2180
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'X-Axis Switch' = calculated
+		mode: import
+		source =
+				{
+				    ("Region", NAMEOF('dim_countries'[Region]), 0),
+				    ("Country", NAMEOF('fact_qcchecks'[Country]), 1),
+				    ("Check Status", NAMEOF('fact_qcchecks'[Check Status]), 2),
+				    ("Compliance Status", NAMEOF('fact_qcchecks'[Compliance Status]), 3),
+				    ("Type of Product", NAMEOF('dim_products'[Type of Product]), 4),
+				    ("Product", NAMEOF('dim_products'[Product]), 5),
+				    ("Dimension", NAMEOF('dim_process'[Dimension]), 6),
+				    ("Criticality", NAMEOF('dim_process'[Criticality]), 7),
+				    ("Process", NAMEOF('dim_process'[Process]), 8),
+				    ("Check Name", NAMEOF('fact_qcchecks'[Check Name]), 9),
+				    ("Object", NAMEOF('dim_process'[Object]), 10),
+				    ("Field", NAMEOF('dim_process'[Field]), 11),
+				    ("Team", NAMEOF('dim_process'[Team]), 12)
+				}
+
+	annotation PBI_Id = 290c5caa8f014b7a82dad3a2145996cb
+

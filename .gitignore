@@ -46,6 +46,10 @@ env/
 credentials.json
 *.key
 
+# --- Local dev / notes de travail (spécifiques à la machine, pas pour le repo partagé) ---
+.mcp.json
+build.md
+
 # --- Logs ----------------------------------------------------------------
 *.log
 

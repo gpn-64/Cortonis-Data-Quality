@@ -1,0 +1,33 @@
+table dim_countries
+	lineageTag: 928bb027-1fa2-4393-a843-a82e45ea3e67
+
+	column Country
+		dataType: string
+		lineageTag: 99650c23-3fc5-463d-b5a9-2e09fa8564cf
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		lineageTag: 9d200187-af21-4562-a2c1-1bef6b431b63
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_countries = m
+		mode: import
+		source =
+				let
+				    Source = #"data export quality dashboard (fictional v2)",
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"Country", "Region"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns")
+				in
+				    #"Removed Duplicates"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

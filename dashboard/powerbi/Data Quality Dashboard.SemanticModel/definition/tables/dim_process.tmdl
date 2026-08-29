@@ -1,0 +1,92 @@
+table dim_process
+	lineageTag: b4f51932-580e-4952-8466-cfa4dcba91ed
+
+	column 'Check Name'
+		dataType: string
+		lineageTag: 42a70e27-f585-4b89-9a5b-9b82528b68d8
+		summarizeBy: none
+		sourceColumn: Check Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Process
+		dataType: string
+		lineageTag: b25d6d21-2e1c-4bbf-9ffd-7644b69cb19f
+		summarizeBy: none
+		sourceColumn: Process
+
+		annotation SummarizationSetBy = Automatic
+
+	column Criticality
+		dataType: string
+		lineageTag: 53af5426-3e86-4665-b5be-c9d85970d1e0
+		summarizeBy: none
+		sourceColumn: Criticality
+
+		annotation SummarizationSetBy = Automatic
+
+	column Field
+		dataType: string
+		lineageTag: e785aa7c-172a-4ad8-948b-875b094c1a0e
+		summarizeBy: none
+		sourceColumn: Field
+
+		annotation SummarizationSetBy = Automatic
+
+	column Object
+		dataType: string
+		lineageTag: 91283b72-add6-447a-93c3-d44f8e3d126e
+		summarizeBy: none
+		sourceColumn: Object
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dimension
+		dataType: string
+		lineageTag: e67a5c26-0bfe-4540-b9df-ee5f22abf2e4
+		summarizeBy: none
+		sourceColumn: Dimension
+
+		annotation SummarizationSetBy = Automatic
+
+	column Team
+		dataType: string
+		lineageTag: bfc4e884-7d58-47cb-b07a-a98885bc17b1
+		summarizeBy: none
+		sourceColumn: Team
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Check Name - Country'
+		dataType: string
+		lineageTag: d365acce-71d9-4a27-820f-fde34f61b701
+		summarizeBy: none
+		sourceColumn: Check Name - Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: dcab49ce-4dc1-4c4d-a502-9249f90ac397
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_process = m
+		mode: import
+		source =
+				let
+				    Source = #"data export quality dashboard (fictional v2)",
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"Criticality", "Dimension", "Field", "Object", "Process", "Check Name", "Country", "Team"}),
+				    #"Reordered Columns" = Table.ReorderColumns(#"Removed Other Columns",{"Check Name", "Process", "Criticality", "Field", "Object", "Dimension"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Reordered Columns"),
+				    #"Added Custom" = Table.AddColumn(#"Removed Duplicates", "Check Name - Country", each [Check Name]&" - "&[Country]),
+				    #"Reordered Columns1" = Table.ReorderColumns(#"Added Custom",{"Check Name - Country", "Check Name", "Process", "Criticality", "Field", "Object", "Dimension", "Country", "Team"})
+				in
+				    #"Reordered Columns1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

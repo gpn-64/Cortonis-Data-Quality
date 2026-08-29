@@ -1,0 +1,108 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.3.0/schema.json",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "Fluent2-CY26SU08",
+      "reportVersionAtImport": {
+        "visual": "2.12.0",
+        "report": "3.4.0",
+        "page": "2.3.1"
+      },
+      "type": "SharedResources"
+    },
+    "customTheme": {
+      "name": "Cortonis_Pharma___Green978677772272889.json",
+      "reportVersionAtImport": {
+        "visual": "2.12.0",
+        "report": "3.4.0",
+        "page": "2.3.1"
+      },
+      "type": "RegisteredResources"
+    }
+  },
+  "objects": {
+    "section": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Top'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "expanded": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "resourcePackages": [
+    {
+      "name": "SharedResources",
+      "type": "SharedResources",
+      "items": [
+        {
+          "name": "Fluent2-CY26SU08",
+          "path": "BaseThemes/Fluent2-CY26SU08.json",
+          "type": "BaseTheme"
+        }
+      ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "bg1-overview048254682768954615.png",
+          "path": "bg1-overview048254682768954615.png",
+          "type": "Image"
+        },
+        {
+          "name": "bg2-deviations12051886059426886.png",
+          "path": "bg2-deviations12051886059426886.png",
+          "type": "Image"
+        },
+        {
+          "name": "bg3-process-team9703877400508275.png",
+          "path": "bg3-process-team9703877400508275.png",
+          "type": "Image"
+        },
+        {
+          "name": "bg4-geography33346271585659004.png",
+          "path": "bg4-geography33346271585659004.png",
+          "type": "Image"
+        },
+        {
+          "name": "Cortonis_Pharma___Green978677772272889.json",
+          "path": "Cortonis_Pharma___Green978677772272889.json",
+          "type": "CustomTheme"
+        },
+        {
+          "name": "setting13456253711505894.png",
+          "path": "setting13456253711505894.png",
+          "type": "Image"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "useStylableVisualContainerHeader": true,
+    "exportDataMode": "AllowSummarized",
+    "defaultDrillFilterOtherVisuals": true,
+    "allowChangeFilterTypes": true,
+    "useEnhancedTooltips": true,
+    "useDefaultAggregateDisplayName": true
+  }
+}

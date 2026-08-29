@@ -1,0 +1,13 @@
+expression 'data export quality dashboard (fictional v2)' =
+		let
+		  Source = Csv.Document(File.Contents("C:\Users\User\Documents\Coding Projects\Data-Quality\data\raw\data export quality dashboard (fictional v2).csv"), [Delimiter = ",", Columns = 19, Encoding = 65001, QuoteStyle = QuoteStyle.None]),
+		  #"Promoted headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+		  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers",{{"Compliance Status", type text}, {"Criticality", type text}, {"Deviation #", type text}, {"Dimension", type text}, {"Field", type text}, {"Detection Date", type date}, {"Compliance Date", type date}, {"Finding ID", Int64.Type}, {"Object", type text}, {"Product", type text}, {"Process", type text}, {"Type of Product", type text}, {"Check Name", type text}, {"Check Status", type text}, {"Record ID", type text}, {"Country", type text}, {"Region", type text}, {"Team", type text}, {"Created Date", type date}})
+		in
+		    #"Changed column type"
+	lineageTag: 1b2f2736-3567-4b2b-bbb7-61a1c4acb744
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
