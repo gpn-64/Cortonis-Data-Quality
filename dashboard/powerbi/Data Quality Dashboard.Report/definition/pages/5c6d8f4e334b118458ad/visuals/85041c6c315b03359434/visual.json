@@ -10,10 +10,10 @@
     "tabOrder": 0
   },
   "visual": {
-    "visualType": "tableEx",
+    "visualType": "pivotTable",
     "query": {
       "queryState": {
-        "Values": {
+        "Rows": {
           "projections": [
             {
               "field": {
@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "fact_qcchecks.Deviation #",
-              "nativeQueryRef": "Deviation #"
+              "nativeQueryRef": "Deviation #",
+              "active": true
             },
             {
               "field": {
@@ -37,100 +38,200 @@
                       "Entity": "fact_qcchecks"
                     }
                   },
-                  "Property": "Detection Date"
+                  "Property": "Record ID"
                 }
               },
-              "queryRef": "fact_qcchecks.Detection Date",
+              "queryRef": "fact_qcchecks.Record ID",
+              "nativeQueryRef": "Record ID",
+              "active": true
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "fact_qcchecks"
+                        }
+                      },
+                      "Property": "Country"
+                    }
+                  },
+                  "Function": 3
+                }
+              },
+              "queryRef": "Min(fact_qcchecks.Country)",
+              "nativeQueryRef": "Country"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "fact_qcchecks"
+                        }
+                      },
+                      "Property": "Detection Date"
+                    }
+                  },
+                  "Function": 3
+                }
+              },
+              "queryRef": "Min(fact_qcchecks.Detection Date)",
               "nativeQueryRef": "Detection Date"
             },
             {
               "field": {
-                "Column": {
+                "Aggregation": {
                   "Expression": {
-                    "SourceRef": {
-                      "Entity": "fact_qcchecks"
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "fact_qcchecks"
+                        }
+                      },
+                      "Property": "Compliance Date"
                     }
                   },
-                  "Property": "Compliance Date"
+                  "Function": 3
                 }
               },
-              "queryRef": "fact_qcchecks.Compliance Date",
+              "queryRef": "Min(fact_qcchecks.Compliance Date)",
               "nativeQueryRef": "Compliance Date"
             },
             {
               "field": {
-                "Column": {
+                "Aggregation": {
                   "Expression": {
-                    "SourceRef": {
-                      "Entity": "dim_process"
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "dim_process"
+                        }
+                      },
+                      "Property": "Criticality"
                     }
                   },
-                  "Property": "Criticality"
+                  "Function": 3
                 }
               },
-              "queryRef": "dim_process.Criticality",
+              "queryRef": "Min(dim_process.Criticality)",
               "nativeQueryRef": "Criticality"
             },
             {
               "field": {
-                "Column": {
+                "Aggregation": {
                   "Expression": {
-                    "SourceRef": {
-                      "Entity": "dim_process"
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "dim_process"
+                        }
+                      },
+                      "Property": "Process"
                     }
                   },
-                  "Property": "Process"
+                  "Function": 3
                 }
               },
-              "queryRef": "dim_process.Process",
+              "queryRef": "Min(dim_process.Process)",
               "nativeQueryRef": "Process"
             },
             {
               "field": {
-                "Column": {
+                "Aggregation": {
                   "Expression": {
-                    "SourceRef": {
-                      "Entity": "dim_process"
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "fact_qcchecks"
+                        }
+                      },
+                      "Property": "Product"
                     }
                   },
-                  "Property": "Team"
+                  "Function": 3
                 }
               },
-              "queryRef": "dim_process.Team",
-              "nativeQueryRef": "Team"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "fact_qcchecks"
-                    }
-                  },
-                  "Property": "Product"
-                }
-              },
-              "queryRef": "fact_qcchecks.Product",
+              "queryRef": "Min(fact_qcchecks.Product)",
               "nativeQueryRef": "Product"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "fact_qcchecks"
-                    }
-                  },
-                  "Property": "Country"
-                }
-              },
-              "queryRef": "fact_qcchecks.Country",
-              "nativeQueryRef": "Country"
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "fact_qcchecks"
+                  }
+                },
+                "Property": "Deviation #"
+              }
+            },
+            "direction": "Ascending"
+          },
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "fact_qcchecks"
+                  }
+                },
+                "Property": "Record ID"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
       }
     },
+    "expansionStates": [
+      {
+        "roles": [
+          "Rows"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "fact_qcchecks.Deviation #"
+            ],
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_qcchecks"
+                    }
+                  },
+                  "Property": "Deviation #"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "fact_qcchecks.Record ID"
+            ],
+            "isCollapsed": true,
+            "isPinned": true
+          }
+        ],
+        "root": {}
+      }
+    ],
     "objects": {
       "columnWidth": [
         {
@@ -159,6 +260,20 @@
           },
           "selector": {
             "metadata": "fact_qcchecks.Compliance Date"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "184.3147476884834D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "fact_qcchecks.Deviation #"
           }
         }
       ],
@@ -194,6 +309,26 @@
               "expr": {
                 "Literal": {
                   "Value": "10D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTotals": [
+        {
+          "properties": {
+            "columnSubtotals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "rowSubtotals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }

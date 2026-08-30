@@ -3490,6 +3490,16 @@ cultureInfo en-US
 			            },
 			            "Weight": 0.499
 			          }
+			        },
+			        {
+			          "Non-Compliant": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -4748,9 +4758,829 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
+			    },
+			    "entity__measure.non_compliance_rate_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "Non Compliance Rate %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "non compliance rate %": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "non compliance rate percentage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.771
+			          }
+			        },
+			        {
+			          "non compliance rate pct": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.748
+			          }
+			        }
+			      ]
+			    },
+			    "xaxis_switch": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "X-Axis Switch"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "x-axis switch": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "x axis switch": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "switch": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "axis switch": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "x-axis adjustment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "x-axis modification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "x-axis alteration": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "x axis adjustment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "x axis modification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "x axis alteration": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "axis adjustment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "axis modification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "axis alteration": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "x-axis change": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        }
+			      ]
+			    },
+			    "xaxis_switch.xaxis_switch": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "X-Axis Switch",
+			          "ConceptualProperty": "X-Axis Switch"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "x-axis switch": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "x-axis switch name": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "x axis switch": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "switch": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "axis switch": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "x-axis adjustment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "x-axis modification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "x-axis alteration": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "x axis adjustment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "x axis modification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "x axis alteration": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "axis adjustment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "axis modification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "axis alteration": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "x-axis change": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        }
+			      ],
+			      "NameType": "Name"
+			    },
+			    "xaxis_switch.xaxis_switch_field": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "X-Axis Switch",
+			          "ConceptualProperty": "X-Axis Switch Fields"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "x-axis switch field": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "x axis switch field": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "switch field": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "axis switch field": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "x-axis switch arena": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "x axis switch arena": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "axis switch arena": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "x-axis switch turf": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "x-axis switch ground": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "x-axis switch pitch": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "x-axis switch park": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "switch arena": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "x axis switch turf": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        },
+			        {
+			          "x axis switch ground": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.499
+			          }
+			        }
+			      ]
+			    },
+			    "xaxis_switch.xaxis_switch_order": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "X-Axis Switch",
+			          "ConceptualProperty": "X-Axis Switch Order"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "x-axis switch order": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "x axis switch order": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "order": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "switch order": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "axis switch order": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "x-axis switch instruction": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "x-axis switch direction": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "x-axis switch edict": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.52
+			          }
+			        },
+			        {
+			          "x axis switch instruction": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "x axis switch direction": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "x axis switch edict": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.514
+			          }
+			        },
+			        {
+			          "axis switch instruction": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "axis switch direction": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "axis switch edict": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "x-axis switch command": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
+			    "fact_qccheck_created_date_has_date_hierarchy": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_qcchecks"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_qccheck.created_date": {
+			          "Target": {
+			            "Entity": "fact_qccheck.created_date"
+			          }
+			        },
+			        "fact_qccheck.created_date.date_hierarchy": {
+			          "Target": {
+			            "Entity": "fact_qccheck.created_date.date_hierarchy"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_qccheck.created_date"
+			            },
+			            "Object": {
+			              "Role": "fact_qccheck.created_date.date_hierarchy"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "created_dates_have_created_date_hierarchies"
+			        }
+			      ]
+			    },
+			    "fact_qccheck_compliance_date_date_hierarchy_has_fact_qccheck_compliance_date_day": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_qcchecks"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_qccheck.compliance_date.date_hierarchy": {
+			          "Target": {
+			            "Entity": "fact_qccheck.compliance_date.date_hierarchy"
+			          }
+			        },
+			        "fact_qccheck.compliance_date.day": {
+			          "Target": {
+			            "Entity": "fact_qccheck.compliance_date.day"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_qccheck.compliance_date.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "fact_qccheck.compliance_date.day"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "compliance_date_hierarchies_have_compliance_days"
+			        }
+			      ]
+			    },
+			    "fact_qccheck_compliance_date_date_hierarchy_has_fact_qccheck_compliance_date_month": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_qcchecks"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_qccheck.compliance_date.date_hierarchy": {
+			          "Target": {
+			            "Entity": "fact_qccheck.compliance_date.date_hierarchy"
+			          }
+			        },
+			        "fact_qccheck.compliance_date.month": {
+			          "Target": {
+			            "Entity": "fact_qccheck.compliance_date.month"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_qccheck.compliance_date.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "fact_qccheck.compliance_date.month"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "compliance_date_hierarchies_have_compliance_months"
+			        }
+			      ]
+			    },
+			    "fact_qccheck_compliance_date_date_hierarchy_has_fact_qccheck_compliance_date_quarter": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_qcchecks"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_qccheck.compliance_date.date_hierarchy": {
+			          "Target": {
+			            "Entity": "fact_qccheck.compliance_date.date_hierarchy"
+			          }
+			        },
+			        "fact_qccheck.compliance_date.quarter": {
+			          "Target": {
+			            "Entity": "fact_qccheck.compliance_date.quarter"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_qccheck.compliance_date.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "fact_qccheck.compliance_date.quarter"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "compliance_date_hierarchies_have_compliance_quarters"
+			        }
+			      ]
+			    },
+			    "fact_qccheck_compliance_date_date_hierarchy_has_fact_qccheck_compliance_date_year": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_qcchecks"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_qccheck.compliance_date.date_hierarchy": {
+			          "Target": {
+			            "Entity": "fact_qccheck.compliance_date.date_hierarchy"
+			          }
+			        },
+			        "fact_qccheck.compliance_date.year": {
+			          "Target": {
+			            "Entity": "fact_qccheck.compliance_date.year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_qccheck.compliance_date.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "fact_qccheck.compliance_date.year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "compliance_date_hierarchies_have_compliance_years"
+			        }
+			      ]
+			    },
+			    "fact_qccheck_compliance_date_has_date_hierarchy": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_qcchecks"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_qccheck.compliance_date": {
+			          "Target": {
+			            "Entity": "fact_qccheck.compliance_date"
+			          }
+			        },
+			        "fact_qccheck.compliance_date.date_hierarchy": {
+			          "Target": {
+			            "Entity": "fact_qccheck.compliance_date.date_hierarchy"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_qccheck.compliance_date"
+			            },
+			            "Object": {
+			              "Role": "fact_qccheck.compliance_date.date_hierarchy"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "compliance_dates_have_compliance_date_hierarchies"
+			        }
+			      ]
+			    },
+			    "fact_qccheck_detection_date_date_hierarchy_has_fact_qccheck_detection_date_day": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_qcchecks"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_qccheck.detection_date.date_hierarchy": {
+			          "Target": {
+			            "Entity": "fact_qccheck.detection_date.date_hierarchy"
+			          }
+			        },
+			        "fact_qccheck.detection_date.day": {
+			          "Target": {
+			            "Entity": "fact_qccheck.detection_date.day"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_qccheck.detection_date.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "fact_qccheck.detection_date.day"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "detection_date_hierarchies_have_detection_days"
+			        }
+			      ]
+			    },
 			    "fact_qccheck_detection_date_date_hierarchy_has_fact_qccheck_detection_date_month": {
 			      "Binding": {
 			        "ConceptualEntity": "fact_qcchecks"
@@ -5025,6 +5855,85 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "dim_products_have_fact_qcchecks"
+			        }
+			      ]
+			    },
+			    "xaxis_switch_has_xaxis_switch": {
+			      "Binding": {
+			        "ConceptualEntity": "X-Axis Switch"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "xaxis_switch": {
+			          "Target": {
+			            "Entity": "xaxis_switch"
+			          }
+			        },
+			        "xaxis_switch.xaxis_switch": {
+			          "Target": {
+			            "Entity": "xaxis_switch.xaxis_switch"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "xaxis_switch"
+			            },
+			            "Object": {
+			              "Role": "xaxis_switch.xaxis_switch"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "xaxis_switches_have_xaxis_switches"
+			        },
+			        {
+			          "Name": {
+			            "Subject": {
+			              "Role": "xaxis_switch"
+			            },
+			            "Name": {
+			              "Role": "xaxis_switch.xaxis_switch"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "xaxis_switches_are_names_IDs_of_xaxis_switches"
+			        }
+			      ]
+			    },
+			    "fact_qccheck_has_entity__measure_non_compliance_rate_": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_qcchecks"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_qccheck": {
+			          "Target": {
+			            "Entity": "fact_qccheck"
+			          }
+			        },
+			        "entity__measure.non_compliance_rate_": {
+			          "Target": {
+			            "Entity": "entity__measure.non_compliance_rate_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_qccheck"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.non_compliance_rate_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_qcchecks_have_non_compliance_rate_"
 			        }
 			      ]
 			    },
@@ -6493,237 +7402,6 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.9,
 			          "ID": "fact_qcchecks_are_created_on_created_dates"
-			        }
-			      ]
-			    },
-			    "fact_qccheck_detection_date_date_hierarchy_has_fact_qccheck_detection_date_day": {
-			      "Binding": {
-			        "ConceptualEntity": "fact_qcchecks"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_qccheck.detection_date.date_hierarchy": {
-			          "Target": {
-			            "Entity": "fact_qccheck.detection_date.date_hierarchy"
-			          }
-			        },
-			        "fact_qccheck.detection_date.day": {
-			          "Target": {
-			            "Entity": "fact_qccheck.detection_date.day"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_qccheck.detection_date.date_hierarchy"
-			            },
-			            "Object": {
-			              "Role": "fact_qccheck.detection_date.day"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "detection_date_hierarchies_have_detection_days"
-			        }
-			      ]
-			    },
-			    "fact_qccheck_compliance_date_has_date_hierarchy": {
-			      "Binding": {
-			        "ConceptualEntity": "fact_qcchecks"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_qccheck.compliance_date": {
-			          "Target": {
-			            "Entity": "fact_qccheck.compliance_date"
-			          }
-			        },
-			        "fact_qccheck.compliance_date.date_hierarchy": {
-			          "Target": {
-			            "Entity": "fact_qccheck.compliance_date.date_hierarchy"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_qccheck.compliance_date"
-			            },
-			            "Object": {
-			              "Role": "fact_qccheck.compliance_date.date_hierarchy"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "compliance_dates_have_compliance_date_hierarchies"
-			        }
-			      ]
-			    },
-			    "fact_qccheck_compliance_date_date_hierarchy_has_fact_qccheck_compliance_date_year": {
-			      "Binding": {
-			        "ConceptualEntity": "fact_qcchecks"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_qccheck.compliance_date.date_hierarchy": {
-			          "Target": {
-			            "Entity": "fact_qccheck.compliance_date.date_hierarchy"
-			          }
-			        },
-			        "fact_qccheck.compliance_date.year": {
-			          "Target": {
-			            "Entity": "fact_qccheck.compliance_date.year"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_qccheck.compliance_date.date_hierarchy"
-			            },
-			            "Object": {
-			              "Role": "fact_qccheck.compliance_date.year"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "compliance_date_hierarchies_have_compliance_years"
-			        }
-			      ]
-			    },
-			    "fact_qccheck_compliance_date_date_hierarchy_has_fact_qccheck_compliance_date_quarter": {
-			      "Binding": {
-			        "ConceptualEntity": "fact_qcchecks"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_qccheck.compliance_date.date_hierarchy": {
-			          "Target": {
-			            "Entity": "fact_qccheck.compliance_date.date_hierarchy"
-			          }
-			        },
-			        "fact_qccheck.compliance_date.quarter": {
-			          "Target": {
-			            "Entity": "fact_qccheck.compliance_date.quarter"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_qccheck.compliance_date.date_hierarchy"
-			            },
-			            "Object": {
-			              "Role": "fact_qccheck.compliance_date.quarter"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "compliance_date_hierarchies_have_compliance_quarters"
-			        }
-			      ]
-			    },
-			    "fact_qccheck_compliance_date_date_hierarchy_has_fact_qccheck_compliance_date_month": {
-			      "Binding": {
-			        "ConceptualEntity": "fact_qcchecks"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_qccheck.compliance_date.date_hierarchy": {
-			          "Target": {
-			            "Entity": "fact_qccheck.compliance_date.date_hierarchy"
-			          }
-			        },
-			        "fact_qccheck.compliance_date.month": {
-			          "Target": {
-			            "Entity": "fact_qccheck.compliance_date.month"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_qccheck.compliance_date.date_hierarchy"
-			            },
-			            "Object": {
-			              "Role": "fact_qccheck.compliance_date.month"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "compliance_date_hierarchies_have_compliance_months"
-			        }
-			      ]
-			    },
-			    "fact_qccheck_compliance_date_date_hierarchy_has_fact_qccheck_compliance_date_day": {
-			      "Binding": {
-			        "ConceptualEntity": "fact_qcchecks"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_qccheck.compliance_date.date_hierarchy": {
-			          "Target": {
-			            "Entity": "fact_qccheck.compliance_date.date_hierarchy"
-			          }
-			        },
-			        "fact_qccheck.compliance_date.day": {
-			          "Target": {
-			            "Entity": "fact_qccheck.compliance_date.day"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_qccheck.compliance_date.date_hierarchy"
-			            },
-			            "Object": {
-			              "Role": "fact_qccheck.compliance_date.day"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "compliance_date_hierarchies_have_compliance_days"
-			        }
-			      ]
-			    },
-			    "fact_qccheck_created_date_has_date_hierarchy": {
-			      "Binding": {
-			        "ConceptualEntity": "fact_qcchecks"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_qccheck.created_date": {
-			          "Target": {
-			            "Entity": "fact_qccheck.created_date"
-			          }
-			        },
-			        "fact_qccheck.created_date.date_hierarchy": {
-			          "Target": {
-			            "Entity": "fact_qccheck.created_date.date_hierarchy"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_qccheck.created_date"
-			            },
-			            "Object": {
-			              "Role": "fact_qccheck.created_date.date_hierarchy"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "created_dates_have_created_date_hierarchies"
 			        }
 			      ]
 			    },

@@ -4,10 +4,10 @@
   "position": {
     "x": 1262.8571428571429,
     "y": 280,
-    "z": 17001,
+    "z": 18000,
     "height": 762.85714285714289,
     "width": 618.57142857142856,
-    "tabOrder": 17001
+    "tabOrder": 18000
   },
   "visual": {
     "visualType": "pivotTable",
@@ -77,7 +77,8 @@
                 }
               },
               "queryRef": "_Measures.Non-Compliant Checks",
-              "nativeQueryRef": "Non-Compliant Checks"
+              "nativeQueryRef": "Non-Compliant",
+              "displayName": "Non-Compliant"
             },
             {
               "field": {
@@ -141,7 +142,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "81.2857151721924D"
+                  "Value": "80D"
                 }
               }
             }
@@ -155,7 +156,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "80.28571629910118D"
+                  "Value": "150D"
                 }
               }
             }
@@ -169,7 +170,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "317.5714313705644D"
+                  "Value": "250D"
                 }
               }
             }
@@ -261,11 +262,54 @@
           "selector": {
             "metadata": "dim_process.Criticality"
           }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "80D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.Total Checks"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "320D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "dim_countries.Region"
+          }
         }
       ],
       "columnHeaders": [
         {
-          "properties": {}
+          "properties": {
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'fixedWidth'"
+                }
+              }
+            },
+            "defaultColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "90D"
+                }
+              }
+            }
+          }
         }
       ],
       "values": [
@@ -291,6 +335,71 @@
                 }
               }
             }
+          }
+        }
+      ],
+      "columnFormatting": [
+        {
+          "properties": {
+            "dataBars": {
+              "positiveColor": {
+                "solid": {
+                  "color": {
+                    "expr": {
+                      "Literal": {
+                        "Value": "'#8CEBCB'"
+                      }
+                    }
+                  }
+                }
+              },
+              "negativeColor": {
+                "solid": {
+                  "color": {
+                    "expr": {
+                      "Literal": {
+                        "Value": "'minColor'"
+                      }
+                    }
+                  }
+                }
+              },
+              "axisColor": {
+                "solid": {
+                  "color": {
+                    "expr": {
+                      "Literal": {
+                        "Value": "'#FFFFFF'"
+                      }
+                    }
+                  }
+                }
+              },
+              "reverseDirection": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              },
+              "hideText": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              },
+              "totalMatchingOption": {
+                "expr": {
+                  "Literal": {
+                    "Value": "1L"
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.Compliance Rate %"
           }
         }
       ]
