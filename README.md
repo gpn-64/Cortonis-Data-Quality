@@ -1,11 +1,5 @@
 # 🧪 Regulatory Data Quality Dashboard
 
-![status](https://img.shields.io/badge/status-active-brightgreen)
-![license](https://img.shields.io/badge/license-MIT-blue)
-![Power BI](https://img.shields.io/badge/Power%20BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
-![DAX](https://img.shields.io/badge/DAX-4A4A4A?style=for-the-badge&logo=microsoftexcel&logoColor=white)
-![PBIP](https://img.shields.io/badge/PBIP-versioned-512BD4?style=for-the-badge)
-
 A Power BI dashboard for monitoring the **data quality of regulatory information** (RIM) in a pharmaceutical company: QC checks run across Registrations, Submissions, Products and Documents, the deviations they raise, and how fast those deviations get corrected.
 
 ---
@@ -49,19 +43,19 @@ This repository starts *after* all of that: it assumes the check-level table alr
 
 ---
 
-## RIM-agnostic by design — aligned to the DIA RIM Reference Model
+## RIM data aligned to the DIA RIM Reference Model
 
-The model is named against the **DIA RIM Reference Model V2.0** (DIA RIM Working Group, 2026 — copy in [`docs/dia standards/`](docs/dia%20standards/)), the industry's vendor-neutral reference framework for regulatory information, **not** against any single RIM product's object model. The QC checks are phrased the same way (e.g. *"Broken link Submission → Application → Registration"*, *"Registration without linked Health Authority"*).
+The model is named against the **DIA RIM Reference Model V2.0** (DIA RIM Working Group, 2026 — copy in [`docs/dia standards/`](<docs/dia%20standards/>)), the industry's vendor-neutral reference framework for regulatory information, **not** against any single RIM product's object model. The QC checks are phrased the same way (e.g. *"Broken link Submission → Application → Registration"*, *"Registration without linked Health Authority"*).
 
-| In this project | DIA RIM Reference Model V2.0 | Note |
-|---|---|---|
-| `Object = Submission` | **Submission** | exact object name |
-| `Object = Registration` | **License-Registration** | DIA's full object name; "Registration" is the common industry short form |
-| `Object = Product` | **Medicinal Product** (in the Product Family → Global Product → Medicinal Product hierarchy) | kept as the umbrella term |
-| `Object = Document` | **Content** / **Submission Content** | documents are formally scoped to the sister *DIA EDM Reference Model*; "Document" is the term every RIM/DMS platform shares |
-| `Application`, `Health Authority`, `Content Plan`, `Product Family`, `Active Substance`, `Procedure Type`, `Country`, `Region` | Application · Health Authority · Submission Content Plan · Product Family · Substance / "INN (generic name)" · Application Procedure Type · Country · Country.Regions | all DIA object / attribute names |
-| `Process` ∈ {Submission / Registration / Product Management, Document Control} | regulatory business-process capability names | standard RIM capability taxonomy, not vendor-specific |
-| `Dimension` ∈ {Completeness, Uniqueness, Validity, Accuracy, Consistency, Timeliness, Referential Integrity} | *not a DIA concept* | the six **DAMA-DMBOK** data-quality dimensions, plus Referential Integrity |
+| In this project                                                                                                                                | DIA RIM Reference Model V2.0                                                                                                                                                 | Note                                                                                                                         |
+| ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `Object = Submission`                                                                                                                        | **Submission**                                                                                                                                                         | exact object name                                                                                                            |
+| `Object = Registration`                                                                                                                      | **License-Registration**                                                                                                                                               | DIA's full object name; "Registration" is the common industry short form                                                     |
+| `Object = Product`                                                                                                                           | **Medicinal Product** (in the Product Family → Global Product → Medicinal Product hierarchy)                                                                         | kept as the umbrella term                                                                                                    |
+| `Object = Document`                                                                                                                          | **Content** / **Submission Content**                                                                                                                             | documents are formally scoped to the sister*DIA EDM Reference Model*; "Document" is the term every RIM/DMS platform shares |
+| `Application`, `Health Authority`, `Content Plan`, `Product Family`, `Active Substance`, `Procedure Type`, `Country`, `Region` | Application · Health Authority · Submission Content Plan · Product Family · Substance / "INN (generic name)" · Application Procedure Type · Country · Country.Regions | all DIA object / attribute names                                                                                             |
+| `Process` ∈ {Submission / Registration / Product Management, Document Control}                                                              | regulatory business-process capability names                                                                                                                                 | standard RIM capability taxonomy, not vendor-specific                                                                        |
+| `Dimension` ∈ {Completeness, Uniqueness, Validity, Accuracy, Consistency, Timeliness, Referential Integrity}                                | *not a DIA concept*                                                                                                                                                        | the six**DAMA-DMBOK** data-quality dimensions, plus Referential Integrity                                              |
 
 The Registration / Submission / Application trio is **shared vocabulary** between the DIA model and every major RIM vendor, so the same fields map — with only a rename — onto:
 
@@ -85,34 +79,34 @@ Known wording drift from the strict DIA vocabulary (kept for readability, no imp
 
 **Synthetic** — `data/raw/data export quality dashboard (fictional v2).csv`
 
-| | |
-|---|---|
-| Rows | 12,000 (one per QC check) |
-| Detection dates | 2023-09-01 → 2026-08-20 |
-| Countries | 134, grouped into 5 regions |
-| Teams | 20 (4 functions × 5 regions) |
-| Distinct checks | 26, across 7 data-quality dimensions |
-| Processes | 4 — Submission Management, Registration Management, Product Management, Document Control |
-| Products | 240, across 6 therapeutic classes |
-| Findings | ~826 detected / ~833 corrected / ~10,341 with no finding |
+|                 |                                                                                           |
+| --------------- | ----------------------------------------------------------------------------------------- |
+| Rows            | 12,000 (one per QC check)                                                                 |
+| Detection dates | 2023-09-01 → 2026-08-20                                                                  |
+| Countries       | 134, grouped into 5 regions                                                               |
+| Teams           | 20 (4 functions × 5 regions)                                                             |
+| Distinct checks | 26, across 7 data-quality dimensions                                                      |
+| Processes       | 4 — Submission Management, Registration Management, Product Management, Document Control |
+| Products        | 240, across 6 therapeutic classes                                                         |
+| Findings        | ~826 detected / ~833 corrected / ~10,341 with no finding                                  |
 
 ### Columns (raw export)
 
-| Field | Description |
-|---|---|
-| `Check Name` | The QC rule that was run |
-| `Dimension` | Completeness, Referential Integrity, Uniqueness, Consistency, Timeliness, Validity, Accuracy |
-| `Object` / `Field` | Regulatory object and field the rule targets |
-| `Process` | Business process the check belongs to |
-| `Criticality` | Critical / Major / Minor |
-| `Check Status` | `No finding` · `Finding detected` · `Finding corrected` |
-| `Compliance Status` | `Compliant` / `Non compliant` (derived from `Check Status`) |
-| `Deviation #` | Deviation identifier, when a finding is raised |
-| `Detection Date` / `Compliance Date` / `Created Date` | Finding lifecycle dates |
-| `Product` / `Type of Product` | Affected product and its therapeutic class |
-| `Country` / `Region` | Where the affected record is registered |
-| `Team` | Team responsible for the process in that region |
-| `Record ID` / `Finding ID` | Record and finding keys |
+| Field                                                       | Description                                                                                  |
+| ----------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `Check Name`                                              | The QC rule that was run                                                                     |
+| `Dimension`                                               | Completeness, Referential Integrity, Uniqueness, Consistency, Timeliness, Validity, Accuracy |
+| `Object` / `Field`                                      | Regulatory object and field the rule targets                                                 |
+| `Process`                                                 | Business process the check belongs to                                                        |
+| `Criticality`                                             | Critical / Major / Minor                                                                     |
+| `Check Status`                                            | `No finding` · `Finding detected` · `Finding corrected`                              |
+| `Compliance Status`                                       | `Compliant` / `Non compliant` (derived from `Check Status`)                            |
+| `Deviation #`                                             | Deviation identifier, when a finding is raised                                               |
+| `Detection Date` / `Compliance Date` / `Created Date` | Finding QC checks lifecycle dates                                                           |
+| `Product` / `Type of Product`                           | Affected product and its therapeutic class                                                   |
+| `Country` / `Region`                                    | Where the affected record is registered                                                      |
+| `Team`                                                    | Team responsible for the process in that region                                              |
+| `Record ID` / `Finding ID`                              | Record and finding keys                                                                      |
 
 ### The QC checks
 
@@ -140,19 +134,19 @@ X-Axis Switch   field parameter — lets most charts pivot their axis across 13 
 
 ### Key DAX measures (`_Measures`)
 
-| Measure | Definition |
-|---|---|
-| `Total Checks` | `DISTINCTCOUNT(fact_qcchecks[Record ID])` |
-| `Compliant Checks` / `Non-Compliant Checks` | `Total Checks` filtered on `Compliance Status` |
-| `Compliance Rate %` | `DIVIDE([Compliant Checks], [Total Checks])` |
-| `Open Deviations` | distinct `Deviation #` where `Check Status = "Finding detected"` |
-| `Deviations Corrected` | checks where `Check Status = "Finding corrected"` |
-| `Total Deviations` | distinct `Deviation #` where `Check Status <> "No finding"` |
-| `Deviation Rate %` | `DIVIDE([Total Deviations], [Total Checks])` |
-| `Correction Rate %` | `DIVIDE([Deviations Corrected], [Total Deviations])` |
-| `Avg Days to Correct` | `AVERAGEX` of `DATEDIFF(Detection, Compliance, DAY)` over corrected findings |
-| `Critical Open Deviations` | `Open Deviations` where `Criticality = "Critical"` |
-| `Right First Time %` | share of checks where `Compliance Date = Created Date` |
+| Measure                                         | Definition                                                                       |
+| ----------------------------------------------- | -------------------------------------------------------------------------------- |
+| `Total Checks`                                | `DISTINCTCOUNT(fact_qcchecks[Record ID])`                                      |
+| `Compliant Checks` / `Non-Compliant Checks` | `Total Checks` filtered on `Compliance Status`                               |
+| `Compliance Rate %`                           | `DIVIDE([Compliant Checks], [Total Checks])`                                   |
+| `Open Deviations`                             | distinct`Deviation #` where `Check Status = "Finding detected"`              |
+| `Deviations Corrected`                        | checks where`Check Status = "Finding corrected"`                               |
+| `Total Deviations`                            | distinct`Deviation #` where `Check Status <> "No finding"`                   |
+| `Deviation Rate %`                            | `DIVIDE([Total Deviations], [Total Checks])`                                   |
+| `Correction Rate %`                           | `DIVIDE([Deviations Corrected], [Total Deviations])`                           |
+| `Avg Days to Correct`                         | `AVERAGEX` of `DATEDIFF(Detection, Compliance, DAY)` over corrected findings |
+| `Critical Open Deviations`                    | `Open Deviations` where `Criticality = "Critical"`                           |
+| `Right First Time %`                          | share of checks where`Compliance Date = Created Date`                          |
 
 > **Note:** `Non-Compliant Checks` equals `Open Deviations` by construction — `Compliance Status` is fully derived from `Check Status` in the synthetic data. `Deviation Rate %` and `1 − Compliance Rate %` are *not* the same thing: the first counts every historical deviation (including corrected ones), the second is a current-state snapshot.
 

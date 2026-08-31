@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Deviations",
+                    "value": "Quality Deviations",
                     "textStyle": {
                       "fontWeight": "bold",
                       "fontFamily": "Trebuchet MS",

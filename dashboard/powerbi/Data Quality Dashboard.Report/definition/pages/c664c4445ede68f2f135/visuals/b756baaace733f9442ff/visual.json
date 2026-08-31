@@ -23,11 +23,11 @@
                       "Entity": "dim_process"
                     }
                   },
-                  "Property": "Team"
+                  "Property": "Business Function"
                 }
               },
-              "queryRef": "dim_process.Team",
-              "nativeQueryRef": "Team",
+              "queryRef": "dim_process.Business Function",
+              "nativeQueryRef": "Business Function",
               "active": true
             }
           ]

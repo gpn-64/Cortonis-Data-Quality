@@ -23,11 +23,11 @@
                       "Entity": "dim_process"
                     }
                   },
-                  "Property": "Process"
+                  "Property": "RIM Process Area"
                 }
               },
-              "queryRef": "dim_process.Process",
-              "nativeQueryRef": "Process",
+              "queryRef": "dim_process.RIM Process Area",
+              "nativeQueryRef": "RIM Process Area",
               "active": true
             }
           ]
@@ -42,7 +42,7 @@
         "levels": [
           {
             "queryRefs": [
-              "dim_process.Process"
+              "dim_process.RIM Process Area"
             ],
             "isCollapsed": true,
             "isPinned": true
@@ -189,7 +189,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Process'"
+                  "Value": "'RIM Process Area'"
                 }
               }
             },

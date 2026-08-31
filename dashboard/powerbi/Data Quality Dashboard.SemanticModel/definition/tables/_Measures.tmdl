@@ -11,7 +11,7 @@ table _Measures
 		displayFolder: Volumes
 		lineageTag: d7431529-684e-4787-b60f-0eeee1297b53
 
-	measure 'Non-Compliant Checks' = CALCULATE([Total Checks], fact_qcchecks[Compliance Status] = "Non compliant")
+	measure 'Non-Compliant Checks' = CALCULATE([Total Checks], fact_qcchecks[Compliance Status] = "Non-Compliant")
 		formatString: #,##0
 		displayFolder: Volumes
 		lineageTag: c34c95c0-c2a4-4f48-b813-1e6c8778d169
@@ -21,17 +21,17 @@ table _Measures
 		displayFolder: Rates
 		lineageTag: 2c13e541-adf2-4142-8e32-d05752106134
 
-	measure 'Open Deviations' = CALCULATE(DISTINCTCOUNT(fact_qcchecks[Deviation #]), fact_qcchecks[Check Status] = "Finding detected")
+	measure 'Open Deviations' = CALCULATE(DISTINCTCOUNT(fact_qcchecks[Deviation #]), fact_qcchecks[Check Status] = "Finding Detected")
 		formatString: #,##0
 		displayFolder: Deviations
 		lineageTag: 621df46d-b4ec-4838-a98d-a84e9c83bba0
 
-	measure 'Deviations Corrected' = CALCULATE([Total Checks], fact_qcchecks[Check Status] = "Finding corrected")
+	measure 'Deviations Corrected' = CALCULATE([Total Checks], fact_qcchecks[Check Status] = "Finding Corrected")
 		formatString: #,##0
 		displayFolder: Deviations
 		lineageTag: 60a1733a-d3b2-473d-b1b0-1ab284f3c120
 
-	measure 'Total Deviations' = CALCULATE(DISTINCTCOUNT(fact_qcchecks[Deviation #]), fact_qcchecks[Check Status] <> "No finding")
+	measure 'Total Deviations' = CALCULATE(DISTINCTCOUNT(fact_qcchecks[Deviation #]), fact_qcchecks[Check Status] <> "No Finding")
 		formatString: #,##0
 		displayFolder: Deviations
 		lineageTag: b85c8391-1dd7-45d5-a8b5-a49a91c64c33
@@ -51,7 +51,7 @@ table _Measures
 		displayFolder: Deviations
 		lineageTag: 1440d5f4-a01b-4b53-a2dc-34717b29fe38
 
-	measure 'Avg Days to Correct' = AVERAGEX(FILTER(fact_qcchecks, fact_qcchecks[Check Status] = "Finding corrected"), DATEDIFF(fact_qcchecks[Detection Date], fact_qcchecks[Compliance Date], DAY))
+	measure 'Mean Time To Resolve (MTTR)' = AVERAGEX(FILTER(fact_qcchecks, fact_qcchecks[Check Status] = "Finding Corrected"), DATEDIFF(fact_qcchecks[Finding Detection Date], fact_qcchecks[Finding Resolution Date], DAY))
 		formatString: 0.0
 		displayFolder: Timing
 		lineageTag: ab2c1685-27b4-416b-9dbc-36534b13c14d
@@ -83,6 +83,20 @@ table _Measures
 		formatString: 0.00%;-0.00%;0.00%
 		displayFolder: Rates
 		lineageTag: 0549d087-dce9-409b-ada0-af727488de1e
+
+	measure 'Median Time To Resolve (MedTTR)' = MEDIANX(FILTER(fact_qcchecks, fact_qcchecks[Check Status] = "Finding Corrected"), DATEDIFF(fact_qcchecks[Finding Detection Date], fact_qcchecks[Finding Resolution Date], DAY))
+		displayFolder: Timing
+		lineageTag: 731b22f0-8e66-4f3a-86e7-1373b47f4256
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Compliant / Total Checks' = [Compliant Checks]&" out of "&[Total Checks]
+		displayFolder: Volumes
+		lineageTag: 22ab6ea3-7281-46a5-b773-f0fff40430e7
+
+	measure 'Record Link' = "https://github.com/gpn-64"
+		displayFolder: Button
+		lineageTag: 481bdffe-a75e-45c1-bc7c-c5b1a70ff358
 
 	column Column1
 		isHidden

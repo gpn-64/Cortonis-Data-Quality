@@ -110,7 +110,7 @@ table LocalDateTable_ece7d50e-8635-431a-ba36-6b95e4ff55c0
 
 	partition LocalDateTable_ece7d50e-8635-431a-ba36-6b95e4ff55c0 = calculated
 		mode: import
-		source = Calendar(Date(Year(MIN('fact_qcchecks'[Detection Date])), 1, 1), Date(Year(MAX('fact_qcchecks'[Detection Date])), 12, 31))
+		source = Calendar(Date(Year(MIN('fact_qcchecks'[Finding Detection Date])), 1, 1), Date(Year(MAX('fact_qcchecks'[Finding Detection Date])), 12, 31))
 
 	annotation __PBI_LocalDateTable = true
 

@@ -44,15 +44,15 @@ table 'X-Axis Switch'
 				    ("Country", NAMEOF('fact_qcchecks'[Country]), 1),
 				    ("Check Status", NAMEOF('fact_qcchecks'[Check Status]), 2),
 				    ("Compliance Status", NAMEOF('fact_qcchecks'[Compliance Status]), 3),
-				    ("Type of Product", NAMEOF('dim_products'[Type of Product]), 4),
-				    ("Product", NAMEOF('dim_products'[Product]), 5),
-				    ("Dimension", NAMEOF('dim_process'[Dimension]), 6),
+				    ("Therapeutic Area", NAMEOF('dim_products'[Therapeutic Area]), 4),
+				    ("Medicinal Product", NAMEOF('dim_products'[Medicinal Product Name]), 5),
+				    ("DQ Dimension", NAMEOF('dim_process'[DQ Dimension]), 6),
 				    ("Criticality", NAMEOF('dim_process'[Criticality]), 7),
-				    ("Process", NAMEOF('dim_process'[Process]), 8),
+				    ("RIM Process Area", NAMEOF('dim_process'[RIM Process Area]), 8),
 				    ("Check Name", NAMEOF('fact_qcchecks'[Check Name]), 9),
-				    ("Object", NAMEOF('dim_process'[Object]), 10),
-				    ("Field", NAMEOF('dim_process'[Field]), 11),
-				    ("Team", NAMEOF('dim_process'[Team]), 12)
+				    ("RIM Object", NAMEOF('dim_process'[RIM Object]), 10),
+				    ("RIM Attribute", NAMEOF('dim_process'[RIM Attribute]), 11),
+				    ("Business Function", NAMEOF('dim_process'[Business Function]), 12)
 				}
 
 	annotation PBI_Id = 290c5caa8f014b7a82dad3a2145996cb

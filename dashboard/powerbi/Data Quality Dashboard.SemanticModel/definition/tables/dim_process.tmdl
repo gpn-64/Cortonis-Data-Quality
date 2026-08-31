@@ -9,11 +9,11 @@ table dim_process
 
 		annotation SummarizationSetBy = Automatic
 
-	column Process
+	column 'RIM Process Area'
 		dataType: string
 		lineageTag: b25d6d21-2e1c-4bbf-9ffd-7644b69cb19f
 		summarizeBy: none
-		sourceColumn: Process
+		sourceColumn: RIM Process Area
 
 		annotation SummarizationSetBy = Automatic
 
@@ -25,35 +25,35 @@ table dim_process
 
 		annotation SummarizationSetBy = Automatic
 
-	column Field
+	column 'RIM Attribute'
 		dataType: string
 		lineageTag: e785aa7c-172a-4ad8-948b-875b094c1a0e
 		summarizeBy: none
-		sourceColumn: Field
+		sourceColumn: RIM Attribute
 
 		annotation SummarizationSetBy = Automatic
 
-	column Object
+	column 'RIM Object'
 		dataType: string
 		lineageTag: 91283b72-add6-447a-93c3-d44f8e3d126e
 		summarizeBy: none
-		sourceColumn: Object
+		sourceColumn: RIM Object
 
 		annotation SummarizationSetBy = Automatic
 
-	column Dimension
+	column 'DQ Dimension'
 		dataType: string
 		lineageTag: e67a5c26-0bfe-4540-b9df-ee5f22abf2e4
 		summarizeBy: none
-		sourceColumn: Dimension
+		sourceColumn: DQ Dimension
 
 		annotation SummarizationSetBy = Automatic
 
-	column Team
+	column 'Business Function'
 		dataType: string
 		lineageTag: bfc4e884-7d58-47cb-b07a-a98885bc17b1
 		summarizeBy: none
-		sourceColumn: Team
+		sourceColumn: Business Function
 
 		annotation SummarizationSetBy = Automatic
 
@@ -78,13 +78,15 @@ table dim_process
 		source =
 				let
 				    Source = #"data export quality dashboard (fictional v2)",
-				    #"Removed Other Columns" = Table.SelectColumns(Source,{"Criticality", "Dimension", "Field", "Object", "Process", "Check Name", "Country", "Team"}),
-				    #"Reordered Columns" = Table.ReorderColumns(#"Removed Other Columns",{"Check Name", "Process", "Criticality", "Field", "Object", "Dimension"}),
-				    #"Removed Duplicates" = Table.Distinct(#"Reordered Columns"),
-				    #"Added Custom" = Table.AddColumn(#"Removed Duplicates", "Check Name - Country", each [Check Name]&" - "&[Country]),
-				    #"Reordered Columns1" = Table.ReorderColumns(#"Added Custom",{"Check Name - Country", "Check Name", "Process", "Criticality", "Field", "Object", "Dimension", "Country", "Team"})
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"Criticality", "DQ Dimension", "RIM Attribute", "RIM Object", "RIM Process Area", "Check Name", "Country", "Business Function"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns"),
+				    #"Added Custom" = Table.AddColumn(#"Removed Duplicates", "Check Name - Country", each [Check Name]&" - "&[Country])
 				in
-				    #"Reordered Columns1"
+				    #"Added Custom"
+
+		annotation PBI_NavigationStepName = Navigation
+
+		annotation PBI_ResultType = Table
 
 	annotation PBI_NavigationStepName = Navigation
 

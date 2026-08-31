@@ -1,0 +1,554 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "589ee085ac98322f6d34",
+  "position": {
+    "x": 289.6680197325299,
+    "y": 278.3639018893092,
+    "z": 15001,
+    "height": 772.919057530214,
+    "width": 1589.6415717029081,
+    "tabOrder": 15001
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_qcchecks"
+                    }
+                  },
+                  "Property": "Finding ID"
+                }
+              },
+              "queryRef": "fact_qcchecks.Finding ID",
+              "nativeQueryRef": "Finding ID"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_qcchecks"
+                    }
+                  },
+                  "Property": "Deviation #"
+                }
+              },
+              "queryRef": "fact_qcchecks.Deviation #",
+              "nativeQueryRef": "Deviation #"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_process"
+                    }
+                  },
+                  "Property": "DQ Dimension"
+                }
+              },
+              "queryRef": "dim_process.DQ Dimension",
+              "nativeQueryRef": "DQ Dimension"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_process"
+                    }
+                  },
+                  "Property": "Country"
+                }
+              },
+              "queryRef": "dim_process.Country",
+              "nativeQueryRef": "Country"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_process"
+                    }
+                  },
+                  "Property": "Criticality"
+                }
+              },
+              "queryRef": "dim_process.Criticality",
+              "nativeQueryRef": "Criticality"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_process"
+                    }
+                  },
+                  "Property": "RIM Process Area"
+                }
+              },
+              "queryRef": "dim_process.RIM Process Area",
+              "nativeQueryRef": "RIM Process Area"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_qcchecks"
+                    }
+                  },
+                  "Property": "Check Name"
+                }
+              },
+              "queryRef": "fact_qcchecks.Check Name",
+              "nativeQueryRef": "Check Name1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_qcchecks"
+                    }
+                  },
+                  "Property": "Medicinal Product Name"
+                }
+              },
+              "queryRef": "fact_qcchecks.Medicinal Product Name",
+              "nativeQueryRef": "Medicinal Product Name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_qcchecks"
+                    }
+                  },
+                  "Property": "Finding Detection Date"
+                }
+              },
+              "queryRef": "fact_qcchecks.Finding Detection Date",
+              "nativeQueryRef": "Finding Detection Date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_qcchecks"
+                    }
+                  },
+                  "Property": "Check Status"
+                }
+              },
+              "queryRef": "fact_qcchecks.Check Status",
+              "nativeQueryRef": "Check Status"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_qcchecks"
+                    }
+                  },
+                  "Property": "Record Link"
+                }
+              },
+              "queryRef": "fact_qcchecks.Record Link",
+              "nativeQueryRef": "Record Link"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {}
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "webURL": {
+              "expr": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Record Link"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "fact_qcchecks.Record Link"
+          }
+        },
+        {
+          "properties": {
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "345.89245250943964D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "fact_qcchecks.Check Name"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "126.1301415010072D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "fact_qcchecks.Check Status"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "128.97002865127888D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "dim_process.Country"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "74.06507221208449D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "fact_qcchecks.Finding ID"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "114.39175174175134D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "fact_qcchecks.Finding Detection Date"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "186.78352498522102D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "dim_process.RIM Process Area"
+          }
+        }
+      ],
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "rowPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "938757c8c2c42a374088",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "fact_qcchecks"
+              }
+            },
+            "Property": "Finding ID"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "c022a009e8d623111674",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_process"
+              }
+            },
+            "Property": "DQ Dimension"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "079cbe2de095e6d98bef",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_process"
+              }
+            },
+            "Property": "Country"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ab5c878d2c377e083d59",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_process"
+              }
+            },
+            "Property": "Criticality"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "af7ed6dd338612c451a1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_process"
+              }
+            },
+            "Property": "RIM Process Area"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "655b1b3d1843c307c651",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "fact_qcchecks"
+              }
+            },
+            "Property": "Check Name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "3d7f206727f292dbbc29",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "fact_qcchecks"
+              }
+            },
+            "Property": "Check Status"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "f",
+              "Entity": "fact_qcchecks",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "f"
+                          }
+                        },
+                        "Property": "Check Status"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Finding Detected'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "49b78eebdadce6d4c29e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "fact_qcchecks"
+              }
+            },
+            "Property": "Medicinal Product Name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "6d26b3ecb37c97b193a3",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "fact_qcchecks"
+              }
+            },
+            "Property": "Deviation #"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "d39476681056cd0cd048",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "fact_qcchecks"
+              }
+            },
+            "Property": "Record Link"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

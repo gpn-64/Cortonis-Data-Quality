@@ -23,11 +23,11 @@
                       "Entity": "dim_products"
                     }
                   },
-                  "Property": "Type of Product"
+                  "Property": "Therapeutic Area"
                 }
               },
-              "queryRef": "dim_products.Type of Product",
-              "nativeQueryRef": "Type of Product",
+              "queryRef": "dim_products.Therapeutic Area",
+              "nativeQueryRef": "Therapeutic Area",
               "active": true
             },
             {
@@ -35,14 +35,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "fact_qcchecks"
+                      "Entity": "dim_products"
                     }
                   },
-                  "Property": "Product"
+                  "Property": "Medicinal Product Name"
                 }
               },
-              "queryRef": "fact_qcchecks.Product",
-              "nativeQueryRef": "Product",
+              "queryRef": "dim_products.Medicinal Product Name",
+              "nativeQueryRef": "Medicinal Product Name",
               "active": false
             }
           ]
@@ -57,17 +57,16 @@
         "levels": [
           {
             "queryRefs": [
-              "dim_products.Type of Product"
+              "dim_products.Therapeutic Area"
             ],
             "isCollapsed": true,
             "isPinned": true
           },
           {
             "queryRefs": [
-              "fact_qcchecks.Product"
+              "dim_products.Medicinal Product Name"
             ],
-            "isCollapsed": true,
-            "isPinned": true
+            "isCollapsed": true
           }
         ],
         "root": {}

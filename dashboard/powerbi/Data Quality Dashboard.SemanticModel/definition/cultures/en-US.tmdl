@@ -195,139 +195,80 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "fact_qccheck.detection_date": {
+			    "dim_product.medicinal_product_name": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "fact_qcchecks",
-			          "ConceptualProperty": "Detection Date"
+			          "ConceptualEntity": "dim_products",
+			          "ConceptualProperty": "Medicinal Product Name"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "detection date": {
+			          "medicinal product name": {
 			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "date": {
-			            "State": "Generated",
-			            "Weight": 0.7
-			          }
-			        },
-			        {
-			          "detection moment": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.75
-			          }
-			        },
-			        {
-			          "detection period": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.727
-			          }
-			        }
-			      ],
-			      "SemanticType": "Time"
-			    },
-			    "fact_qccheck.detection_date.date_hierarchy": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "fact_qcchecks",
-			          "VariationSource": "Detection Date",
-			          "VariationSet": "Variation",
-			          "Hierarchy": "Date Hierarchy"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "detection date hierarchy": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "date hierarchy": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        }
-			      ],
-			      "SemanticType": "Time"
-			    },
-			    "fact_qccheck.detection_date.year": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "fact_qcchecks",
-			          "VariationSource": "Detection Date",
-			          "VariationSet": "Variation",
-			          "Hierarchy": "Date Hierarchy",
-			          "HierarchyLevel": "Year"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "detection year": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "year": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "detection date year": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "date year": {
+			          "name": {
 			            "State": "Generated",
 			            "Weight": 0.97
 			          }
 			        },
 			        {
-			          "detection date yr": {
+			          "product": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "product name": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "medicinal product nickname": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.762
+			            "Weight": 0.739
 			          }
 			        },
 			        {
-			          "detection yr": {
+			          "medicinal product title": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.75
+			            "Weight": 0.739
 			          }
 			        },
 			        {
-			          "date yr": {
+			          "medicinal product label": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.75
+			            "Weight": 0.739
 			          }
 			        },
 			        {
-			          "yr": {
+			          "medicinal product tag": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "artifact": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -337,17 +278,80 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "detection moment year": {
+			          "product nickname": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.609
+			            "Weight": 0.727
 			          }
 			        },
 			        {
-			          "moment year": {
+			          "product title": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "product label": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "product tag": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "item": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ],
+			      "NameType": "Name"
+			    },
+			    "dim_process.business_function": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_process",
+			          "ConceptualProperty": "Business Function"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "business function": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "function": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "biz function": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -357,113 +361,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "detection period year": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.591
-			          }
-			        },
-			        {
-			          "period year": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.582
-			          }
-			        }
-			      ],
-			      "SemanticType": "Time"
-			    },
-			    "fact_qccheck.detection_date.quarter": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "fact_qcchecks",
-			          "VariationSource": "Detection Date",
-			          "VariationSet": "Variation",
-			          "Hierarchy": "Date Hierarchy",
-			          "HierarchyLevel": "Quarter"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "detection quarter": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "quarter": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "detection date quarter": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "date quarter": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "detection date qtr": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.846
-			          }
-			        },
-			        {
-			          "detection qtr": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.833
-			          }
-			        },
-			        {
-			          "date qtr": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.833
-			          }
-			        },
-			        {
-			          "qtr": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.818
-			          }
-			        },
-			        {
-			          "detection moment quarter": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.609
-			          }
-			        },
-			        {
-			          "moment quarter": {
+			          "industry function": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -473,17 +371,77 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "detection period quarter": {
+			          "commerce function": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.591
+			            "Weight": 0.6
 			          }
 			        },
 			        {
-			          "period quarter": {
+			          "corporation function": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "employer function": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "enterprise function": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "establishment function": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "commercial function": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "corporate function": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "firm function": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -492,44 +450,402 @@ cultureInfo en-US
 			            "Weight": 0.582
 			          }
 			        }
-			      ],
-			      "SemanticType": "Time"
+			      ]
 			    },
-			    "fact_qccheck.detection_date.month": {
+			    "dim_process.DQ_dimension": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "fact_qcchecks",
-			          "VariationSource": "Detection Date",
-			          "VariationSet": "Variation",
-			          "Hierarchy": "Date Hierarchy",
-			          "HierarchyLevel": "Month"
+			          "ConceptualEntity": "dim_process",
+			          "ConceptualProperty": "DQ Dimension"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "detection month": {
+			          "DQ dimension": {
 			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "month": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "detection date month": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "date month": {
+			          "dimension": {
 			            "State": "Generated",
 			            "Weight": 0.97
 			          }
 			        },
 			        {
-			          "detection date mth": {
+			          "dq measurement": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "dq length": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "dq height": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "dq width": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "dq breadth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "measurement": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "length": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "height": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "width": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "breadth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        }
+			      ]
+			    },
+			    "dim_process.RIM_object": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_process",
+			          "ConceptualProperty": "RIM Object"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "RIM object": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "object": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "rim thing": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "rim entity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "thing": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "entity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "rim article": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "rim item": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "rim body": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "rim piece": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "article": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "item": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        }
+			      ]
+			    },
+			    "dim_process.RIM_attribute": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_process",
+			          "ConceptualProperty": "RIM Attribute"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "RIM attribute": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "attribute": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "rim trait": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "rim aspect": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "rim element": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "rim property": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "trait": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "aspect": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "element": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "property": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "rim quality": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "rim characteristic": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        }
+			      ]
+			    },
+			    "dim_process.RIM_process_area": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_process",
+			          "ConceptualProperty": "RIM Process Area"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "RIM process area": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "area": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "process area": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "rim process region": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -539,7 +855,37 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "detection mth": {
+			          "rim process locale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "rim process locality": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "rim process neighbourhood": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "process region": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -549,13 +895,274 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "date mth": {
+			          "process locale": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "process locality": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "process neighbourhood": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "rim process district": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "rim process continent": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        }
+			      ]
+			    },
+			    "fact_qccheck.finding_ID": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fact_qcchecks",
+			          "ConceptualProperty": "Finding ID"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "finding ID": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "finding": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "finding identification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "finding identity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "finding identifier": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "finding credential": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "discovery": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "conclusion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "verdict": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "outcome": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "definition": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "result": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        }
+			      ]
+			    },
+			    "fact_qccheck.record_created_date.day": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fact_qcchecks",
+			          "VariationSource": "Record Created Date",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy",
+			          "HierarchyLevel": "Day"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "record created day": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "day": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "record created date day": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "record created moment day": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.617
+			          }
+			        },
+			        {
+			          "record created period day": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "fact_qccheck.record_created_date.month": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fact_qcchecks",
+			          "VariationSource": "Record Created Date",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy",
+			          "HierarchyLevel": "Month"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "record created month": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "month": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "record created date month": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "record created date mth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.771
+			          }
+			        },
+			        {
+			          "record created mth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
 			          }
 			        },
 			        {
@@ -569,129 +1176,33 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "detection moment month": {
+			          "record created moment month": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.609
+			            "Weight": 0.617
 			          }
 			        },
 			        {
-			          "moment month": {
+			          "record created period month": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.6
-			          }
-			        },
-			        {
-			          "detection period month": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.591
-			          }
-			        },
-			        {
-			          "period month": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.582
+			            "Weight": 0.599
 			          }
 			        }
 			      ],
 			      "SemanticType": "Time"
 			    },
-			    "fact_qccheck.detection_date.day": {
+			    "fact_qccheck.record_created_date.quarter": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "fact_qcchecks",
-			          "VariationSource": "Detection Date",
-			          "VariationSet": "Variation",
-			          "Hierarchy": "Date Hierarchy",
-			          "HierarchyLevel": "Day"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "detection day": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "day": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "detection date day": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "date day": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "detection moment day": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.609
-			          }
-			        },
-			        {
-			          "moment day": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.6
-			          }
-			        },
-			        {
-			          "detection period day": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.591
-			          }
-			        },
-			        {
-			          "period day": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.582
-			          }
-			        }
-			      ],
-			      "SemanticType": "Time"
-			    },
-			    "fact_qccheck.compliance_date.quarter": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "fact_qcchecks",
-			          "VariationSource": "Compliance Date",
+			          "VariationSource": "Record Created Date",
 			          "VariationSet": "Variation",
 			          "Hierarchy": "Date Hierarchy",
 			          "HierarchyLevel": "Quarter"
@@ -700,7 +1211,7 @@ cultureInfo en-US
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "compliance quarter": {
+			          "record created quarter": {
 			            "State": "Generated"
 			          }
 			        },
@@ -710,44 +1221,28 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "compliance date quarter": {
+			          "record created date quarter": {
 			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "date quarter": {
-			            "State": "Generated",
-			            "Weight": 0.97
+			          "record created date qtr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.857
 			          }
 			        },
 			        {
-			          "compliance date qtr": {
+			          "record created qtr": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.846
-			          }
-			        },
-			        {
-			          "compliance qtr": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.833
-			          }
-			        },
-			        {
-			          "date qtr": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.833
 			          }
 			        },
 			        {
@@ -761,227 +1256,23 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "compliance moment quarter": {
+			          "record created moment quarter": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.609
+			            "Weight": 0.617
 			          }
 			        },
 			        {
-			          "moment quarter": {
+			          "record created period quarter": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.6
-			          }
-			        },
-			        {
-			          "compliance period quarter": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.591
-			          }
-			        },
-			        {
-			          "period quarter": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.582
-			          }
-			        }
-			      ],
-			      "SemanticType": "Time"
-			    },
-			    "fact_qccheck.compliance_date.year": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "fact_qcchecks",
-			          "VariationSource": "Compliance Date",
-			          "VariationSet": "Variation",
-			          "Hierarchy": "Date Hierarchy",
-			          "HierarchyLevel": "Year"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "compliance year": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "year": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "compliance date year": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "date year": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "compliance date yr": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.762
-			          }
-			        },
-			        {
-			          "compliance yr": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.75
-			          }
-			        },
-			        {
-			          "date yr": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.75
-			          }
-			        },
-			        {
-			          "yr": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
-			          }
-			        },
-			        {
-			          "compliance moment year": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.609
-			          }
-			        },
-			        {
-			          "moment year": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.6
-			          }
-			        },
-			        {
-			          "compliance period year": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.591
-			          }
-			        },
-			        {
-			          "period year": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.582
-			          }
-			        }
-			      ],
-			      "SemanticType": "Time"
-			    },
-			    "fact_qccheck.compliance_date.date_hierarchy": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "fact_qcchecks",
-			          "VariationSource": "Compliance Date",
-			          "VariationSet": "Variation",
-			          "Hierarchy": "Date Hierarchy"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "compliance date hierarchy": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "date hierarchy": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        }
-			      ],
-			      "SemanticType": "Time"
-			    },
-			    "fact_qccheck.compliance_date": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "fact_qcchecks",
-			          "ConceptualProperty": "Compliance Date"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "compliance date": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "date": {
-			            "State": "Generated",
-			            "Weight": 0.7
-			          }
-			        },
-			        {
-			          "compliance moment": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.75
-			          }
-			        },
-			        {
-			          "compliance period": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.727
+			            "Weight": 0.599
 			          }
 			        }
 			      ],
@@ -1053,25 +1344,55 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "fact_qccheck.product": {
+			    "fact_qccheck.record_created_date.year": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "fact_qcchecks",
-			          "ConceptualProperty": "Product"
+			          "VariationSource": "Record Created Date",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy",
+			          "HierarchyLevel": "Year"
 			        }
 			      },
 			      "State": "Generated",
-			      "Visibility": {
-			        "Value": "Hidden"
-			      },
 			      "Terms": [
 			        {
-			          "product": {
+			          "record created year": {
 			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "artifact": {
+			          "year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "record created date year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "record created date yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.771
+			          }
+			        },
+			        {
+			          "record created yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "yr": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -1081,36 +1402,27 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "item": {
+			          "record created moment year": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.714
+			            "Weight": 0.617
 			          }
 			        },
 			        {
-			          "merchandise": {
+			          "record created period year": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.714
-			          }
-			        },
-			        {
-			          "produce": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.714
+			            "Weight": 0.599
 			          }
 			        }
-			      ]
+			      ],
+			      "SemanticType": "Time"
 			    },
 			    "fact_qccheck.check_status": {
 			      "Definition": {
@@ -1711,16 +2023,6 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "area": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.714
-			          }
-			        },
-			        {
 			          "district": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -1780,6 +2082,12 @@ cultureInfo en-US
 			            "Type": "Noun",
 			            "State": "Generated",
 			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "process": {
+			            "State": "Generated",
+			            "Weight": 0.97
 			          }
 			        },
 			        {
@@ -1843,43 +2151,43 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "dim course": {
+			          "procedure": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.485
+			            "Weight": 0.491
 			          }
 			        },
 			        {
-			          "dim route": {
+			          "development": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.485
+			            "Weight": 0.491
 			          }
 			        },
 			        {
-			          "dim practice": {
+			          "progression": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.485
+			            "Weight": 0.491
 			          }
 			        },
 			        {
-			          "dim mean": {
+			          "method": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.485
+			            "Weight": 0.491
 			          }
 			        }
 			      ]
@@ -2006,121 +2314,30 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "dim_process.process": {
+			    "fact_qccheck.record_created_date.date_hierarchy": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "dim_process",
-			          "ConceptualProperty": "Process"
+			          "ConceptualEntity": "fact_qcchecks",
+			          "VariationSource": "Record Created Date",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "process": {
+			          "record created date hierarchy": {
 			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "procedure": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "development": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "progression": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "method": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "manner": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "activity": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "course": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "route": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "practice": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "mean": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
+			          "date hierarchy": {
+			            "State": "Generated",
+			            "Weight": 0.97
 			          }
 			        }
-			      ]
+			      ],
+			      "SemanticType": "Time"
 			    },
 			    "dim_process.criticality": {
 			      "Definition": {
@@ -2138,469 +2355,452 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "dim_process.field": {
+			    "fact_qccheck.record_created_date": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "dim_process",
-			          "ConceptualProperty": "Field"
+			          "ConceptualEntity": "fact_qcchecks",
+			          "ConceptualProperty": "Record Created Date"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "field": {
+			          "record created date": {
 			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "arena": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
 			          }
 			        },
 			        {
-			          "turf": {
+			          "record created moment": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.476
+			            "Weight": 0.762
 			          }
 			        },
 			        {
-			          "ground": {
+			          "record created period": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "pitch": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "park": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "meadow": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.466
-			          }
-			        },
-			        {
-			          "grassland": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.466
-			          }
-			        },
-			        {
-			          "lea": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.466
-			          }
-			        },
-			        {
-			          "pasture": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.452
-			          }
-			        },
-			        {
-			          "countryside": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.452
+			            "Weight": 0.739
 			          }
 			        }
-			      ]
+			      ],
+			      "SemanticType": "Time"
 			    },
-			    "dim_process.object": {
+			    "fact_qccheck.finding_resolution_date.day": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "dim_process",
-			          "ConceptualProperty": "Object"
+			          "ConceptualEntity": "fact_qcchecks",
+			          "VariationSource": "Finding Resolution Date",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy",
+			          "HierarchyLevel": "Day"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "object": {
+			          "finding resolution day": {
 			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "thing": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
+			          "day": {
+			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "entity": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
+			          "finding resolution date day": {
+			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "article": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
+			          "resolution day": {
+			            "State": "Generated",
+			            "Weight": 0.97
 			          }
 			        },
 			        {
-			          "item": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
+			          "date day": {
+			            "State": "Generated",
+			            "Weight": 0.97
 			          }
 			        },
 			        {
-			          "body": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
+			          "resolution date day": {
+			            "State": "Generated",
+			            "Weight": 0.97
 			          }
 			        },
 			        {
-			          "piece": {
+			          "finding resolution moment day": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.476
+			            "Weight": 0.617
 			          }
 			        },
 			        {
-			          "idea": {
+			          "resolution moment day": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.466
+			            "Weight": 0.609
 			          }
 			        },
 			        {
-			          "intention": {
+			          "moment day": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.466
+			            "Weight": 0.6
 			          }
 			        },
 			        {
-			          "purpose": {
+			          "finding resolution period day": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.452
+			            "Weight": 0.599
 			          }
 			        },
 			        {
-			          "objective": {
+			          "resolution period day": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.452
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "period day": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
 			          }
 			        }
-			      ]
+			      ],
+			      "SemanticType": "Time"
 			    },
-			    "dim_process.dimension": {
+			    "fact_qccheck.finding_resolution_date.month": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "dim_process",
-			          "ConceptualProperty": "Dimension"
+			          "ConceptualEntity": "fact_qcchecks",
+			          "VariationSource": "Finding Resolution Date",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy",
+			          "HierarchyLevel": "Month"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "dimension": {
+			          "finding resolution month": {
 			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "measurement": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
+			          "month": {
+			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "length": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
+			          "finding resolution date month": {
+			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "height": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
+			          "resolution month": {
+			            "State": "Generated",
+			            "Weight": 0.97
 			          }
 			        },
 			        {
-			          "width": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
+			          "date month": {
+			            "State": "Generated",
+			            "Weight": 0.97
 			          }
 			        },
 			        {
-			          "breadth": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
+			          "resolution date month": {
+			            "State": "Generated",
+			            "Weight": 0.97
 			          }
 			        },
 			        {
-			          "aspect": {
+			          "finding resolution date mth": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.466
+			            "Weight": 0.771
 			          }
 			        },
 			        {
-			          "element": {
+			          "finding resolution mth": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.466
+			            "Weight": 0.762
 			          }
 			        },
 			        {
-			          "facet": {
+			          "resolution date mth": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.452
+			            "Weight": 0.762
 			          }
 			        },
 			        {
-			          "feature": {
+			          "resolution mth": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.452
+			            "Weight": 0.75
 			          }
 			        },
 			        {
-			          "factor": {
+			          "date mth": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.452
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "mth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "finding resolution moment month": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.617
+			          }
+			        },
+			        {
+			          "resolution moment month": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "moment month": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "finding resolution period month": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
 			          }
 			        }
-			      ]
+			      ],
+			      "SemanticType": "Time"
 			    },
-			    "dim_process.team": {
+			    "fact_qccheck.finding_resolution_date.quarter": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "dim_process",
-			          "ConceptualProperty": "Team"
+			          "ConceptualEntity": "fact_qcchecks",
+			          "VariationSource": "Finding Resolution Date",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy",
+			          "HierarchyLevel": "Quarter"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "team": {
+			          "finding resolution quarter": {
 			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "lineup": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
+			          "quarter": {
+			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "side": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
+			          "finding resolution date quarter": {
+			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "squad": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
+			          "resolution quarter": {
+			            "State": "Generated",
+			            "Weight": 0.97
 			          }
 			        },
 			        {
-			          "crew": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
+			          "date quarter": {
+			            "State": "Generated",
+			            "Weight": 0.97
 			          }
 			        },
 			        {
-			          "club": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
+			          "resolution date quarter": {
+			            "State": "Generated",
+			            "Weight": 0.97
 			          }
 			        },
 			        {
-			          "unit": {
+			          "finding resolution date qtr": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.466
+			            "Weight": 0.857
 			          }
 			        },
 			        {
-			          "band": {
+			          "finding resolution qtr": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.452
+			            "Weight": 0.846
 			          }
 			        },
 			        {
-			          "panel": {
+			          "resolution date qtr": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.452
+			            "Weight": 0.846
 			          }
 			        },
 			        {
-			          "set": {
+			          "resolution qtr": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.452
+			            "Weight": 0.833
 			          }
 			        },
 			        {
-			          "bunch": {
+			          "date qtr": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.452
+			            "Weight": 0.833
+			          }
+			        },
+			        {
+			          "qtr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.818
+			          }
+			        },
+			        {
+			          "finding resolution moment quarter": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.617
+			          }
+			        },
+			        {
+			          "resolution moment quarter": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "moment quarter": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "finding resolution period quarter": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
 			          }
 			        }
-			      ]
+			      ],
+			      "SemanticType": "Time"
 			    },
 			    "dim_process.check_name__country": {
 			      "Definition": {
@@ -2787,6 +2987,12 @@ cultureInfo en-US
 			          }
 			        },
 			        {
+			          "product": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
 			          "dim artifact": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -2794,6 +3000,16 @@ cultureInfo en-US
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "artifact": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
 			          }
 			        },
 			        {
@@ -2824,32 +3040,6 @@ cultureInfo en-US
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.727
-			          }
-			        }
-			      ]
-			    },
-			    "dim_product.product": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "dim_products",
-			          "ConceptualProperty": "Product"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "product": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "artifact": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
 			          }
 			        },
 			        {
@@ -2884,28 +3074,63 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "dim_product.type_of_product": {
+			    "fact_qccheck.finding_resolution_date.year": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "dim_products",
-			          "ConceptualProperty": "Type of Product"
+			          "ConceptualEntity": "fact_qcchecks",
+			          "VariationSource": "Finding Resolution Date",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy",
+			          "HierarchyLevel": "Year"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "type of product": {
+			          "finding resolution year": {
 			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "type": {
+			          "year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "finding resolution date year": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "resolution year": {
 			            "State": "Generated",
 			            "Weight": 0.97
 			          }
 			        },
 			        {
-			          "category of product": {
+			          "date year": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "resolution date year": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "finding resolution date yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.771
+			          }
+			        },
+			        {
+			          "finding resolution yr": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -2915,7 +3140,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "genre of product": {
+			          "resolution date yr": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -2925,86 +3150,108 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "manner of product": {
+			          "resolution yr": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.762
+			            "Weight": 0.75
 			          }
 			        },
 			        {
-			          "variety of product": {
+			          "date yr": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.762
+			            "Weight": 0.75
 			          }
 			        },
 			        {
-			          "brand of product": {
+			          "yr": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.739
+			            "Weight": 0.736
 			          }
 			        },
 			        {
-			          "class of product": {
+			          "finding resolution moment year": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.739
+			            "Weight": 0.617
 			          }
 			        },
 			        {
-			          "kind of product": {
+			          "resolution moment year": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.739
+			            "Weight": 0.609
 			          }
 			        },
 			        {
-			          "style of product": {
+			          "moment year": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.739
+			            "Weight": 0.6
 			          }
 			        },
 			        {
-			          "form of product": {
+			          "finding resolution period year": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.739
-			          }
-			        },
-			        {
-			          "grouping of product": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.739
+			            "Weight": 0.599
 			          }
 			        }
-			      ]
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "fact_qccheck.finding_resolution_date.date_hierarchy": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fact_qcchecks",
+			          "VariationSource": "Finding Resolution Date",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "finding resolution date hierarchy": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date hierarchy": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "resolution date hierarchy": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
 			    },
 			    "entity__measure": {
 			      "Definition": {
@@ -3713,118 +3960,34 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "entity__measure.avg_days_to_correct": {
+			    "entity__measure.mean_time_to_resolve_MTTR": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "_Measures",
-			          "ConceptualProperty": "Avg Days to Correct"
+			          "ConceptualProperty": "Mean Time To Resolve (MTTR)"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "avg days to correct": {
+			          "mean time to resolve (MTTR)": {
 			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "average day to correct": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.599
+			          "mean time to resolve": {
+			            "State": "Generated",
+			            "Weight": 0.75
 			          }
 			        },
 			        {
-			          "avg existence to correct": {
-			            "Type": "Noun",
+			          "MTTR IN DAYS": {
 			            "State": "Suggested",
 			            "Source": {
-			              "Agent": "Thesaurus"
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
 			            },
-			            "Weight": 0.514
-			          }
-			        },
-			        {
-			          "avg being to correct": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.499
-			          }
-			        },
-			        {
-			          "avg living to correct": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.499
-			          }
-			        },
-			        {
-			          "avg eras to correct": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.489
-			          }
-			        },
-			        {
-			          "avg generation to correct": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.489
-			          }
-			        },
-			        {
-			          "avg epoch to correct": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.489
-			          }
-			        },
-			        {
-			          "avg period to correct": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.474
-			          }
-			        },
-			        {
-			          "avg age to correct": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.474
-			          }
-			        },
-			        {
-			          "avg daylight to correct": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.45
+			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -3851,41 +4014,34 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "fact_qccheck.compliance_date.month": {
+			    "fact_qccheck.finding_resolution_date": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "fact_qcchecks",
-			          "VariationSource": "Compliance Date",
-			          "VariationSet": "Variation",
-			          "Hierarchy": "Date Hierarchy",
-			          "HierarchyLevel": "Month"
+			          "ConceptualProperty": "Finding Resolution Date"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "compliance month": {
+			          "finding resolution date": {
 			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "month": {
-			            "State": "Generated"
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
 			          }
 			        },
 			        {
-			          "compliance date month": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "date month": {
+			          "resolution date": {
 			            "State": "Generated",
 			            "Weight": 0.97
 			          }
 			        },
 			        {
-			          "compliance date mth": {
+			          "finding resolution moment": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -3895,7 +4051,354 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "compliance mth": {
+			          "resolution moment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "finding resolution period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "resolution period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "fact_qccheck.medicinal_product_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fact_qcchecks",
+			          "ConceptualProperty": "Medicinal Product Name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "medicinal product name": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "product": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "product name": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "medicinal product nickname": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "medicinal product title": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "medicinal product label": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "medicinal product tag": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "artifact": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "product nickname": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "product title": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "product label": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "product tag": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "item": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ]
+			    },
+			    "fact_qccheck.finding_detection_date.day": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fact_qcchecks",
+			          "VariationSource": "Finding Detection Date",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy",
+			          "HierarchyLevel": "Day"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "finding detection day": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "day": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "finding detection date day": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "detection day": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "date day": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "detection date day": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "finding detection moment day": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.617
+			          }
+			        },
+			        {
+			          "detection moment day": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "moment day": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "finding detection period day": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        },
+			        {
+			          "detection period day": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "period day": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "fact_qccheck.finding_detection_date.month": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fact_qcchecks",
+			          "VariationSource": "Finding Detection Date",
+			          "VariationSet": "Variation",
+			          "Hierarchy": "Date Hierarchy",
+			          "HierarchyLevel": "Month"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "finding detection month": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "month": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "finding detection date month": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "detection month": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "date month": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "detection date month": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "finding detection date mth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.771
+			          }
+			        },
+			        {
+			          "finding detection mth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "detection date mth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "detection mth": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -3925,7 +4428,17 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "compliance moment month": {
+			          "finding detection moment month": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.617
+			          }
+			        },
+			        {
+			          "detection moment month": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -3945,299 +4458,23 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "compliance period month": {
+			          "finding detection period month": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.591
-			          }
-			        },
-			        {
-			          "period month": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.582
+			            "Weight": 0.599
 			          }
 			        }
 			      ],
 			      "SemanticType": "Time"
 			    },
-			    "fact_qccheck.compliance_date.day": {
+			    "fact_qccheck.finding_detection_date.quarter": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "fact_qcchecks",
-			          "VariationSource": "Compliance Date",
-			          "VariationSet": "Variation",
-			          "Hierarchy": "Date Hierarchy",
-			          "HierarchyLevel": "Day"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "compliance day": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "day": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "compliance date day": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "date day": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "compliance moment day": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.609
-			          }
-			        },
-			        {
-			          "moment day": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.6
-			          }
-			        },
-			        {
-			          "compliance period day": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.591
-			          }
-			        },
-			        {
-			          "period day": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.582
-			          }
-			        }
-			      ],
-			      "SemanticType": "Time"
-			    },
-			    "fact_qccheck.created_date": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "fact_qcchecks",
-			          "ConceptualProperty": "Created Date"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "created date": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "date": {
-			            "State": "Generated",
-			            "Weight": 0.7
-			          }
-			        },
-			        {
-			          "created moment": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.75
-			          }
-			        },
-			        {
-			          "created period": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.727
-			          }
-			        }
-			      ],
-			      "SemanticType": "Time"
-			    },
-			    "fact_qccheck.created_date.date_hierarchy": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "fact_qcchecks",
-			          "VariationSource": "Created Date",
-			          "VariationSet": "Variation",
-			          "Hierarchy": "Date Hierarchy"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "created date hierarchy": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "date hierarchy": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "hierarchy": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        }
-			      ],
-			      "SemanticType": "Time"
-			    },
-			    "fact_qccheck.created_date.year": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "fact_qcchecks",
-			          "VariationSource": "Created Date",
-			          "VariationSet": "Variation",
-			          "Hierarchy": "Date Hierarchy",
-			          "HierarchyLevel": "Year"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "created year": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "year": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "created date year": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "date year": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "created date yr": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.762
-			          }
-			        },
-			        {
-			          "created yr": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.75
-			          }
-			        },
-			        {
-			          "date yr": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.75
-			          }
-			        },
-			        {
-			          "yr": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.736
-			          }
-			        },
-			        {
-			          "created moment year": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.609
-			          }
-			        },
-			        {
-			          "moment year": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.6
-			          }
-			        },
-			        {
-			          "created period year": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.591
-			          }
-			        },
-			        {
-			          "period year": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.582
-			          }
-			        }
-			      ],
-			      "SemanticType": "Time"
-			    },
-			    "fact_qccheck.created_date.quarter": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "fact_qcchecks",
-			          "VariationSource": "Created Date",
+			          "VariationSource": "Finding Detection Date",
 			          "VariationSet": "Variation",
 			          "Hierarchy": "Date Hierarchy",
 			          "HierarchyLevel": "Quarter"
@@ -4246,7 +4483,7 @@ cultureInfo en-US
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "created quarter": {
+			          "finding detection quarter": {
 			            "State": "Generated"
 			          }
 			        },
@@ -4256,8 +4493,14 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "created date quarter": {
+			          "finding detection date quarter": {
 			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "detection quarter": {
+			            "State": "Generated",
+			            "Weight": 0.97
 			          }
 			        },
 			        {
@@ -4267,7 +4510,23 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "created date qtr": {
+			          "detection date quarter": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "finding detection date qtr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.857
+			          }
+			        },
+			        {
+			          "finding detection qtr": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -4277,7 +4536,17 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "created qtr": {
+			          "detection date qtr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.846
+			          }
+			        },
+			        {
+			          "detection qtr": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -4307,7 +4576,17 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "created moment quarter": {
+			          "finding detection moment quarter": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.617
+			          }
+			        },
+			        {
+			          "detection moment quarter": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -4327,63 +4606,75 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "created period quarter": {
+			          "finding detection period quarter": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.591
-			          }
-			        },
-			        {
-			          "period quarter": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.582
+			            "Weight": 0.599
 			          }
 			        }
 			      ],
 			      "SemanticType": "Time"
 			    },
-			    "fact_qccheck.created_date.month": {
+			    "fact_qccheck.finding_detection_date.year": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "fact_qcchecks",
-			          "VariationSource": "Created Date",
+			          "VariationSource": "Finding Detection Date",
 			          "VariationSet": "Variation",
 			          "Hierarchy": "Date Hierarchy",
-			          "HierarchyLevel": "Month"
+			          "HierarchyLevel": "Year"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "created month": {
+			          "finding detection year": {
 			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "month": {
+			          "year": {
 			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "created date month": {
+			          "finding detection date year": {
 			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "date month": {
+			          "detection year": {
 			            "State": "Generated",
 			            "Weight": 0.97
 			          }
 			        },
 			        {
-			          "created date mth": {
+			          "date year": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "detection date year": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "finding detection date yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.771
+			          }
+			        },
+			        {
+			          "finding detection yr": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -4393,7 +4684,17 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "created mth": {
+			          "detection date yr": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "detection yr": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -4403,7 +4704,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "date mth": {
+			          "date yr": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -4413,7 +4714,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "mth": {
+			          "yr": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -4423,7 +4724,17 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "created moment month": {
+			          "finding detection moment year": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.617
+			          }
+			        },
+			        {
+			          "detection moment year": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -4433,7 +4744,7 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "moment month": {
+			          "moment year": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -4443,99 +4754,113 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "created period month": {
+			          "finding detection period year": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.591
-			          }
-			        },
-			        {
-			          "period month": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.582
+			            "Weight": 0.599
 			          }
 			        }
 			      ],
 			      "SemanticType": "Time"
 			    },
-			    "fact_qccheck.created_date.day": {
+			    "fact_qccheck.finding_detection_date.date_hierarchy": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "fact_qcchecks",
-			          "VariationSource": "Created Date",
+			          "VariationSource": "Finding Detection Date",
 			          "VariationSet": "Variation",
-			          "Hierarchy": "Date Hierarchy",
-			          "HierarchyLevel": "Day"
+			          "Hierarchy": "Date Hierarchy"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "created day": {
+			          "finding detection date hierarchy": {
 			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "day": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "created date day": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "date day": {
+			          "date hierarchy": {
 			            "State": "Generated",
 			            "Weight": 0.97
 			          }
 			        },
 			        {
-			          "created moment day": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.609
+			          "detection date hierarchy": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "fact_qccheck.finding_detection_date": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fact_qcchecks",
+			          "ConceptualProperty": "Finding Detection Date"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "finding detection date": {
+			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "moment day": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.6
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
 			          }
 			        },
 			        {
-			          "created period day": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.591
+			          "detection date": {
+			            "State": "Generated",
+			            "Weight": 0.97
 			          }
 			        },
 			        {
-			          "period day": {
+			          "finding detection moment": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.582
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "detection moment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "finding detection period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "detection period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
 			          }
 			        }
 			      ],
@@ -5092,6 +5417,12 @@ cultureInfo en-US
 			          }
 			        },
 			        {
+			          "field": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
 			          "switch field": {
 			            "State": "Generated",
 			            "Weight": 0.97
@@ -5347,23 +5678,262 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
+			    },
+			    "dim_product.therapeutic_area": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "dim_products",
+			          "ConceptualProperty": "Therapeutic Area"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "therapeutic area": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "area": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "therapeutic region": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "therapeutic locale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "therapeutic locality": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "therapeutic neighbourhood": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "locale": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "locality": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "neighbourhood": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "therapeutic district": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "therapeutic continent": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "therapeutic field": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
+			    },
+			    "fact_qccheck.time_to_resolve": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fact_qcchecks",
+			          "ConceptualProperty": "Time to Resolve"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "time to resolve": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "duration to resolve": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "interval to resolve": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "moment to resolve": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "period to resolve": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "timetable to resolve": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        }
+			      ]
+			    },
+			    "fact_qccheck.time_to_resolve_bins": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fact_qcchecks",
+			          "ConceptualProperty": "Time to Resolve (bins)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "time to resolve (bins)": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "time to resolve (bin)": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "time to resolve": {
+			            "State": "Generated",
+			            "Weight": 0.75
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.median_time_to_resolve_MedTTR": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "Median Time To Resolve (MedTTR)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "median time to resolve (MedTTR)": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "median time to resolve": {
+			            "State": "Generated",
+			            "Weight": 0.75
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
-			    "fact_qccheck_created_date_has_date_hierarchy": {
+			    "fact_qccheck_finding_detection_date_date_hierarchy_has_fact_qccheck_finding_detection_date_quarter": {
 			      "Binding": {
 			        "ConceptualEntity": "fact_qcchecks"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "fact_qccheck.created_date": {
+			        "fact_qccheck.finding_detection_date.date_hierarchy": {
 			          "Target": {
-			            "Entity": "fact_qccheck.created_date"
+			            "Entity": "fact_qccheck.finding_detection_date.date_hierarchy"
 			          }
 			        },
-			        "fact_qccheck.created_date.date_hierarchy": {
+			        "fact_qccheck.finding_detection_date.quarter": {
 			          "Target": {
-			            "Entity": "fact_qccheck.created_date.date_hierarchy"
+			            "Entity": "fact_qccheck.finding_detection_date.quarter"
 			          }
 			        }
 			      },
@@ -5371,32 +5941,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "fact_qccheck.created_date"
+			              "Role": "fact_qccheck.finding_detection_date.date_hierarchy"
 			            },
 			            "Object": {
-			              "Role": "fact_qccheck.created_date.date_hierarchy"
+			              "Role": "fact_qccheck.finding_detection_date.quarter"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "created_dates_have_created_date_hierarchies"
+			          "ID": "finding_detection_date_hierarchies_have_finding_detection_quarters"
 			        }
 			      ]
 			    },
-			    "fact_qccheck_compliance_date_date_hierarchy_has_fact_qccheck_compliance_date_day": {
+			    "fact_qccheck_finding_detection_date_date_hierarchy_has_fact_qccheck_finding_detection_date_year": {
 			      "Binding": {
 			        "ConceptualEntity": "fact_qcchecks"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "fact_qccheck.compliance_date.date_hierarchy": {
+			        "fact_qccheck.finding_detection_date.date_hierarchy": {
 			          "Target": {
-			            "Entity": "fact_qccheck.compliance_date.date_hierarchy"
+			            "Entity": "fact_qccheck.finding_detection_date.date_hierarchy"
 			          }
 			        },
-			        "fact_qccheck.compliance_date.day": {
+			        "fact_qccheck.finding_detection_date.year": {
 			          "Target": {
-			            "Entity": "fact_qccheck.compliance_date.day"
+			            "Entity": "fact_qccheck.finding_detection_date.year"
 			          }
 			        }
 			      },
@@ -5404,32 +5974,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "fact_qccheck.compliance_date.date_hierarchy"
+			              "Role": "fact_qccheck.finding_detection_date.date_hierarchy"
 			            },
 			            "Object": {
-			              "Role": "fact_qccheck.compliance_date.day"
+			              "Role": "fact_qccheck.finding_detection_date.year"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "compliance_date_hierarchies_have_compliance_days"
+			          "ID": "finding_detection_date_hierarchies_have_finding_detection_years"
 			        }
 			      ]
 			    },
-			    "fact_qccheck_compliance_date_date_hierarchy_has_fact_qccheck_compliance_date_month": {
+			    "fact_qccheck_finding_detection_date_has_date_hierarchy": {
 			      "Binding": {
 			        "ConceptualEntity": "fact_qcchecks"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "fact_qccheck.compliance_date.date_hierarchy": {
+			        "fact_qccheck.finding_detection_date": {
 			          "Target": {
-			            "Entity": "fact_qccheck.compliance_date.date_hierarchy"
+			            "Entity": "fact_qccheck.finding_detection_date"
 			          }
 			        },
-			        "fact_qccheck.compliance_date.month": {
+			        "fact_qccheck.finding_detection_date.date_hierarchy": {
 			          "Target": {
-			            "Entity": "fact_qccheck.compliance_date.month"
+			            "Entity": "fact_qccheck.finding_detection_date.date_hierarchy"
 			          }
 			        }
 			      },
@@ -5437,32 +6007,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "fact_qccheck.compliance_date.date_hierarchy"
+			              "Role": "fact_qccheck.finding_detection_date"
 			            },
 			            "Object": {
-			              "Role": "fact_qccheck.compliance_date.month"
+			              "Role": "fact_qccheck.finding_detection_date.date_hierarchy"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "compliance_date_hierarchies_have_compliance_months"
+			          "ID": "finding_detection_dates_have_finding_detection_date_hierarchies"
 			        }
 			      ]
 			    },
-			    "fact_qccheck_compliance_date_date_hierarchy_has_fact_qccheck_compliance_date_quarter": {
+			    "fact_qccheck_finding_resolution_date_date_hierarchy_has_fact_qccheck_finding_resolution_date_day": {
 			      "Binding": {
 			        "ConceptualEntity": "fact_qcchecks"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "fact_qccheck.compliance_date.date_hierarchy": {
+			        "fact_qccheck.finding_resolution_date.date_hierarchy": {
 			          "Target": {
-			            "Entity": "fact_qccheck.compliance_date.date_hierarchy"
+			            "Entity": "fact_qccheck.finding_resolution_date.date_hierarchy"
 			          }
 			        },
-			        "fact_qccheck.compliance_date.quarter": {
+			        "fact_qccheck.finding_resolution_date.day": {
 			          "Target": {
-			            "Entity": "fact_qccheck.compliance_date.quarter"
+			            "Entity": "fact_qccheck.finding_resolution_date.day"
 			          }
 			        }
 			      },
@@ -5470,32 +6040,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "fact_qccheck.compliance_date.date_hierarchy"
+			              "Role": "fact_qccheck.finding_resolution_date.date_hierarchy"
 			            },
 			            "Object": {
-			              "Role": "fact_qccheck.compliance_date.quarter"
+			              "Role": "fact_qccheck.finding_resolution_date.day"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "compliance_date_hierarchies_have_compliance_quarters"
+			          "ID": "finding_resolution_date_hierarchies_have_finding_resolution_days"
 			        }
 			      ]
 			    },
-			    "fact_qccheck_compliance_date_date_hierarchy_has_fact_qccheck_compliance_date_year": {
+			    "fact_qccheck_finding_resolution_date_date_hierarchy_has_fact_qccheck_finding_resolution_date_month": {
 			      "Binding": {
 			        "ConceptualEntity": "fact_qcchecks"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "fact_qccheck.compliance_date.date_hierarchy": {
+			        "fact_qccheck.finding_resolution_date.date_hierarchy": {
 			          "Target": {
-			            "Entity": "fact_qccheck.compliance_date.date_hierarchy"
+			            "Entity": "fact_qccheck.finding_resolution_date.date_hierarchy"
 			          }
 			        },
-			        "fact_qccheck.compliance_date.year": {
+			        "fact_qccheck.finding_resolution_date.month": {
 			          "Target": {
-			            "Entity": "fact_qccheck.compliance_date.year"
+			            "Entity": "fact_qccheck.finding_resolution_date.month"
 			          }
 			        }
 			      },
@@ -5503,32 +6073,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "fact_qccheck.compliance_date.date_hierarchy"
+			              "Role": "fact_qccheck.finding_resolution_date.date_hierarchy"
 			            },
 			            "Object": {
-			              "Role": "fact_qccheck.compliance_date.year"
+			              "Role": "fact_qccheck.finding_resolution_date.month"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "compliance_date_hierarchies_have_compliance_years"
+			          "ID": "finding_resolution_date_hierarchies_have_finding_resolution_months"
 			        }
 			      ]
 			    },
-			    "fact_qccheck_compliance_date_has_date_hierarchy": {
+			    "fact_qccheck_finding_resolution_date_date_hierarchy_has_fact_qccheck_finding_resolution_date_quarter": {
 			      "Binding": {
 			        "ConceptualEntity": "fact_qcchecks"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "fact_qccheck.compliance_date": {
+			        "fact_qccheck.finding_resolution_date.date_hierarchy": {
 			          "Target": {
-			            "Entity": "fact_qccheck.compliance_date"
+			            "Entity": "fact_qccheck.finding_resolution_date.date_hierarchy"
 			          }
 			        },
-			        "fact_qccheck.compliance_date.date_hierarchy": {
+			        "fact_qccheck.finding_resolution_date.quarter": {
 			          "Target": {
-			            "Entity": "fact_qccheck.compliance_date.date_hierarchy"
+			            "Entity": "fact_qccheck.finding_resolution_date.quarter"
 			          }
 			        }
 			      },
@@ -5536,32 +6106,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "fact_qccheck.compliance_date"
+			              "Role": "fact_qccheck.finding_resolution_date.date_hierarchy"
 			            },
 			            "Object": {
-			              "Role": "fact_qccheck.compliance_date.date_hierarchy"
+			              "Role": "fact_qccheck.finding_resolution_date.quarter"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "compliance_dates_have_compliance_date_hierarchies"
+			          "ID": "finding_resolution_date_hierarchies_have_finding_resolution_quarters"
 			        }
 			      ]
 			    },
-			    "fact_qccheck_detection_date_date_hierarchy_has_fact_qccheck_detection_date_day": {
+			    "fact_qccheck_finding_resolution_date_date_hierarchy_has_fact_qccheck_finding_resolution_date_year": {
 			      "Binding": {
 			        "ConceptualEntity": "fact_qcchecks"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "fact_qccheck.detection_date.date_hierarchy": {
+			        "fact_qccheck.finding_resolution_date.date_hierarchy": {
 			          "Target": {
-			            "Entity": "fact_qccheck.detection_date.date_hierarchy"
+			            "Entity": "fact_qccheck.finding_resolution_date.date_hierarchy"
 			          }
 			        },
-			        "fact_qccheck.detection_date.day": {
+			        "fact_qccheck.finding_resolution_date.year": {
 			          "Target": {
-			            "Entity": "fact_qccheck.detection_date.day"
+			            "Entity": "fact_qccheck.finding_resolution_date.year"
 			          }
 			        }
 			      },
@@ -5569,32 +6139,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "fact_qccheck.detection_date.date_hierarchy"
+			              "Role": "fact_qccheck.finding_resolution_date.date_hierarchy"
 			            },
 			            "Object": {
-			              "Role": "fact_qccheck.detection_date.day"
+			              "Role": "fact_qccheck.finding_resolution_date.year"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "detection_date_hierarchies_have_detection_days"
+			          "ID": "finding_resolution_date_hierarchies_have_finding_resolution_years"
 			        }
 			      ]
 			    },
-			    "fact_qccheck_detection_date_date_hierarchy_has_fact_qccheck_detection_date_month": {
+			    "fact_qccheck_finding_resolution_date_has_date_hierarchy": {
 			      "Binding": {
 			        "ConceptualEntity": "fact_qcchecks"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "fact_qccheck.detection_date.date_hierarchy": {
+			        "fact_qccheck.finding_resolution_date": {
 			          "Target": {
-			            "Entity": "fact_qccheck.detection_date.date_hierarchy"
+			            "Entity": "fact_qccheck.finding_resolution_date"
 			          }
 			        },
-			        "fact_qccheck.detection_date.month": {
+			        "fact_qccheck.finding_resolution_date.date_hierarchy": {
 			          "Target": {
-			            "Entity": "fact_qccheck.detection_date.month"
+			            "Entity": "fact_qccheck.finding_resolution_date.date_hierarchy"
 			          }
 			        }
 			      },
@@ -5602,32 +6172,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "fact_qccheck.detection_date.date_hierarchy"
+			              "Role": "fact_qccheck.finding_resolution_date"
 			            },
 			            "Object": {
-			              "Role": "fact_qccheck.detection_date.month"
+			              "Role": "fact_qccheck.finding_resolution_date.date_hierarchy"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "detection_date_hierarchies_have_detection_months"
+			          "ID": "finding_resolution_dates_have_finding_resolution_date_hierarchies"
 			        }
 			      ]
 			    },
-			    "fact_qccheck_detection_date_date_hierarchy_has_fact_qccheck_detection_date_quarter": {
+			    "fact_qccheck_record_created_date_date_hierarchy_has_fact_qccheck_record_created_date_day": {
 			      "Binding": {
 			        "ConceptualEntity": "fact_qcchecks"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "fact_qccheck.detection_date.date_hierarchy": {
+			        "fact_qccheck.record_created_date.date_hierarchy": {
 			          "Target": {
-			            "Entity": "fact_qccheck.detection_date.date_hierarchy"
+			            "Entity": "fact_qccheck.record_created_date.date_hierarchy"
 			          }
 			        },
-			        "fact_qccheck.detection_date.quarter": {
+			        "fact_qccheck.record_created_date.day": {
 			          "Target": {
-			            "Entity": "fact_qccheck.detection_date.quarter"
+			            "Entity": "fact_qccheck.record_created_date.day"
 			          }
 			        }
 			      },
@@ -5635,32 +6205,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "fact_qccheck.detection_date.date_hierarchy"
+			              "Role": "fact_qccheck.record_created_date.date_hierarchy"
 			            },
 			            "Object": {
-			              "Role": "fact_qccheck.detection_date.quarter"
+			              "Role": "fact_qccheck.record_created_date.day"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "detection_date_hierarchies_have_detection_quarters"
+			          "ID": "record_created_date_hierarchies_have_record_created_days"
 			        }
 			      ]
 			    },
-			    "fact_qccheck_detection_date_date_hierarchy_has_fact_qccheck_detection_date_year": {
+			    "fact_qccheck_record_created_date_date_hierarchy_has_fact_qccheck_record_created_date_month": {
 			      "Binding": {
 			        "ConceptualEntity": "fact_qcchecks"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "fact_qccheck.detection_date.date_hierarchy": {
+			        "fact_qccheck.record_created_date.date_hierarchy": {
 			          "Target": {
-			            "Entity": "fact_qccheck.detection_date.date_hierarchy"
+			            "Entity": "fact_qccheck.record_created_date.date_hierarchy"
 			          }
 			        },
-			        "fact_qccheck.detection_date.year": {
+			        "fact_qccheck.record_created_date.month": {
 			          "Target": {
-			            "Entity": "fact_qccheck.detection_date.year"
+			            "Entity": "fact_qccheck.record_created_date.month"
 			          }
 			        }
 			      },
@@ -5668,32 +6238,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "fact_qccheck.detection_date.date_hierarchy"
+			              "Role": "fact_qccheck.record_created_date.date_hierarchy"
 			            },
 			            "Object": {
-			              "Role": "fact_qccheck.detection_date.year"
+			              "Role": "fact_qccheck.record_created_date.month"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "detection_date_hierarchies_have_detection_years"
+			          "ID": "record_created_date_hierarchies_have_record_created_months"
 			        }
 			      ]
 			    },
-			    "fact_qccheck_detection_date_has_date_hierarchy": {
+			    "fact_qccheck_record_created_date_date_hierarchy_has_fact_qccheck_record_created_date_quarter": {
 			      "Binding": {
 			        "ConceptualEntity": "fact_qcchecks"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "fact_qccheck.detection_date": {
+			        "fact_qccheck.record_created_date.date_hierarchy": {
 			          "Target": {
-			            "Entity": "fact_qccheck.detection_date"
+			            "Entity": "fact_qccheck.record_created_date.date_hierarchy"
 			          }
 			        },
-			        "fact_qccheck.detection_date.date_hierarchy": {
+			        "fact_qccheck.record_created_date.quarter": {
 			          "Target": {
-			            "Entity": "fact_qccheck.detection_date.date_hierarchy"
+			            "Entity": "fact_qccheck.record_created_date.quarter"
 			          }
 			        }
 			      },
@@ -5701,15 +6271,81 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "fact_qccheck.detection_date"
+			              "Role": "fact_qccheck.record_created_date.date_hierarchy"
 			            },
 			            "Object": {
-			              "Role": "fact_qccheck.detection_date.date_hierarchy"
+			              "Role": "fact_qccheck.record_created_date.quarter"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "detection_dates_have_detection_date_hierarchies"
+			          "ID": "record_created_date_hierarchies_have_record_created_quarters"
+			        }
+			      ]
+			    },
+			    "fact_qccheck_record_created_date_date_hierarchy_has_fact_qccheck_record_created_date_year": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_qcchecks"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_qccheck.record_created_date.date_hierarchy": {
+			          "Target": {
+			            "Entity": "fact_qccheck.record_created_date.date_hierarchy"
+			          }
+			        },
+			        "fact_qccheck.record_created_date.year": {
+			          "Target": {
+			            "Entity": "fact_qccheck.record_created_date.year"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_qccheck.record_created_date.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "fact_qccheck.record_created_date.year"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "record_created_date_hierarchies_have_record_created_years"
+			        }
+			      ]
+			    },
+			    "fact_qccheck_record_created_date_has_date_hierarchy": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_qcchecks"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_qccheck.record_created_date": {
+			          "Target": {
+			            "Entity": "fact_qccheck.record_created_date"
+			          }
+			        },
+			        "fact_qccheck.record_created_date.date_hierarchy": {
+			          "Target": {
+			            "Entity": "fact_qccheck.record_created_date.date_hierarchy"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_qccheck.record_created_date"
+			            },
+			            "Object": {
+			              "Role": "fact_qccheck.record_created_date.date_hierarchy"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "record_created_dates_have_record_created_date_hierarchies"
 			        }
 			      ]
 			    },
@@ -5819,14 +6455,7 @@ cultureInfo en-US
 			        "dim_product": {
 			          "Target": {
 			            "Entity": "dim_product"
-			          },
-			          "Nouns": [
-			            {
-			              "product": {
-			                "State": "Generated"
-			              }
-			            }
-			          ]
+			          }
 			        }
 			      },
 			      "Phrasings": [
@@ -5855,6 +6484,138 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "dim_products_have_fact_qcchecks"
+			        }
+			      ]
+			    },
+			    "entity__measure_has_median_time_to_resolve_MedTTR": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__measure": {
+			          "Target": {
+			            "Entity": "entity__measure"
+			          }
+			        },
+			        "entity__measure.median_time_to_resolve_MedTTR": {
+			          "Target": {
+			            "Entity": "entity__measure.median_time_to_resolve_MedTTR"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__measure"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.median_time_to_resolve_MedTTR"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have_median_time_to_resolve_MedTTR"
+			        }
+			      ]
+			    },
+			    "fact_qccheck_has_time_to_resolve_bins": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_qcchecks"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_qccheck": {
+			          "Target": {
+			            "Entity": "fact_qccheck"
+			          }
+			        },
+			        "fact_qccheck.time_to_resolve_bins": {
+			          "Target": {
+			            "Entity": "fact_qccheck.time_to_resolve_bins"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_qccheck"
+			            },
+			            "Object": {
+			              "Role": "fact_qccheck.time_to_resolve_bins"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_qcchecks_have_time_to_resolve_bins"
+			        }
+			      ]
+			    },
+			    "fact_qccheck_has_time_to_resolve": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_qcchecks"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_qccheck": {
+			          "Target": {
+			            "Entity": "fact_qccheck"
+			          }
+			        },
+			        "fact_qccheck.time_to_resolve": {
+			          "Target": {
+			            "Entity": "fact_qccheck.time_to_resolve"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_qccheck"
+			            },
+			            "Object": {
+			              "Role": "fact_qccheck.time_to_resolve"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_qcchecks_have_time_to_resolve"
+			        }
+			      ]
+			    },
+			    "dim_product_has_therapeutic_area": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_products"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_product": {
+			          "Target": {
+			            "Entity": "dim_product"
+			          }
+			        },
+			        "dim_product.therapeutic_area": {
+			          "Target": {
+			            "Entity": "dim_product.therapeutic_area"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_product"
+			            },
+			            "Object": {
+			              "Role": "dim_product.therapeutic_area"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_products_have_therapeutic_areas"
 			        }
 			      ]
 			    },
@@ -6003,7 +6764,7 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "fact_qccheck_has_created_date": {
+			    "fact_qccheck_has_finding_detection_date": {
 			      "Binding": {
 			        "ConceptualEntity": "fact_qcchecks"
 			      },
@@ -6014,9 +6775,9 @@ cultureInfo en-US
 			            "Entity": "fact_qccheck"
 			          }
 			        },
-			        "fact_qccheck.created_date": {
+			        "fact_qccheck.finding_detection_date": {
 			          "Target": {
-			            "Entity": "fact_qccheck.created_date"
+			            "Entity": "fact_qccheck.finding_detection_date"
 			          }
 			        }
 			      },
@@ -6027,12 +6788,45 @@ cultureInfo en-US
 			              "Role": "fact_qccheck"
 			            },
 			            "Object": {
-			              "Role": "fact_qccheck.created_date"
+			              "Role": "fact_qccheck.finding_detection_date"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "fact_qcchecks_have_created_dates"
+			          "ID": "fact_qcchecks_have_finding_detection_dates"
+			        }
+			      ]
+			    },
+			    "fact_qccheck_has_finding_resolution_date": {
+			      "Binding": {
+			        "ConceptualEntity": "fact_qcchecks"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_qccheck": {
+			          "Target": {
+			            "Entity": "fact_qccheck"
+			          }
+			        },
+			        "fact_qccheck.finding_resolution_date": {
+			          "Target": {
+			            "Entity": "fact_qccheck.finding_resolution_date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_qccheck"
+			            },
+			            "Object": {
+			              "Role": "fact_qccheck.finding_resolution_date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_qcchecks_have_finding_resolution_dates"
 			        }
 			      ]
 			    },
@@ -6069,7 +6863,7 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "entity__measure_has_avg_days_to_correct": {
+			    "entity__measure_has_mean_time_to_resolve_MTTR": {
 			      "Binding": {
 			        "ConceptualEntity": "_Measures"
 			      },
@@ -6080,9 +6874,9 @@ cultureInfo en-US
 			            "Entity": "entity__measure"
 			          }
 			        },
-			        "entity__measure.avg_days_to_correct": {
+			        "entity__measure.mean_time_to_resolve_MTTR": {
 			          "Target": {
-			            "Entity": "entity__measure.avg_days_to_correct"
+			            "Entity": "entity__measure.mean_time_to_resolve_MTTR"
 			          }
 			        }
 			      },
@@ -6093,12 +6887,12 @@ cultureInfo en-US
 			              "Role": "entity__measure"
 			            },
 			            "Object": {
-			              "Role": "entity__measure.avg_days_to_correct"
+			              "Role": "entity__measure.mean_time_to_resolve_MTTR"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "Phrasing_measures_have_avg_days_to_correct"
+			          "ID": "Phrasing_measures_have_mean_time_to_resolve_MTTR"
 			        }
 			      ]
 			    },
@@ -6432,72 +7226,6 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "dim_product_has_type_of_product": {
-			      "Binding": {
-			        "ConceptualEntity": "dim_products"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_product": {
-			          "Target": {
-			            "Entity": "dim_product"
-			          }
-			        },
-			        "dim_product.type_of_product": {
-			          "Target": {
-			            "Entity": "dim_product.type_of_product"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_product"
-			            },
-			            "Object": {
-			              "Role": "dim_product.type_of_product"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_products_have_type_of_product"
-			        }
-			      ]
-			    },
-			    "dim_product_has_product": {
-			      "Binding": {
-			        "ConceptualEntity": "dim_products"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_product": {
-			          "Target": {
-			            "Entity": "dim_product"
-			          }
-			        },
-			        "dim_product.product": {
-			          "Target": {
-			            "Entity": "dim_product.product"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_product"
-			            },
-			            "Object": {
-			              "Role": "dim_product.product"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_products_have_products"
-			        }
-			      ]
-			    },
 			    "dim_process_has_country": {
 			      "Binding": {
 			        "ConceptualEntity": "dim_process"
@@ -6564,20 +7292,20 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "dim_process_has_team": {
+			    "fact_qccheck_has_record_created_date": {
 			      "Binding": {
-			        "ConceptualEntity": "dim_process"
+			        "ConceptualEntity": "fact_qcchecks"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "dim_process": {
+			        "fact_qccheck": {
 			          "Target": {
-			            "Entity": "dim_process"
+			            "Entity": "fact_qccheck"
 			          }
 			        },
-			        "dim_process.team": {
+			        "fact_qccheck.record_created_date": {
 			          "Target": {
-			            "Entity": "dim_process.team"
+			            "Entity": "fact_qccheck.record_created_date"
 			          }
 			        }
 			      },
@@ -6585,114 +7313,15 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "dim_process"
+			              "Role": "fact_qccheck"
 			            },
 			            "Object": {
-			              "Role": "dim_process.team"
+			              "Role": "fact_qccheck.record_created_date"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "dim_processes_have_teams"
-			        }
-			      ]
-			    },
-			    "dim_process_has_dimension": {
-			      "Binding": {
-			        "ConceptualEntity": "dim_process"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_process": {
-			          "Target": {
-			            "Entity": "dim_process"
-			          }
-			        },
-			        "dim_process.dimension": {
-			          "Target": {
-			            "Entity": "dim_process.dimension"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_process"
-			            },
-			            "Object": {
-			              "Role": "dim_process.dimension"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_processes_have_dimensions"
-			        }
-			      ]
-			    },
-			    "dim_process_has_object": {
-			      "Binding": {
-			        "ConceptualEntity": "dim_process"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_process": {
-			          "Target": {
-			            "Entity": "dim_process"
-			          }
-			        },
-			        "dim_process.object": {
-			          "Target": {
-			            "Entity": "dim_process.object"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_process"
-			            },
-			            "Object": {
-			              "Role": "dim_process.object"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_processes_have_objects"
-			        }
-			      ]
-			    },
-			    "dim_process_has_field": {
-			      "Binding": {
-			        "ConceptualEntity": "dim_process"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_process": {
-			          "Target": {
-			            "Entity": "dim_process"
-			          }
-			        },
-			        "dim_process.field": {
-			          "Target": {
-			            "Entity": "dim_process.field"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_process"
-			            },
-			            "Object": {
-			              "Role": "dim_process.field"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_processes_have_fields"
+			          "ID": "fact_qcchecks_have_record_created_dates"
 			        }
 			      ]
 			    },
@@ -6726,39 +7355,6 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "dim_processes_have_criticalities"
-			        }
-			      ]
-			    },
-			    "dim_process_has_process": {
-			      "Binding": {
-			        "ConceptualEntity": "dim_process"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_process": {
-			          "Target": {
-			            "Entity": "dim_process"
-			          }
-			        },
-			        "dim_process.process": {
-			          "Target": {
-			            "Entity": "dim_process.process"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_process"
-			            },
-			            "Object": {
-			              "Role": "dim_process.process"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_processes_have_processes"
 			        }
 			      ]
 			    },
@@ -6993,7 +7589,7 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "fact_qccheck_has_compliance_date": {
+			    "fact_qccheck_has_finding_ID": {
 			      "Binding": {
 			        "ConceptualEntity": "fact_qcchecks"
 			      },
@@ -7004,9 +7600,9 @@ cultureInfo en-US
 			            "Entity": "fact_qccheck"
 			          }
 			        },
-			        "fact_qccheck.compliance_date": {
+			        "fact_qccheck.finding_ID": {
 			          "Target": {
-			            "Entity": "fact_qccheck.compliance_date"
+			            "Entity": "fact_qccheck.finding_ID"
 			          }
 			        }
 			      },
@@ -7017,29 +7613,29 @@ cultureInfo en-US
 			              "Role": "fact_qccheck"
 			            },
 			            "Object": {
-			              "Role": "fact_qccheck.compliance_date"
+			              "Role": "fact_qccheck.finding_ID"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "fact_qcchecks_have_compliance_dates"
+			          "ID": "fact_qcchecks_have_finding_ID"
 			        }
 			      ]
 			    },
-			    "fact_qccheck_has_detection_date": {
+			    "dim_process_has_RIM_process_area": {
 			      "Binding": {
-			        "ConceptualEntity": "fact_qcchecks"
+			        "ConceptualEntity": "dim_process"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "fact_qccheck": {
+			        "dim_process": {
 			          "Target": {
-			            "Entity": "fact_qccheck"
+			            "Entity": "dim_process"
 			          }
 			        },
-			        "fact_qccheck.detection_date": {
+			        "dim_process.RIM_process_area": {
 			          "Target": {
-			            "Entity": "fact_qccheck.detection_date"
+			            "Entity": "dim_process.RIM_process_area"
 			          }
 			        }
 			      },
@@ -7047,15 +7643,193 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "fact_qccheck"
+			              "Role": "dim_process"
 			            },
 			            "Object": {
-			              "Role": "fact_qccheck.detection_date"
+			              "Role": "dim_process.RIM_process_area"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "fact_qcchecks_have_detection_dates"
+			          "ID": "dim_processes_have_RIM_process_areas"
+			        }
+			      ]
+			    },
+			    "dim_process_has_RIM_attribute": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_process"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_process": {
+			          "Target": {
+			            "Entity": "dim_process"
+			          }
+			        },
+			        "dim_process.RIM_attribute": {
+			          "Target": {
+			            "Entity": "dim_process.RIM_attribute"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_process"
+			            },
+			            "Object": {
+			              "Role": "dim_process.RIM_attribute"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_processes_have_RIM_attributes"
+			        }
+			      ]
+			    },
+			    "dim_process_has_RIM_object": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_process"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_process": {
+			          "Target": {
+			            "Entity": "dim_process"
+			          }
+			        },
+			        "dim_process.RIM_object": {
+			          "Target": {
+			            "Entity": "dim_process.RIM_object"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_process"
+			            },
+			            "Object": {
+			              "Role": "dim_process.RIM_object"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_processes_have_RIM_objects"
+			        }
+			      ]
+			    },
+			    "dim_process_has_DQ_dimension": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_process"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_process": {
+			          "Target": {
+			            "Entity": "dim_process"
+			          }
+			        },
+			        "dim_process.DQ_dimension": {
+			          "Target": {
+			            "Entity": "dim_process.DQ_dimension"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_process"
+			            },
+			            "Object": {
+			              "Role": "dim_process.DQ_dimension"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_processes_have_DQ_dimensions"
+			        }
+			      ]
+			    },
+			    "dim_process_has_business_function": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_process"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_process": {
+			          "Target": {
+			            "Entity": "dim_process"
+			          }
+			        },
+			        "dim_process.business_function": {
+			          "Target": {
+			            "Entity": "dim_process.business_function"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_process"
+			            },
+			            "Object": {
+			              "Role": "dim_process.business_function"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_processes_have_business_functions"
+			        }
+			      ]
+			    },
+			    "dim_product_has_medicinal_product_name": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_products"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_product": {
+			          "Target": {
+			            "Entity": "dim_product"
+			          }
+			        },
+			        "dim_product.medicinal_product_name": {
+			          "Target": {
+			            "Entity": "dim_product.medicinal_product_name"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_product"
+			            },
+			            "Object": {
+			              "Role": "dim_product.medicinal_product_name"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_products_have_medicinal_product_names"
+			        },
+			        {
+			          "Name": {
+			            "Subject": {
+			              "Role": "dim_product"
+			            },
+			            "Name": {
+			              "Role": "dim_product.medicinal_product_name"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "medicinal_product_names_are_names_IDs_of_dim_products"
 			        }
 			      ]
 			    },
@@ -7122,19 +7896,6 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "fact_qcchecks_have_compliance_statuses"
-			        },
-			        {
-			          "DynamicAdjective": {
-			            "Subject": {
-			              "Role": "fact_qccheck"
-			            },
-			            "Adjective": {
-			              "Role": "fact_qccheck.compliance_status"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "compliance_statuses_describe_fact_qcchecks"
 			        }
 			      ]
 			    },
@@ -7180,6 +7941,51 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "fact_qcchecks_are_in_dim_countries"
+			        }
+			      ]
+			    },
+			    "dim_product_in_therapeutic_area": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_products"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_product": {
+			          "Target": {
+			            "Entity": "dim_product"
+			          }
+			        },
+			        "dim_product.therapeutic_area": {
+			          "Target": {
+			            "Entity": "dim_product.therapeutic_area"
+			          }
+			        }
+			      },
+			      "SemanticSlots": {
+			        "Where": {
+			          "Role": "dim_product.therapeutic_area"
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "dim_product"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "dim_product.therapeutic_area"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_products_are_in_therapeutic_areas"
 			        }
 			      ]
 			    },
@@ -7363,7 +8169,52 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "fact_qccheck_is_created_on_created_date": {
+			    "dim_process_in_RIM_process_area": {
+			      "Binding": {
+			        "ConceptualEntity": "dim_process"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_process": {
+			          "Target": {
+			            "Entity": "dim_process"
+			          }
+			        },
+			        "dim_process.RIM_process_area": {
+			          "Target": {
+			            "Entity": "dim_process.RIM_process_area"
+			          }
+			        }
+			      },
+			      "SemanticSlots": {
+			        "Where": {
+			          "Role": "dim_process.RIM_process_area"
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "dim_process"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "dim_process.RIM_process_area"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_processes_are_in_RIM_process_areas"
+			        }
+			      ]
+			    },
+			    "fact_qccheck_is_created_on_record_created_date": {
 			      "Binding": {
 			        "ConceptualEntity": "fact_qcchecks"
 			      },
@@ -7374,15 +8225,15 @@ cultureInfo en-US
 			            "Entity": "fact_qccheck"
 			          }
 			        },
-			        "fact_qccheck.created_date": {
+			        "fact_qccheck.record_created_date": {
 			          "Target": {
-			            "Entity": "fact_qccheck.created_date"
+			            "Entity": "fact_qccheck.record_created_date"
 			          }
 			        }
 			      },
 			      "SemanticSlots": {
 			        "When": {
-			          "Role": "fact_qccheck.created_date"
+			          "Role": "fact_qccheck.record_created_date"
 			        }
 			      },
 			      "Phrasings": [
@@ -7401,24 +8252,24 @@ cultureInfo en-US
 			          },
 			          "State": "Generated",
 			          "Weight": 0.9,
-			          "ID": "fact_qcchecks_are_created_on_created_dates"
+			          "ID": "fact_qcchecks_are_created_on_record_created_dates"
 			        }
 			      ]
 			    },
-			    "fact_qccheck_created_date_date_hierarchy_has_fact_qccheck_created_date_year": {
+			    "fact_qccheck_finding_detection_date_date_hierarchy_has_fact_qccheck_finding_detection_date_month": {
 			      "Binding": {
 			        "ConceptualEntity": "fact_qcchecks"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "fact_qccheck.created_date.date_hierarchy": {
+			        "fact_qccheck.finding_detection_date.date_hierarchy": {
 			          "Target": {
-			            "Entity": "fact_qccheck.created_date.date_hierarchy"
+			            "Entity": "fact_qccheck.finding_detection_date.date_hierarchy"
 			          }
 			        },
-			        "fact_qccheck.created_date.year": {
+			        "fact_qccheck.finding_detection_date.month": {
 			          "Target": {
-			            "Entity": "fact_qccheck.created_date.year"
+			            "Entity": "fact_qccheck.finding_detection_date.month"
 			          }
 			        }
 			      },
@@ -7426,32 +8277,32 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "fact_qccheck.created_date.date_hierarchy"
+			              "Role": "fact_qccheck.finding_detection_date.date_hierarchy"
 			            },
 			            "Object": {
-			              "Role": "fact_qccheck.created_date.year"
+			              "Role": "fact_qccheck.finding_detection_date.month"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "created_date_hierarchies_have_created_years"
+			          "ID": "finding_detection_date_hierarchies_have_finding_detection_months"
 			        }
 			      ]
 			    },
-			    "fact_qccheck_created_date_date_hierarchy_has_fact_qccheck_created_date_quarter": {
+			    "fact_qccheck_finding_detection_date_date_hierarchy_has_fact_qccheck_finding_detection_date_day": {
 			      "Binding": {
 			        "ConceptualEntity": "fact_qcchecks"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "fact_qccheck.created_date.date_hierarchy": {
+			        "fact_qccheck.finding_detection_date.date_hierarchy": {
 			          "Target": {
-			            "Entity": "fact_qccheck.created_date.date_hierarchy"
+			            "Entity": "fact_qccheck.finding_detection_date.date_hierarchy"
 			          }
 			        },
-			        "fact_qccheck.created_date.quarter": {
+			        "fact_qccheck.finding_detection_date.day": {
 			          "Target": {
-			            "Entity": "fact_qccheck.created_date.quarter"
+			            "Entity": "fact_qccheck.finding_detection_date.day"
 			          }
 			        }
 			      },
@@ -7459,81 +8310,15 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "fact_qccheck.created_date.date_hierarchy"
+			              "Role": "fact_qccheck.finding_detection_date.date_hierarchy"
 			            },
 			            "Object": {
-			              "Role": "fact_qccheck.created_date.quarter"
+			              "Role": "fact_qccheck.finding_detection_date.day"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "created_date_hierarchies_have_created_quarters"
-			        }
-			      ]
-			    },
-			    "fact_qccheck_created_date_date_hierarchy_has_fact_qccheck_created_date_month": {
-			      "Binding": {
-			        "ConceptualEntity": "fact_qcchecks"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_qccheck.created_date.date_hierarchy": {
-			          "Target": {
-			            "Entity": "fact_qccheck.created_date.date_hierarchy"
-			          }
-			        },
-			        "fact_qccheck.created_date.month": {
-			          "Target": {
-			            "Entity": "fact_qccheck.created_date.month"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_qccheck.created_date.date_hierarchy"
-			            },
-			            "Object": {
-			              "Role": "fact_qccheck.created_date.month"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "created_date_hierarchies_have_created_months"
-			        }
-			      ]
-			    },
-			    "fact_qccheck_created_date_date_hierarchy_has_fact_qccheck_created_date_day": {
-			      "Binding": {
-			        "ConceptualEntity": "fact_qcchecks"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_qccheck.created_date.date_hierarchy": {
-			          "Target": {
-			            "Entity": "fact_qccheck.created_date.date_hierarchy"
-			          }
-			        },
-			        "fact_qccheck.created_date.day": {
-			          "Target": {
-			            "Entity": "fact_qccheck.created_date.day"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_qccheck.created_date.date_hierarchy"
-			            },
-			            "Object": {
-			              "Role": "fact_qccheck.created_date.day"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "created_date_hierarchies_have_created_days"
+			          "ID": "finding_detection_date_hierarchies_have_finding_detection_days"
 			        }
 			      ]
 			    }

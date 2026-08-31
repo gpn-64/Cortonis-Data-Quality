@@ -17,12 +17,12 @@ table fact_qcchecks
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Detection Date'
+	column 'Finding Detection Date'
 		dataType: dateTime
 		formatString: yyyy-mm-dd
 		lineageTag: 40f984b2-263f-4f1a-9067-3979bfbd69f8
 		summarizeBy: none
-		sourceColumn: Detection Date
+		sourceColumn: Finding Detection Date
 
 		variation Variation
 			isDefault
@@ -35,11 +35,11 @@ table fact_qcchecks
 
 		annotation PBI_FormatHint = {"isDateTimeCustom":true}
 
-	column Product
+	column 'Medicinal Product Name'
 		dataType: string
 		lineageTag: 466aec00-f470-465c-8987-d3155af8a93b
 		summarizeBy: none
-		sourceColumn: Product
+		sourceColumn: Medicinal Product Name
 
 		annotation SummarizationSetBy = Automatic
 
@@ -83,18 +83,18 @@ table fact_qcchecks
 
 		annotation SummarizationSetBy = Automatic
 
-	column Search = fact_qcchecks[Check Name]&fact_qcchecks[Country]&fact_qcchecks[Product]&fact_qcchecks[Deviation #]
+	column Search = fact_qcchecks[Check Name]&fact_qcchecks[Country]&fact_qcchecks[Medicinal Product Name]&fact_qcchecks[Deviation #]
 		lineageTag: 267c5b2f-ca3b-450a-be41-15ed34dcb562
 		summarizeBy: none
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Compliance Date'
+	column 'Finding Resolution Date'
 		dataType: dateTime
 		formatString: yyyy-mm-dd
 		lineageTag: 7344b02b-fb55-40ae-bfd6-6ccec88e12a1
 		summarizeBy: none
-		sourceColumn: Compliance Date
+		sourceColumn: Finding Resolution Date
 
 		variation Variation
 			isDefault
@@ -107,12 +107,12 @@ table fact_qcchecks
 
 		annotation PBI_FormatHint = {"isDateTimeCustom":true}
 
-	column 'Created Date'
+	column 'Record Created Date'
 		dataType: dateTime
 		formatString: yyyy-mm-dd
 		lineageTag: 38087971-bf04-490e-821d-fb99797b6b2c
 		summarizeBy: none
-		sourceColumn: Created Date
+		sourceColumn: Record Created Date
 
 		variation Variation
 			isDefault
@@ -127,9 +127,103 @@ table fact_qcchecks
 
 	column 'Right First Time' =
 			
-			if( fact_qcchecks[Compliance Date] = fact_qcchecks[Created Date],TRUE,FALSE)
+			if( fact_qcchecks[Finding Resolution Date] = fact_qcchecks[Record Created Date],TRUE,FALSE)
 		formatString: """TRUE"";""TRUE"";""FALSE"""
 		lineageTag: bd56bf05-0795-40f9-a4fc-2960990645c2
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Finding ID'
+		dataType: string
+		lineageTag: 8547b5bb-8bd7-4230-864f-18543854202e
+		summarizeBy: none
+		sourceColumn: Finding ID
+
+	column 'Time to Resolve' =
+			
+			IF (
+			    fact_qcchecks[Check Status] = "Finding Corrected",
+			    DATEDIFF (
+			        fact_qcchecks[Finding Detection Date],
+			        fact_qcchecks[Finding Resolution Date],
+			        DAY
+			    ),
+			    BLANK ()
+			)
+		formatString: 0
+		lineageTag: f57d6b6f-0385-428e-9c99-79f020bfaa9a
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"fact_qcchecks","TableItemName":"Time to Resolve (bins)","ObjectType":4},"LinkType":"UsedInGroup"}]
+
+	column 'Time to Resolve (bins)' =
+			IF(
+				ISBLANK('fact_qcchecks'[Time to Resolve]),
+				BLANK(),
+				INT('fact_qcchecks'[Time to Resolve] / 10) * 10
+			)
+		formatString: 0
+		lineageTag: 380e8cee-8ba2-4a7a-af6c-c42c45401ac8
+		summarizeBy: none
+
+		extendedProperty GroupingMetadata =
+				{
+				  "version": 0,
+				  "groupedColumns": [
+				    {
+				      "Column": {
+				        "Expression": {
+				          "SourceRef": {
+				            "Entity": "fact_qcchecks"
+				          }
+				        },
+				        "Property": "Time to Resolve"
+				      }
+				    }
+				  ],
+				  "binningMetadata": {
+				    "binSize": {
+				      "value": 10.0,
+				      "unit": 0
+				    }
+				  }
+				}
+
+		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"f","Entity":"fact_qcchecks"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"f"}},"Property":"Time to Resolve"}}],"BinItem":{"Expression":{"Floor":{"Expression":{"Column":{"Expression":{"SourceRef":{"Source":"f"}},"Property":"Time to Resolve"}},"Size":10.0}}}}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Correction Target Date Met?' = ```
+			
+			
+			VAR __Target = 
+			SWITCH(
+			    TRUE(),
+			    RELATED(dim_process[Criticality]) = "Minor", 30,
+			    RELATED(dim_process[Criticality]) = "Major", 45,
+			    RELATED(dim_process[Criticality]) = "Critical", 60
+			)
+			
+			RETURN
+			
+			IF(
+			    fact_qcchecks[Time to Resolve] <= __Target,
+			    TRUE,
+			    FALSE
+			)
+			    
+			```
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: dc8418c5-6b5d-4a36-b3ba-399af16fd3b4
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Record Link' = "go to record →"
+		lineageTag: 0fd63b6f-c27b-4071-b2f6-09ad5dea6b86
 		summarizeBy: none
 
 		annotation SummarizationSetBy = Automatic
@@ -139,11 +233,15 @@ table fact_qcchecks
 		source =
 				let
 				    Source = #"data export quality dashboard (fictional v2)",
-				    #"Removed Other Columns" = Table.SelectColumns(Source,{"Compliance Status", "Deviation #", "Detection Date", "Compliance Date", "Product", "Check Name", "Check Status", "Record ID", "Country", "Created Date"}),
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"Compliance Status", "Deviation #", "Finding ID", "Finding Detection Date", "Finding Resolution Date", "Medicinal Product Name", "Check Name", "Check Status", "Record ID", "Country", "Record Created Date"}),
 				    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns"),
 				    #"Added Custom" = Table.AddColumn(#"Removed Duplicates", "QC Name - Country", each [Check Name]&" - "&[Country])
 				in
 				    #"Added Custom"
+
+		annotation PBI_NavigationStepName = Navigation
+
+		annotation PBI_ResultType = Table
 
 	annotation PBI_NavigationStepName = Navigation
 

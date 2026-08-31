@@ -38,21 +38,6 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Total Checks"
-                }
-              },
-              "queryRef": "_Measures.Total Checks",
-              "nativeQueryRef": "TOTAL CHECKS",
-              "displayName": "TOTAL CHECKS"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Measures"
-                    }
-                  },
                   "Property": "Non-Compliant Checks"
                 }
               },
@@ -83,12 +68,12 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Avg Days to Correct"
+                  "Property": "Mean Time To Resolve (MTTR)"
                 }
               },
               "queryRef": "_Measures.Avg Days to Correct",
-              "nativeQueryRef": "AVG DAYS TO CORRECT",
-              "displayName": "AVG DAYS TO CORRECT"
+              "nativeQueryRef": "MTTR IN DAYS",
+              "displayName": "MTTR IN DAYS"
             },
             {
               "field": {
@@ -104,6 +89,21 @@
               "queryRef": "_Measures.Right First Time %",
               "nativeQueryRef": "RFT %",
               "displayName": "RFT %"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Total Checks"
+                }
+              },
+              "queryRef": "_Measures.Total Checks",
+              "nativeQueryRef": "TOTAL CHECKS",
+              "displayName": "TOTAL CHECKS"
             }
           ]
         }
@@ -234,6 +234,34 @@
             ],
             "metadata": "_Measures.Open Deviations",
             "id": "field-a716774e-0369-2aa1-8468-638e326ac458",
+            "order": 0
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Compliant / Total Checks"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 0
+                }
+              }
+            ],
+            "metadata": "_Measures.Compliance Rate %",
+            "id": "field-2df648f2-e7a0-5359-47c4-0e094b9344c9",
             "order": 0
           }
         }
@@ -587,6 +615,47 @@
           "selector": {
             "metadata": "_Measures.Open Deviations",
             "id": "field-a716774e-0369-2aa1-8468-638e326ac458"
+          }
+        },
+        {
+          "properties": {
+            "titleFontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.1
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.Compliance Rate %"
+          }
+        },
+        {
+          "properties": {
+            "titleContentType": {
+              "expr": {
+                "Literal": {
+                  "Value": "'custom'"
+                }
+              }
+            },
+            "titleText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Compliant'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.Compliance Rate %",
+            "id": "field-2df648f2-e7a0-5359-47c4-0e094b9344c9"
           }
         }
       ],

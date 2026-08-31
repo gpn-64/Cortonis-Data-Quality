@@ -23,11 +23,11 @@
                       "Entity": "fact_qcchecks"
                     }
                   },
-                  "Property": "Created Date"
+                  "Property": "Record Created Date"
                 }
               },
-              "queryRef": "fact_qcchecks.Created Date",
-              "nativeQueryRef": "Created Date",
+              "queryRef": "fact_qcchecks.Record Created Date",
+              "nativeQueryRef": "Record Created Date",
               "active": true
             }
           ]
@@ -43,7 +43,7 @@
                     "Entity": "fact_qcchecks"
                   }
                 },
-                "Property": "Created Date"
+                "Property": "Record Created Date"
               }
             },
             "direction": "Ascending"
@@ -60,7 +60,7 @@
         "levels": [
           {
             "queryRefs": [
-              "fact_qcchecks.Created Date"
+              "fact_qcchecks.Record Created Date"
             ],
             "isCollapsed": true,
             "isPinned": true

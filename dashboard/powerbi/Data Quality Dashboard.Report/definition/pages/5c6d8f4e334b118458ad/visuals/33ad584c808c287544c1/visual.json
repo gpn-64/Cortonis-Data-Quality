@@ -1,16 +1,16 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
-  "name": "c269fb66b6eb9b4d27fd",
+  "name": "33ad584c808c287544c1",
   "position": {
-    "x": 1338.5714285714287,
-    "y": 280,
-    "z": 6000,
+    "x": 1338.1249496912478,
+    "y": 676.83405586283811,
+    "z": 18001,
     "height": 374.28571428571433,
     "width": 538.57142857142856,
-    "tabOrder": 6000
+    "tabOrder": 18001
   },
   "visual": {
-    "visualType": "columnChart",
+    "visualType": "barChart",
     "query": {
       "queryState": {
         "Category": {
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "fact_qcchecks"
+                      "Entity": "dim_process"
                     }
                   },
-                  "Property": "Time to Resolve (bins)"
+                  "Property": "RIM Process Area"
                 }
               },
-              "queryRef": "fact_qcchecks.Time to Resolve (bins)",
-              "nativeQueryRef": "Time to Resolve (bins)",
+              "queryRef": "dim_process.RIM Process Area",
+              "nativeQueryRef": "RIM Process Area",
               "active": true
             }
           ]
@@ -42,11 +42,11 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Total Checks"
+                  "Property": "Distinct Deviations"
                 }
               },
-              "queryRef": "_Measures.Total Checks",
-              "nativeQueryRef": "Total Checks"
+              "queryRef": "_Measures.Distinct Deviations",
+              "nativeQueryRef": "Distinct Deviations"
             }
           ]
         }
@@ -61,7 +61,7 @@
                     "Entity": "_Measures"
                   }
                 },
-                "Property": "Total Checks"
+                "Property": "Distinct Deviations"
               }
             },
             "direction": "Descending"
@@ -77,14 +77,14 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             },
             "enableDetailDataLabel": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -137,7 +137,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -153,20 +153,7 @@
       ],
       "dataPoint": [
         {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 9,
-                      "Percent": 0
-                    }
-                  }
-                }
-              }
-            }
-          }
+          "properties": {}
         },
         {
           "properties": {
@@ -247,6 +234,64 @@
                       }
                     }
                   }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "FillRule": {
+                      "Input": {
+                        "Measure": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "_Measures"
+                            }
+                          },
+                          "Property": "Distinct Deviations"
+                        }
+                      },
+                      "FillRule": {
+                        "linearGradient2": {
+                          "min": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#8CEBCB'"
+                              }
+                            }
+                          },
+                          "max": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'maxColor'"
+                              }
+                            }
+                          },
+                          "nullColoringStrategy": {
+                            "strategy": {
+                              "Literal": {
+                                "Value": "'asZero'"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
                 }
               }
             ]
@@ -393,6 +438,26 @@
             "id": "2"
           }
         }
+      ],
+      "legend": [
+        {
+          "properties": {
+            "showGradientLegend": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -415,7 +480,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Time to Resolve Distribution'"
+                  "Value": "'Open Deviations by RIM Area Process'"
                 }
               }
             },
@@ -435,7 +500,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Histogram of Time to Resolve by Finding Count'"
+                  "Value": "'Where does the remediation backlog actually sit?'"
                 }
               }
             },
@@ -451,37 +516,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "1c634a5fff706a253a68",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "fact_qcchecks"
-              }
-            },
-            "Property": "Time to Resolve (bins)"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "4cf9d031f4e13ef7ff0b",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Total Checks"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

@@ -28,7 +28,7 @@
                             }
                           },
                           "Name": "Variation",
-                          "Property": "Created Date"
+                          "Property": "Record Created Date"
                         }
                       },
                       "Hierarchy": "Date Hierarchy"
@@ -37,8 +37,8 @@
                   "Level": "Year"
                 }
               },
-              "queryRef": "fact_qcchecks.Created Date.Variation.Date Hierarchy.Year",
-              "nativeQueryRef": "Created Date Year",
+              "queryRef": "fact_qcchecks.Record Created Date.Variation.Date Hierarchy.Year",
+              "nativeQueryRef": "Record Created Date Year",
               "active": true
             },
             {
@@ -54,7 +54,7 @@
                             }
                           },
                           "Name": "Variation",
-                          "Property": "Created Date"
+                          "Property": "Record Created Date"
                         }
                       },
                       "Hierarchy": "Date Hierarchy"
@@ -63,8 +63,8 @@
                   "Level": "Quarter"
                 }
               },
-              "queryRef": "fact_qcchecks.Created Date.Variation.Date Hierarchy.Quarter",
-              "nativeQueryRef": "Created Date Quarter",
+              "queryRef": "fact_qcchecks.Record Created Date.Variation.Date Hierarchy.Quarter",
+              "nativeQueryRef": "Record Created Date Quarter",
               "active": true
             },
             {
@@ -80,7 +80,7 @@
                             }
                           },
                           "Name": "Variation",
-                          "Property": "Created Date"
+                          "Property": "Record Created Date"
                         }
                       },
                       "Hierarchy": "Date Hierarchy"
@@ -89,8 +89,8 @@
                   "Level": "Month"
                 }
               },
-              "queryRef": "fact_qcchecks.Created Date.Variation.Date Hierarchy.Month",
-              "nativeQueryRef": "Created Date Month",
+              "queryRef": "fact_qcchecks.Record Created Date.Variation.Date Hierarchy.Month",
+              "nativeQueryRef": "Record Created Date Month",
               "active": true
             },
             {
@@ -106,7 +106,7 @@
                             }
                           },
                           "Name": "Variation",
-                          "Property": "Created Date"
+                          "Property": "Record Created Date"
                         }
                       },
                       "Hierarchy": "Date Hierarchy"
@@ -115,8 +115,8 @@
                   "Level": "Day"
                 }
               },
-              "queryRef": "fact_qcchecks.Created Date.Variation.Date Hierarchy.Day",
-              "nativeQueryRef": "Created Date Day",
+              "queryRef": "fact_qcchecks.Record Created Date.Variation.Date Hierarchy.Day",
+              "nativeQueryRef": "Record Created Date Day",
               "active": false
             }
           ]
@@ -263,6 +263,48 @@
                     "Right": {
                       "Literal": {
                         "Value": "'Non compliant'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 4,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "fact_qcchecks"
+                          }
+                        },
+                        "Property": "Compliance Status"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Non-Compliant'"
                       }
                     }
                   }

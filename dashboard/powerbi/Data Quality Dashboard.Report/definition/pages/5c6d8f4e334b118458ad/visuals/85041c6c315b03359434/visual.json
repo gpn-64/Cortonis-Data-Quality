@@ -66,7 +66,8 @@
                 }
               },
               "queryRef": "Min(fact_qcchecks.Country)",
-              "nativeQueryRef": "Country"
+              "nativeQueryRef": "Country",
+              "displayName": "Country"
             },
             {
               "field": {
@@ -78,14 +79,15 @@
                           "Entity": "fact_qcchecks"
                         }
                       },
-                      "Property": "Detection Date"
+                      "Property": "Finding Detection Date"
                     }
                   },
                   "Function": 3
                 }
               },
-              "queryRef": "Min(fact_qcchecks.Detection Date)",
-              "nativeQueryRef": "Detection Date"
+              "queryRef": "Min(fact_qcchecks.Finding Detection Date)",
+              "nativeQueryRef": "Finding Detection Date",
+              "displayName": "Finding Detection Date"
             },
             {
               "field": {
@@ -97,14 +99,15 @@
                           "Entity": "fact_qcchecks"
                         }
                       },
-                      "Property": "Compliance Date"
+                      "Property": "Finding Resolution Date"
                     }
                   },
                   "Function": 3
                 }
               },
-              "queryRef": "Min(fact_qcchecks.Compliance Date)",
-              "nativeQueryRef": "Compliance Date"
+              "queryRef": "Min(fact_qcchecks.Finding Resolution Date)",
+              "nativeQueryRef": "Finding Resolution Date",
+              "displayName": "Finding Resolution Date"
             },
             {
               "field": {
@@ -123,7 +126,8 @@
                 }
               },
               "queryRef": "Min(dim_process.Criticality)",
-              "nativeQueryRef": "Criticality"
+              "nativeQueryRef": "Criticality",
+              "displayName": "Criticality"
             },
             {
               "field": {
@@ -135,14 +139,15 @@
                           "Entity": "dim_process"
                         }
                       },
-                      "Property": "Process"
+                      "Property": "RIM Process Area"
                     }
                   },
                   "Function": 3
                 }
               },
-              "queryRef": "Min(dim_process.Process)",
-              "nativeQueryRef": "Process"
+              "queryRef": "Min(dim_process.RIM Process Area)",
+              "nativeQueryRef": "RIM Process Area",
+              "displayName": "RIM Process Area"
             },
             {
               "field": {
@@ -154,14 +159,15 @@
                           "Entity": "fact_qcchecks"
                         }
                       },
-                      "Property": "Product"
+                      "Property": "Medicinal Product Name"
                     }
                   },
                   "Function": 3
                 }
               },
-              "queryRef": "Min(fact_qcchecks.Product)",
-              "nativeQueryRef": "Product"
+              "queryRef": "Min(fact_qcchecks.Medicinal Product Name)",
+              "nativeQueryRef": "Medicinal Product Name",
+              "displayName": "Medicinal Product Name"
             }
           ]
         }
@@ -275,6 +281,62 @@
           "selector": {
             "metadata": "fact_qcchecks.Deviation #"
           }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "91.39308425280811D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Min(fact_qcchecks.Finding Detection Date)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "89.32800122990852D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Min(fact_qcchecks.Finding Resolution Date)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "63.56571184929649D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Min(dim_process.Criticality)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "146.3691980961724D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Min(fact_qcchecks.Country)"
+          }
         }
       ],
       "columnHeaders": [
@@ -346,6 +408,70 @@
                   "Value": "'Deviation Register'"
                 }
               }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#06331F'"
+                    }
+                  }
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'left'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "15D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Trebuchet MS'"
+                }
+              }
             }
           }
         }
@@ -359,6 +485,45 @@
                   "Value": "'Findings only, newest detection first — the join point for the deviation table'"
                 }
               }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#6C7A72'"
+                    }
+                  }
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'left'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Segoe UI'"
+                }
+              }
             }
           }
         }
@@ -370,6 +535,230 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#E2E8E4'"
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            },
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "spacing": [
+        {
+          "properties": {
+            "customizeSpacing": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "verticalSpacing": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            },
+            "spaceBelowSubTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            },
+            "spaceAbovePlotArea": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            },
+            "spaceAboveDivider": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            },
+            "spaceAboveSubtitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "preset": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Custom'"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "86D"
+                }
+              }
+            },
+            "shadowSpread": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "shadowBlur": {
+              "expr": {
+                "Literal": {
+                  "Value": "3D"
+                }
+              }
+            },
+            "angle": {
+              "expr": {
+                "Literal": {
+                  "Value": "90D"
+                }
+              }
+            },
+            "shadowDistance": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "100D"
                 }
               }
             }

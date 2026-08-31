@@ -17,12 +17,12 @@ aligned to this framework.
 - **DIA RIM Reference Model V2.0** — DIA RIM Reference Model Working Group, Final,
   created 2025-10-28, modified 2026-04-13. Distributed under the Creative Commons
   Attribution License.
-  - *User Guide* — [`dia standards/RIM-Reference-Model-User-Guide.pdf`](dia%20standards/RIM-Reference-Model-User-Guide.pdf)
-  - *Conceptual Entity-Relationship model* — [`dia standards/RIM-Reference-Model-V20-Conceptual-ER-Model.pdf`](dia%20standards/RIM-Reference-Model-V20-Conceptual-ER-Model.pdf)
+  - *User Guide* — [`dia standards/RIM-Reference-Model-User-Guide.pdf`](<dia%20standards/RIM-Reference-Model-User-Guide.pdf>)
+  - *Conceptual Entity-Relationship model* — [`dia standards/RIM-Reference-Model-V20-Conceptual-ER-Model.pdf`](<dia%20standards/RIM-Reference-Model-V20-Conceptual-ER-Model.pdf>)
   - *Data dictionary workbook* (56 objects, attributes, controlled-vocabulary examples) —
-    [`dia standards/RIM-Reference-Model-V20.xlsx`](dia%20standards/RIM-Reference-Model-V20.xlsx)
+    [`dia standards/RIM-Reference-Model-V20.xlsx`](<dia%20standards/RIM-Reference-Model-V20.xlsx>)
   - Change requests / governance: LinkedIn group *DIA Regulatory Information Management*.
-- **DIA — Drug Information Association** — <https://www.diaglobal.org/> · Regulatory Affairs
+- **DIA — Drug Information Association** — [https://www.diaglobal.org/](https://www.diaglobal.org/) · Regulatory Affairs
   Community (RAC), which hosts the RIM Working Group.
 - **DIA RIM White Paper / book** — *Achieving Excellence with Regulatory Information
   Management* (RIM White Paper v3.0), DIA RIM Working Group.
@@ -49,6 +49,7 @@ Timeliness, Referential Integrity) comes from general data-quality practice, **n
 - **ISO/IEC 25012** — Data quality model (inherent vs. system-dependent characteristics).
 - **EDM Council — DCAM** (Data Management Capability Assessment Model) — data-quality
   management practices.
+- **Data Quality - Empowering businesses with analytics and AI** - Prashanth Southekal
 
 ---
 
@@ -74,27 +75,15 @@ outside reference model"*, *"Submission Format = eCTD"*, *"missing INN/generic n
 The dashboard is designed to be vendor-neutral (see *RIM-agnostic by design* in the
 README). Vendor product lines referenced there, for context only:
 
-- **Veeva Vault RIM** — <https://www.veeva.com/products/vault-rim/>
-- **Ennov RIM** — <https://www.ennov.com/>
-- **ArisGlobal LifeSphere RIM** — <https://www.arisglobal.com/>
-- **Calyx RIM** — <https://calyx.ai/>
-- **Generis CARA RIM** — <https://www.generis.com/>
-- **EXTEDO RIMS / eCTDmanager** — <https://www.extedo.com/>
-- **LORENZ drugTrack / docuBridge** — <https://www.lorenz.cc/>
-- **Samarind RMS** — <https://www.samarind.co.uk/>
-- **Amplexor / Acolad Life Sciences RIM** — <https://www.acolad.com/>
+- **Veeva Vault RIM** — [https://www.veeva.com/products/vault-rim/](https://www.veeva.com/products/vault-rim/)
+- **Ennov RIM** — [https://www.ennov.com/](https://www.ennov.com/)
+- **ArisGlobal LifeSphere RIM** — [https://www.arisglobal.com/](https://www.arisglobal.com/)
+- **Calyx RIM** — [https://calyx.ai/](https://calyx.ai/)
+- **Generis CARA RIM** — [https://www.generis.com/](https://www.generis.com/)
+- **EXTEDO RIMS / eCTDmanager** — [https://www.extedo.com/](https://www.extedo.com/)
+- **LORENZ drugTrack / docuBridge** — [https://www.lorenz.cc/](https://www.lorenz.cc/)
+- **Samarind RMS** — [https://www.samarind.co.uk/](https://www.samarind.co.uk/)
+- **Amplexor / Acolad Life Sciences RIM** — [https://www.acolad.com/](https://www.acolad.com/)
 
 Market framing for RIM as a capability: Gartner *Market Guide for Regulatory Information
 Management*; DIA RIM maturity discussions.
-
----
-
-## 5. Dashboard build — tooling
-
-- **Power BI Project (PBIP)** format — Microsoft Learn,
-  <https://learn.microsoft.com/power-bi/developer/projects/projects-overview>
-  (PBIR report definition + TMDL semantic model, both text/diffable).
-- **TMDL** — Tabular Model Definition Language, Microsoft Learn.
-- **DAX** — Data Analysis Expressions reference, Microsoft Learn.
-- Report theme: custom *Cortonis Pharma – Green* theme, on top of Power BI base theme
-  *Fluent2-CY26SU08*.
