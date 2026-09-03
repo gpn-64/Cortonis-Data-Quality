@@ -1,33 +1,33 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
-  "name": "3338feecdfa1d6a93763",
+  "name": "40e7254a6df5074ba78c",
   "position": {
-    "x": 290,
-    "y": 281.42857142857144,
-    "z": 4000,
-    "height": 768.57142857142867,
-    "width": 777.14285714285722,
-    "tabOrder": 4000
+    "x": 1104.7161896670736,
+    "y": 645.94700791164439,
+    "z": 18000,
+    "height": 392.70641958264747,
+    "width": 774.40237880316465,
+    "tabOrder": 18000
   },
   "visual": {
-    "visualType": "pivotTable",
+    "visualType": "lineChart",
     "query": {
       "queryState": {
-        "Rows": {
+        "Category": {
           "projections": [
             {
               "field": {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "dim_process"
+                      "Entity": "Calendar"
                     }
                   },
-                  "Property": "RIM Process Area"
+                  "Property": "Year"
                 }
               },
-              "queryRef": "dim_process.RIM Process Area",
-              "nativeQueryRef": "RIM Process Area",
+              "queryRef": "Calendar.Year",
+              "nativeQueryRef": "Year",
               "active": true
             },
             {
@@ -35,19 +35,49 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "fact_qcchecks"
+                      "Entity": "Calendar"
                     }
                   },
-                  "Property": "Check Name"
+                  "Property": "Quarter"
                 }
               },
-              "queryRef": "fact_qcchecks.Check Name",
-              "nativeQueryRef": "Check Name",
+              "queryRef": "Calendar.Quarter",
+              "nativeQueryRef": "Quarter",
               "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Calendar"
+                    }
+                  },
+                  "Property": "Month Short"
+                }
+              },
+              "queryRef": "Calendar.Month Short",
+              "nativeQueryRef": "Month Short",
+              "active": false
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Calendar"
+                    }
+                  },
+                  "Property": "Date"
+                }
+              },
+              "queryRef": "Calendar.Date",
+              "nativeQueryRef": "Date",
+              "active": false
             }
           ]
         },
-        "Values": {
+        "Y": {
           "projections": [
             {
               "field": {
@@ -57,11 +87,11 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Compliance Rate %"
+                  "Property": "Detected Checks"
                 }
               },
-              "queryRef": "_Measures.Compliance Rate %",
-              "nativeQueryRef": "Compliance Rate %"
+              "queryRef": "_Measures.Detected Checks1",
+              "nativeQueryRef": "Detected Checks"
             },
             {
               "field": {
@@ -71,239 +101,128 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Non-Compliant Checks"
+                  "Property": "Corrected Checks"
                 }
               },
-              "queryRef": "_Measures.Non-Compliant Checks",
-              "nativeQueryRef": "Non-Compliant Checks"
+              "queryRef": "_Measures.Corrected Checks",
+              "nativeQueryRef": "Corrected Checks"
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Measure": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "_Measures"
-                  }
-                },
-                "Property": "Compliance Rate %"
-              }
-            },
-            "direction": "Descending"
-          }
-        ]
       }
     },
     "objects": {
-      "columnWidth": [
+      "labels": [
         {
           "properties": {
-            "value": {
+            "show": {
               "expr": {
                 "Literal": {
-                  "Value": "469.0528238436187D"
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "valueAxis": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "lineStyles": [
+        {
+          "properties": {
+            "strokeWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "dim_process.RIM Process Area"
+            "metadata": "_Measures.Corrected Checks"
           }
         },
         {
           "properties": {
-            "value": {
+            "strokeWidth": {
               "expr": {
                 "Literal": {
-                  "Value": "160.95177304200558D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Measures.Compliance Rate %"
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "93.01321477809307D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Measures.Non-Compliant Checks"
-          }
-        }
-      ],
-      "columnHeaders": [
-        {
-          "properties": {
-            "wordWrap": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "11D"
+                  "Value": "2D"
                 }
               }
             }
           }
         }
       ],
-      "columnFormatting": [
+      "dataPoint": [
         {
           "properties": {
-            "dataBars": {
-              "positiveColor": {
-                "solid": {
-                  "color": {
-                    "expr": {
-                      "Literal": {
-                        "Value": "'#8CEBCB'"
-                      }
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 4,
+                      "Percent": 0
                     }
-                  }
-                }
-              },
-              "negativeColor": {
-                "solid": {
-                  "color": {
-                    "expr": {
-                      "Literal": {
-                        "Value": "'minColor'"
-                      }
-                    }
-                  }
-                }
-              },
-              "axisColor": {
-                "solid": {
-                  "color": {
-                    "expr": {
-                      "Literal": {
-                        "Value": "'#FFFFFF'"
-                      }
-                    }
-                  }
-                }
-              },
-              "reverseDirection": {
-                "expr": {
-                  "Literal": {
-                    "Value": "false"
-                  }
-                }
-              },
-              "hideText": {
-                "expr": {
-                  "Literal": {
-                    "Value": "false"
-                  }
-                }
-              },
-              "totalMatchingOption": {
-                "expr": {
-                  "Literal": {
-                    "Value": "1L"
                   }
                 }
               }
             }
           },
           "selector": {
-            "metadata": "_Measures.Compliance Rate %"
+            "metadata": "_Measures.Corrected Checks"
           }
         }
       ],
-      "values": [
+      "error": [
         {
           "properties": {
-            "wordWrap": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "11D"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "rowHeaders": [
-        {
-          "properties": {
-            "wordWrap": {
+            "enabled": {
               "expr": {
                 "Literal": {
                   "Value": "false"
                 }
               }
             },
-            "fontSize": {
+            "shadeShow": {
               "expr": {
                 "Literal": {
-                  "Value": "11D"
+                  "Value": "false"
                 }
               }
-            }
-          }
-        }
-      ],
-      "subTotals": [
-        {
-          "properties": {
-            "fontSize": {
+            },
+            "labelShow": {
               "expr": {
                 "Literal": {
-                  "Value": "11D"
+                  "Value": "false"
                 }
               }
             }
           },
           "selector": {
-            "id": "Row"
+            "metadata": "_Measures.Detected Checks1"
           }
         }
       ],
-      "columnTotal": [
+      "legend": [
         {
           "properties": {
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "11D"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "rowTotal": [
-        {
-          "properties": {
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "11D"
+                  "Value": "10D"
                 }
               }
             }
@@ -318,7 +237,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Findings by Process and Checks'"
+                  "Value": "'Detected vs Corrected Findings over Time'"
                 }
               }
             },
@@ -338,7 +257,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Are the critical ones being closed first?'"
+                  "Value": "'Findings by detection month, excluding “No finding”'"
                 }
               }
             },

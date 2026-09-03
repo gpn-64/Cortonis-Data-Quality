@@ -1,8 +1,8 @@
 expression 'data export quality dashboard (fictional v2)' =
 		let
-		  Source = Csv.Document(File.Contents("C:\Users\User\Documents\Coding Projects\Data-Quality\data\raw\data export quality dashboard (fictional v3).csv"), [Delimiter = ",", Columns = 19, Encoding = 65001, QuoteStyle = QuoteStyle.None]),
+		  Source = Csv.Document(File.Contents("C:\Users\User\Documents\Coding Projects\Data-Quality\data\raw\data export quality dashboard (fictional v4).csv"),[Delimiter=",", Columns=17, Encoding=65001, QuoteStyle=QuoteStyle.None]),
 		  #"Promoted headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
-		  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers",{{"Compliance Status", type text}, {"Criticality", type text}, {"Deviation #", type text}, {"DQ Dimension", type text}, {"RIM Attribute", type text}, {"Finding Detection Date", type date}, {"Finding Resolution Date", type date}, {"Finding ID", type text}, {"RIM Object", type text}, {"Medicinal Product Name", type text}, {"RIM Process Area", type text}, {"Therapeutic Area", type text}, {"Check Name", type text}, {"Check Status", type text}, {"Record ID", type text}, {"Country", type text}, {"Region", type text}, {"Business Function", type text}, {"Record Created Date", type date}})
+		  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers",{{"Criticality", type text}, {"Deviation #", type text}, {"DQ Dimension", type text}, {"RIM Attribute", type text}, {"Finding Detection Date", type date}, {"Finding Resolution Date", type date}, {"Finding ID", type text}, {"RIM Object", type text}, {"Medicinal Product Name", type text}, {"RIM Process Area", type text}, {"Therapeutic Area", type text}, {"Check Name", type text}, {"Record ID", type text}, {"Country", type text}, {"Region", type text}, {"Business Function", type text}, {"Record Created Date", type date}})
 		in
 		    #"Changed column type"
 	lineageTag: 1b2f2736-3567-4b2b-bbb7-61a1c4acb744

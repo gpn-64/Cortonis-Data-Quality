@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "589ee085ac98322f6d34",
   "position": {
-    "x": 289.6680197325299,
-    "y": 278.3639018893092,
-    "z": 15001,
-    "height": 772.919057530214,
-    "width": 1589.6415717029081,
-    "tabOrder": 15001
+    "x": 290,
+    "y": 278.57142857142861,
+    "z": 16000,
+    "height": 760,
+    "width": 1590,
+    "tabOrder": 16000
   },
   "visual": {
     "visualType": "tableEx",
@@ -176,7 +176,15 @@
     "objects": {
       "columnHeaders": [
         {
-          "properties": {}
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            }
+          }
         }
       ],
       "values": [
@@ -231,7 +239,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "345.89245250943964D"
+                  "Value": "325.88595098410457D"
                 }
               }
             }
@@ -336,6 +344,27 @@
             }
           }
         }
+      ],
+      "columnFormatting": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 6,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "fact_qcchecks.Record Link"
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -370,90 +399,6 @@
   },
   "filterConfig": {
     "filters": [
-      {
-        "name": "938757c8c2c42a374088",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "fact_qcchecks"
-              }
-            },
-            "Property": "Finding ID"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "c022a009e8d623111674",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dim_process"
-              }
-            },
-            "Property": "DQ Dimension"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "079cbe2de095e6d98bef",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dim_process"
-              }
-            },
-            "Property": "Country"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "ab5c878d2c377e083d59",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dim_process"
-              }
-            },
-            "Property": "Criticality"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "af7ed6dd338612c451a1",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dim_process"
-              }
-            },
-            "Property": "RIM Process Area"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "655b1b3d1843c307c651",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "fact_qcchecks"
-              }
-            },
-            "Property": "Check Name"
-          }
-        },
-        "type": "Categorical"
-      },
       {
         "name": "3d7f206727f292dbbc29",
         "field": {
@@ -506,48 +451,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "49b78eebdadce6d4c29e",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "fact_qcchecks"
-              }
-            },
-            "Property": "Medicinal Product Name"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "6d26b3ecb37c97b193a3",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "fact_qcchecks"
-              }
-            },
-            "Property": "Deviation #"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "d39476681056cd0cd048",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "fact_qcchecks"
-              }
-            },
-            "Property": "Record Link"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }

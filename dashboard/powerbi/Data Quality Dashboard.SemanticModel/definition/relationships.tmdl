@@ -1,8 +1,3 @@
-relationship dfaf07ae-9490-42ff-b725-a622ae7378fd
-	joinOnDateBehavior: datePartOnly
-	fromColumn: fact_qcchecks.'Finding Detection Date'
-	toColumn: LocalDateTable_ece7d50e-8635-431a-ba36-6b95e4ff55c0.Date
-
 relationship AutoDetected_92fffad7-db5a-481a-ab0d-42949889e43d
 	fromColumn: fact_qcchecks.'Medicinal Product Name'
 	toColumn: dim_products.'Medicinal Product Name'
@@ -15,13 +10,26 @@ relationship 94f8c663-8def-f60a-d887-210413a761ff
 	fromColumn: fact_qcchecks.'QC Name - Country'
 	toColumn: dim_process.'Check Name - Country'
 
-relationship 0c2121d0-61c4-417f-9022-9c51a6d6f97d
-	joinOnDateBehavior: datePartOnly
-	fromColumn: fact_qcchecks.'Finding Resolution Date'
-	toColumn: LocalDateTable_cd00ccff-cf91-42e8-ac39-505ba9ba1eac.Date
+relationship 4a7c4823-4690-bd85-0c7e-d32fb9d8be4a
+	isActive: false
+	fromColumn: fact_qcchecks.'Finding Detection Date'
+	toColumn: Calendar.Date
 
-relationship eedccafe-b114-4f82-8d79-29c1449c0900
-	joinOnDateBehavior: datePartOnly
+relationship 86cb6812-5056-3925-8317-0a514b30bb5d
 	fromColumn: fact_qcchecks.'Record Created Date'
-	toColumn: LocalDateTable_d6c6ea09-c02a-4924-96d5-193de3fa0bb2.Date
+	toColumn: Calendar.Date
+
+relationship 5fd4c120-f37e-f92f-0ec8-5d139dd73c19
+	isActive: false
+	fromColumn: fact_qcchecks.'Finding Resolution Date'
+	toColumn: Calendar.Date
+
+relationship c491fae8-a92a-4fab-8f97-f310c4744e4a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dim_deviations.'Opening Date'
+	toColumn: LocalDateTable_35a1e425-b1b6-4963-a13e-57d9c678978f.Date
+
+relationship 88f8ccbc-3782-7a99-1852-b19ba043ae0b
+	fromColumn: fact_qcchecks.'Deviation #'
+	toColumn: dim_deviations.'Deviation #'
 

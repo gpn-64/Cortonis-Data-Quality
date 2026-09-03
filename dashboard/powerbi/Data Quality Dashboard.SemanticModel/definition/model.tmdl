@@ -11,18 +11,18 @@ annotation __PBI_TimeIntelligenceEnabled = 1
 
 annotation PBI_ProTooling = ["DevMode","MCP-PBIModeling"]
 
-annotation PBI_QueryOrder = ["data export quality dashboard (fictional v2)","fact_qcchecks","dim_countries","dim_process","dim_products"]
+annotation PBI_QueryOrder = ["data export quality dashboard (fictional v2)","fact_qcchecks","dim_countries","dim_process","dim_products","dim_deviations"]
 
 ref table fact_qcchecks
-ref table DateTableTemplate_95501238-c80e-4b10-b5ad-a5e96ba0cc9e
-ref table LocalDateTable_ece7d50e-8635-431a-ba36-6b95e4ff55c0
 ref table dim_countries
 ref table dim_process
 ref table dim_products
 ref table _Measures
-ref table LocalDateTable_cd00ccff-cf91-42e8-ac39-505ba9ba1eac
-ref table LocalDateTable_d6c6ea09-c02a-4924-96d5-193de3fa0bb2
 ref table 'X-Axis Switch'
+ref table Calendar
+ref table dim_deviations
+ref table DateTableTemplate_c4146cb7-e52e-4a9d-8010-63e7e1475986
+ref table LocalDateTable_35a1e425-b1b6-4963-a13e-57d9c678978f
 
 ref cultureInfo en-US
 

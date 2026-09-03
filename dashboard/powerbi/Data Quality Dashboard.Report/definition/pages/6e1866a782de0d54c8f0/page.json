@@ -14,7 +14,7 @@
               "name": {
                 "expr": {
                   "Literal": {
-                    "Value": "'bg4-geography.png'"
+                    "Value": "'bg2-findings.png'"
                   }
                 }
               },
@@ -23,7 +23,7 @@
                   "ResourcePackageItem": {
                     "PackageName": "RegisteredResources",
                     "PackageType": 1,
-                    "ItemName": "bg4-geography33346271585659004.png"
+                    "ItemName": "bg2-findings7122750240640269.png"
                   }
                 }
               },

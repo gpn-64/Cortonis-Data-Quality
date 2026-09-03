@@ -24,11 +24,6 @@ table fact_qcchecks
 		summarizeBy: none
 		sourceColumn: Finding Detection Date
 
-		variation Variation
-			isDefault
-			relationship: dfaf07ae-9490-42ff-b725-a622ae7378fd
-			defaultHierarchy: LocalDateTable_ece7d50e-8635-431a-ba36-6b95e4ff55c0.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date
@@ -89,35 +84,12 @@ table fact_qcchecks
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Finding Resolution Date'
-		dataType: dateTime
-		formatString: yyyy-mm-dd
-		lineageTag: 7344b02b-fb55-40ae-bfd6-6ccec88e12a1
-		summarizeBy: none
-		sourceColumn: Finding Resolution Date
-
-		variation Variation
-			isDefault
-			relationship: 0c2121d0-61c4-417f-9022-9c51a6d6f97d
-			defaultHierarchy: LocalDateTable_cd00ccff-cf91-42e8-ac39-505ba9ba1eac.'Date Hierarchy'
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation UnderlyingDateTimeDataType = Date
-
-		annotation PBI_FormatHint = {"isDateTimeCustom":true}
-
 	column 'Record Created Date'
 		dataType: dateTime
 		formatString: yyyy-mm-dd
 		lineageTag: 38087971-bf04-490e-821d-fb99797b6b2c
 		summarizeBy: none
 		sourceColumn: Record Created Date
-
-		variation Variation
-			isDefault
-			relationship: eedccafe-b114-4f82-8d79-29c1449c0900
-			defaultHierarchy: LocalDateTable_d6c6ea09-c02a-4924-96d5-193de3fa0bb2.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 
@@ -127,7 +99,7 @@ table fact_qcchecks
 
 	column 'Right First Time' =
 			
-			if( fact_qcchecks[Finding Resolution Date] = fact_qcchecks[Record Created Date],TRUE,FALSE)
+			if( fact_qcchecks[Check Status] = "No Finding",TRUE,FALSE)
 		formatString: """TRUE"";""TRUE"";""FALSE"""
 		lineageTag: bd56bf05-0795-40f9-a4fc-2960990645c2
 		summarizeBy: none
@@ -228,13 +200,28 @@ table fact_qcchecks
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Finding Resolution Date'
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 3dc2854d-f3c9-4bd1-8bb0-f2b6b87135f5
+		summarizeBy: none
+		sourceColumn: Finding Resolution Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
 	partition fact_qcchecks = m
 		mode: import
 		source =
 				let
 				    Source = #"data export quality dashboard (fictional v2)",
-				    #"Removed Other Columns" = Table.SelectColumns(Source,{"Compliance Status", "Deviation #", "Finding ID", "Finding Detection Date", "Finding Resolution Date", "Medicinal Product Name", "Check Name", "Check Status", "Record ID", "Country", "Record Created Date"}),
-				    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns"),
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"Deviation #", "Finding Detection Date", "Finding Resolution Date", "Finding ID", "Medicinal Product Name", "Check Name", "Record ID", "Country", "Record Created Date"}),
+				    #"Added Custom1" = Table.AddColumn(#"Removed Other Columns", "Check Status", each if [Finding Detection Date] = null then "No Finding" else if [Finding Resolution Date] = null and [Finding Detection Date] <> null then "Finding Detected" else "Finding Corrected"),
+				    #"Added Custom3" = Table.AddColumn(#"Added Custom1", "Compliance Status", each if [Check Status] = "Finding Detected" then "Non-Compliant" else "Compliant"),
+				    #"Removed Duplicates" = Table.Distinct(#"Added Custom3"),
 				    #"Added Custom" = Table.AddColumn(#"Removed Duplicates", "QC Name - Country", each [Check Name]&" - "&[Country])
 				in
 				    #"Added Custom"

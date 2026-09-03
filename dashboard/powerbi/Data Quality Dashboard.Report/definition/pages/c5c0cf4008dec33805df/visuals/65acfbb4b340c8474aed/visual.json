@@ -45,7 +45,8 @@
                 }
               },
               "index": 0,
-              "length": 1
+              "length": 1,
+              "sortDirection": "Ascending"
             }
           ]
         },
@@ -101,16 +102,16 @@
         "sort": [
           {
             "field": {
-              "Measure": {
+              "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "_Measures"
+                    "Entity": "fact_qcchecks"
                   }
                 },
-                "Property": "Compliance Rate %"
+                "Property": "Country"
               }
             },
-            "direction": "Descending"
+            "direction": "Ascending"
           }
         ]
       }
@@ -400,6 +401,26 @@
           },
           "selector": {
             "metadata": "_Measures.Compliance Rate %"
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "gridHorizontal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
           }
         }
       ]

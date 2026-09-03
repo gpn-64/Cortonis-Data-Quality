@@ -1,7 +1,7 @@
 table _Measures
 	lineageTag: 7623411b-c1c5-4546-a2a6-4abdf8d832c6
 
-	measure 'Total Checks' = DISTINCTCOUNT(fact_qcchecks[Record ID])
+	measure 'Total Checks' = COUNTROWS(fact_qcchecks)
 		formatString: #,##0
 		displayFolder: Volumes
 		lineageTag: a634c80f-f0d2-4a83-8865-3cf9b9cd9409
@@ -41,7 +41,7 @@ table _Measures
 		displayFolder: Rates
 		lineageTag: 51191d24-7cb2-4cf2-8dce-41348d09745e
 
-	measure 'Correction Rate %' = DIVIDE([Deviations Corrected], [Total Deviations])
+	measure 'Correction Rate %' = DIVIDE([Corrected Checks], [Detected Checks])
 		formatString: 0.0%
 		displayFolder: Rates
 		lineageTag: 27929432-7102-4466-841c-d23d747d8e5b
@@ -97,6 +97,123 @@ table _Measures
 	measure 'Record Link' = "https://github.com/gpn-64"
 		displayFolder: Button
 		lineageTag: 481bdffe-a75e-45c1-bc7c-c5b1a70ff358
+
+	measure 'Corrected Checks' = CALCULATE([Total Checks], fact_qcchecks[Check Status] = "Finding Corrected", USERELATIONSHIP('Calendar'[Date],fact_qcchecks[Finding Resolution Date]))
+		formatString: 0
+		displayFolder: Volumes
+		lineageTag: 7377c30a-7c69-43cb-b815-7d5bbc2cbfd7
+
+	measure 'Current Detected Checks' = CALCULATE([Total Checks], fact_qcchecks[Check Status] = "Finding Detected", USERELATIONSHIP('Calendar'[Date],fact_qcchecks[Finding Detection Date]))
+		formatString: 0
+		displayFolder: Volumes
+		lineageTag: a8a2ce63-28cd-4c60-be3a-823170ea1e9b
+
+	/// Average number of QC findings detected per calendar month (months with no detected findings are excluded).
+	measure 'Avg Detected Findings / Month' =
+			AVERAGEX(
+			    VALUES('Calendar'[Year Month Number]),
+			    [Detected Checks]
+			)
+		formatString: 0
+		displayFolder: Volumes
+		lineageTag: b12e85ad-8267-4ac7-bd7a-1014de529ae9
+
+	measure 'Avg Created Records / Month' =
+			AVERAGEX(
+			    VALUES('Calendar'[Year Month Number]),
+			    [Total Checks]
+			)
+		displayFolder: Volumes
+		lineageTag: 30585838-70d9-4b86-9502-7ef8b2126e69
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Avg Compliance Rate % per Month' = [Avg Detected Findings / Month] / [Avg Created Records / Month]
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: Rates
+		lineageTag: 0e745906-51d4-4df8-8810-a9e94a81e470
+
+	measure 'Correction Progress %' =
+			
+			DIVIDE(
+			    [Corrected Checks],
+			    [Total Checks]
+			)
+			+ 0
+		formatString: 0%;-0%;0%
+		displayFolder: Rates
+		lineageTag: 35c5053d-e172-408a-b9a3-1431ea6308ce
+
+	measure 'MTTR by Criticality' =
+			"Critical " & FORMAT(CALCULATE([Mean Time To Resolve (MTTR)], dim_process[Criticality] = "Critical"), "0")
+			    & " • Major " & FORMAT(CALCULATE([Mean Time To Resolve (MTTR)], dim_process[Criticality] = "Major"), "0")
+			    & " • Minor " & FORMAT(CALCULATE([Mean Time To Resolve (MTTR)], dim_process[Criticality] = "Minor"), "0")
+		displayFolder: Timing
+		lineageTag: 959e0861-39e2-40ad-a8e1-ed44909b3016
+
+	measure 'Open Deviation by Criticality' =
+			"Critical " & FORMAT(CALCULATE([Open Deviations], dim_process[Criticality] = "Critical"), "0")
+			    & " • Major " & FORMAT(CALCULATE([Open Deviations], dim_process[Criticality] = "Major"), "0")
+			    & " • Minor " & FORMAT(CALCULATE([Open Deviations], dim_process[Criticality] = "Minor"), "0")
+		displayFolder: Deviations
+		lineageTag: ba4860c2-aade-4c55-bdd6-8fdbae530c54
+
+	measure 'RFT% by Criticality' =
+			"Critical " & FORMAT(CALCULATE([Right First Time %], dim_process[Criticality] = "Critical"), "0%")
+			    & " • Major " & FORMAT(CALCULATE([Right First Time %], dim_process[Criticality] = "Major"), "0%")
+			    & " • Minor " & FORMAT(CALCULATE([Right First Time %], dim_process[Criticality] = "Minor"), "0%")
+		displayFolder: Rates
+		lineageTag: 51db2ee0-e04a-4f0c-9644-f893de3667e4
+
+	measure 'Detected Checks' = CALCULATE([Total Checks], fact_qcchecks[Check Status] IN {"Finding Detected", "Finding Corrected"}, USERELATIONSHIP('Calendar'[Date],fact_qcchecks[Finding Detection Date]))
+		formatString: 0
+		displayFolder: Volumes
+		lineageTag: 90fb6ee0-193e-4423-8d93-ca3c18670ab2
+
+	measure 'Findings leading to deviation %' =
+			
+			
+			VAR __FindingWithDeviation =
+			CALCULATE(
+			    [Detected Checks],
+			    fact_qcchecks[Deviation #] <> BLANK()
+			)
+			
+			RETURN
+			DIVIDE(
+			    __FindingWithDeviation,
+			    [Detected Checks]
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Rates
+		lineageTag: eb285bc3-beeb-42f4-8727-e4f8dc36b794
+
+	measure Measure
+		displayFolder: Volumes
+		lineageTag: 45b57f3f-0427-43cc-9bea-1dccd5f83e9b
+
+		annotation 43dbc3e8-3a1c-4b6f-9923-b49ff7d6691c = True
+
+	measure 'Count Aging Deviation' = ```
+			
+			CALCULATE(
+			    DISTINCTCOUNT(dim_deviations[Deviation #]), 
+			    dim_deviations[In aging report?]
+			)
+			```
+		formatString: 0
+		displayFolder: Deviations
+		lineageTag: 578c30c6-c527-4561-b103-5154289cd797
+
+	measure 'Count Escalated Deviation' =
+			
+			CALCULATE(
+			    [Count Aging Deviation],
+			    dim_deviations[Escalted?]
+			)
+		formatString: 0
+		displayFolder: Deviations
+		lineageTag: 3aae1946-9865-4600-bfc0-b91542133877
 
 	column Column1
 		isHidden

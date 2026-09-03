@@ -1,0 +1,83 @@
+table dim_deviations
+	lineageTag: db80e397-9539-42e8-8ac6-8b4397966408
+
+	column 'Deviation #'
+		dataType: string
+		lineageTag: ece74f0d-7d46-4f1f-96d6-cc1fc3c96c40
+		summarizeBy: none
+		sourceColumn: Deviation #
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Opening Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 39f96a33-a6cf-4e12-8260-acbe767cee56
+		summarizeBy: none
+		sourceColumn: Opening Date
+
+		variation Variation
+			isDefault
+			relationship: c491fae8-a92a-4fab-8f97-f310c4744e4a
+			defaultHierarchy: LocalDateTable_35a1e425-b1b6-4963-a13e-57d9c678978f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Criticality
+		dataType: string
+		lineageTag: 8dc5b2d2-6111-4fd1-b59d-208a14621983
+		summarizeBy: none
+		sourceColumn: Criticality
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: 8ec1ad68-a1dd-450f-83fe-ba9b2c28f3a8
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Closure Date'
+		dataType: string
+		lineageTag: a21516c0-a670-4ac0-872e-e04d29307431
+		summarizeBy: none
+		sourceColumn: Closure Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'In aging report?'
+		dataType: string
+		lineageTag: b65e70f0-93e3-4952-a4cb-11d88eef531e
+		summarizeBy: none
+		sourceColumn: In aging report?
+
+		annotation SummarizationSetBy = Automatic
+
+	column Escalted?
+		dataType: string
+		lineageTag: ee67e1c1-e18f-488f-9ef7-181aaddc9511
+		summarizeBy: none
+		sourceColumn: Escalted?
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_deviations = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents("C:\Users\User\Documents\Coding Projects\Data-Quality\data\raw\data export deviation status (fictional v4).csv"), [Delimiter = ",", Columns = 5, Encoding = 65001, QuoteStyle = QuoteStyle.None]),
+				  #"Promoted headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"Deviation #", type text}, {"Opening Date", type date}, {"Criticality", type text}, {"Status", type text}, {"Closure Date", type text}}),
+				    #"Added Custom" = Table.AddColumn(#"Changed column type", "In aging report?", each Date.AddDays([Opening Date], 60) < #date(2026, 8, 31)),
+				    #"Added Custom1" = Table.AddColumn(#"Added Custom", "Escalted?", each Date.AddDays([Opening Date], 365) < #date(2026, 8, 31) and [Criticality] = "Critical")
+				in
+				  #"Added Custom1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

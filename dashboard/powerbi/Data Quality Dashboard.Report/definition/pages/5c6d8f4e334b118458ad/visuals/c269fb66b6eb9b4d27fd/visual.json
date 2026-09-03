@@ -4,10 +4,10 @@
   "position": {
     "x": 1338.5714285714287,
     "y": 280,
-    "z": 6000,
+    "z": 5000,
     "height": 374.28571428571433,
     "width": 538.57142857142856,
-    "tabOrder": 6000
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "columnChart",
@@ -415,7 +415,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Time to Resolve Distribution'"
+                  "Value": "'Resolution Time Histogram'"
                 }
               }
             },
@@ -435,7 +435,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Histogram of Time to Resolve by Finding Count'"
+                  "Value": "'MTTR = Mean Time to Resolve | MedTTR = Median'"
                 }
               }
             },
@@ -451,37 +451,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "1c634a5fff706a253a68",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "fact_qcchecks"
-              }
-            },
-            "Property": "Time to Resolve (bins)"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "4cf9d031f4e13ef7ff0b",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Total Checks"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

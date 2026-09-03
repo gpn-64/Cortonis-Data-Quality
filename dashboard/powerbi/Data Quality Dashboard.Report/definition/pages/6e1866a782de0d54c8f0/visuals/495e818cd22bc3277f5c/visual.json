@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
-  "name": "828da61316538349becf",
+  "name": "495e818cd22bc3277f5c",
   "position": {
     "x": 290,
     "y": 124.28571428571429,
-    "z": 0,
+    "z": 17000,
     "height": 128.57142857142858,
-    "width": 1620,
-    "tabOrder": 0
+    "width": 935.71428571428578,
+    "tabOrder": 17000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -38,12 +38,12 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Non-Compliant Checks"
+                  "Property": "Current Detected Checks"
                 }
               },
-              "queryRef": "_Measures.Non-Compliant Checks",
-              "nativeQueryRef": "CURRENT FINDINGS",
-              "displayName": "CURRENT FINDINGS"
+              "queryRef": "_Measures.Current Detected Checks",
+              "nativeQueryRef": "CURRENT FINDINGS #",
+              "displayName": "CURRENT FINDINGS #"
             },
             {
               "field": {
@@ -53,57 +53,13 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Open Deviations"
+                  "Property": "Corrected Checks"
                 }
               },
-              "queryRef": "_Measures.Open Deviations",
-              "nativeQueryRef": "OPEN DEVIATIONS",
-              "displayName": "OPEN DEVIATIONS"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Measures"
-                    }
-                  },
-                  "Property": "Count Aging Deviation"
-                }
-              },
-              "queryRef": "_Measures.Count Aging Deviation",
-              "nativeQueryRef": "AGING DEVIATION (>60D)",
-              "displayName": "AGING DEVIATION (>60D)"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Measures"
-                    }
-                  },
-                  "Property": "Mean Time To Resolve (MTTR)"
-                }
-              },
-              "queryRef": "_Measures.Avg Days to Correct",
-              "nativeQueryRef": "MTTR IN DAYS",
-              "displayName": "MTTR IN DAYS"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Measures"
-                    }
-                  },
-                  "Property": "Right First Time %"
-                }
-              },
-              "queryRef": "_Measures.Right First Time %",
-              "nativeQueryRef": "RFT %",
-              "displayName": "RFT %"
+              "queryRef": "_Measures.Corrected Checks",
+              "nativeQueryRef": "CORRECTED FINDINGS",
+              "displayName": "CORRECTED FINDINGS",
+              "format": "0.00"
             }
           ]
         }
@@ -210,21 +166,6 @@
           }
         },
         {
-          "properties": {},
-          "selector": {
-            "data": [
-              {
-                "dataViewWildcard": {
-                  "matchingOption": 0
-                }
-              }
-            ],
-            "metadata": "_Measures.Open Deviations",
-            "id": "field-a716774e-0369-2aa1-8468-638e326ac458",
-            "order": 0
-          }
-        },
-        {
           "properties": {
             "value": {
               "expr": {
@@ -262,7 +203,7 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "MTTR by Criticality"
+                  "Property": "Correction Rate %"
                 }
               }
             }
@@ -275,8 +216,8 @@
                 }
               }
             ],
-            "metadata": "_Measures.Avg Days to Correct",
-            "id": "field-863a90f8-4643-8241-0c52-e2a6cefffca4",
+            "metadata": "_Measures.Corrected Checks",
+            "id": "field-cc2ce466-b8ce-4035-f869-b5bb1d17ded8",
             "order": 0
           }
         },
@@ -290,7 +231,7 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Open Deviation by Criticality"
+                  "Property": "Findings leading to deviation %"
                 }
               }
             }
@@ -303,107 +244,8 @@
                 }
               }
             ],
-            "metadata": "_Measures.Open Deviations",
-            "id": "field-5c2bca1e-d97a-eb47-b78d-e1b6eadd2b6f",
-            "order": 0
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Measures"
-                    }
-                  },
-                  "Property": "RFT% by Criticality"
-                }
-              }
-            }
-          },
-          "selector": {
-            "data": [
-              {
-                "dataViewWildcard": {
-                  "matchingOption": 0
-                }
-              }
-            ],
-            "metadata": "_Measures.Right First Time %",
-            "id": "field-34538941-5173-0557-4450-82982c8025cc",
-            "order": 0
-          }
-        },
-        {
-          "properties": {},
-          "selector": {
-            "data": [
-              {
-                "dataViewWildcard": {
-                  "matchingOption": 0
-                }
-              }
-            ],
-            "metadata": "_Measures.Non-Compliant Checks",
-            "id": "field-a063eee9-07f1-50be-71f9-b65daab766b1",
-            "order": 0
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Measures"
-                    }
-                  },
-                  "Property": "Avg Detected Findings / Month"
-                }
-              }
-            }
-          },
-          "selector": {
-            "data": [
-              {
-                "dataViewWildcard": {
-                  "matchingOption": 0
-                }
-              }
-            ],
-            "metadata": "_Measures.Non-Compliant Checks",
-            "id": "field-be266233-bc06-889c-a4e5-ddcec3b3f90f",
-            "order": 0
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Measures"
-                    }
-                  },
-                  "Property": "Count Escalated Deviation"
-                }
-              }
-            }
-          },
-          "selector": {
-            "data": [
-              {
-                "dataViewWildcard": {
-                  "matchingOption": 0
-                }
-              }
-            ],
-            "metadata": "_Measures.Count Aging Deviation",
-            "id": "field-3b97a2d9-7ddf-ae17-619f-dfee6ca23193",
+            "metadata": "_Measures.Current Detected Checks",
+            "id": "field-362547f9-ff51-30cb-2644-bfba69ebdf97",
             "order": 0
           }
         }
@@ -734,61 +576,6 @@
         },
         {
           "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "titleFontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "10D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Measures.Open Deviations"
-          }
-        },
-        {
-          "properties": {
-            "titleFontColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": -0.6
-                    }
-                  }
-                }
-              }
-            },
-            "titleContentType": {
-              "expr": {
-                "Literal": {
-                  "Value": "'custom'"
-                }
-              }
-            },
-            "titleText": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Critical'"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Measures.Open Deviations",
-            "id": "field-a716774e-0369-2aa1-8468-638e326ac458"
-          }
-        },
-        {
-          "properties": {
             "titleFontColor": {
               "solid": {
                 "color": {
@@ -830,41 +617,6 @@
         },
         {
           "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Measures.Avg Days to Correct"
-          }
-        },
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Measures.Right First Time %"
-          }
-        },
-        {
-          "properties": {
-            "titleFontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "10D"
-                }
-              }
-            },
             "titleFontColor": {
               "solid": {
                 "color": {
@@ -879,7 +631,55 @@
             }
           },
           "selector": {
-            "metadata": "_Measures.Non-Compliant Checks"
+            "metadata": "_Measures.Corrected Checks"
+          }
+        },
+        {
+          "properties": {
+            "titleContentType": {
+              "expr": {
+                "Literal": {
+                  "Value": "'custom'"
+                }
+              }
+            },
+            "titleText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'% Findings Corrected'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.Corrected Checks",
+            "id": "field-cc2ce466-b8ce-4035-f869-b5bb1d17ded8"
+          }
+        },
+        {
+          "properties": {
+            "titleFontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.6
+                    }
+                  }
+                }
+              }
+            },
+            "titleFontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.Current Detected Checks"
           }
         },
         {
@@ -900,56 +700,8 @@
             }
           },
           "selector": {
-            "metadata": "_Measures.Non-Compliant Checks",
-            "id": "field-a063eee9-07f1-50be-71f9-b65daab766b1"
-          }
-        },
-        {
-          "properties": {
-            "titleFontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "10D"
-                }
-              }
-            },
-            "titleFontColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": -0.6
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Measures.Count Aging Deviation"
-          }
-        },
-        {
-          "properties": {
-            "titleContentType": {
-              "expr": {
-                "Literal": {
-                  "Value": "'custom'"
-                }
-              }
-            },
-            "titleText": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Escalated'"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Measures.Count Aging Deviation",
-            "id": "field-3b97a2d9-7ddf-ae17-619f-dfee6ca23193"
+            "metadata": "_Measures.Current Detected Checks",
+            "id": "field-362547f9-ff51-30cb-2644-bfba69ebdf97"
           }
         }
       ],
@@ -986,121 +738,14 @@
                   }
                 }
               }
-            },
-            "valueFontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "10D"
-                }
-              }
-            },
-            "valueFontFamily": {
-              "expr": {
-                "Literal": {
-                  "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
-                }
-              }
             }
           },
           "selector": {
-            "metadata": "_Measures.Open Deviations"
+            "metadata": "_Measures.Corrected Checks"
           }
         },
         {
           "properties": {
-            "valueFontColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": -0.6
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Measures.Open Deviations",
-            "id": "field-a716774e-0369-2aa1-8468-638e326ac458"
-          }
-        },
-        {
-          "properties": {
-            "valueFontColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": -0.6
-                    }
-                  }
-                }
-              }
-            },
-            "valueFontFamily": {
-              "expr": {
-                "Literal": {
-                  "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
-                }
-              }
-            },
-            "valueFontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "10D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Measures.Avg Days to Correct"
-          }
-        },
-        {
-          "properties": {
-            "valueFontColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": -0.6
-                    }
-                  }
-                }
-              }
-            },
-            "valueFontFamily": {
-              "expr": {
-                "Literal": {
-                  "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
-                }
-              }
-            },
-            "valueFontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "10D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Measures.Right First Time %"
-          }
-        },
-        {
-          "properties": {
-            "valueFontFamily": {
-              "expr": {
-                "Literal": {
-                  "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
-                }
-              }
-            },
             "valueFontSize": {
               "expr": {
                 "Literal": {
@@ -1122,26 +767,7 @@
             }
           },
           "selector": {
-            "metadata": "_Measures.Non-Compliant Checks"
-          }
-        },
-        {
-          "properties": {
-            "valueFontColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": -0.6
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Measures.Count Aging Deviation"
+            "metadata": "_Measures.Current Detected Checks"
           }
         },
         {
@@ -1155,8 +781,23 @@
             }
           },
           "selector": {
-            "metadata": "_Measures.Count Aging Deviation",
-            "id": "field-3b97a2d9-7ddf-ae17-619f-dfee6ca23193"
+            "metadata": "_Measures.Current Detected Checks",
+            "id": "field-362547f9-ff51-30cb-2644-bfba69ebdf97"
+          }
+        },
+        {
+          "properties": {
+            "valueFontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.Corrected Checks",
+            "id": "field-cc2ce466-b8ce-4035-f869-b5bb1d17ded8"
           }
         }
       ],
@@ -1189,22 +830,6 @@
           },
           "selector": {
             "id": "default"
-          }
-        }
-      ],
-      "referenceLabelDetail": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Measures.Open Deviations"
           }
         }
       ],

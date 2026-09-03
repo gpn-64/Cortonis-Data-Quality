@@ -14,7 +14,7 @@
               "name": {
                 "expr": {
                   "Literal": {
-                    "Value": "'bg3-process-team.png'"
+                    "Value": "'bg3-process and checks.png'"
                   }
                 }
               },
@@ -23,7 +23,7 @@
                   "ResourcePackageItem": {
                     "PackageName": "RegisteredResources",
                     "PackageType": 1,
-                    "ItemName": "bg3-process-team9703877400508275.png"
+                    "ItemName": "bg3-process_and_checks5849124745428202.png"
                   }
                 }
               },

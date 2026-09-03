@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
-  "name": "828da61316538349becf",
+  "name": "a6b468757dbafa268354",
   "position": {
     "x": 290,
     "y": 124.28571428571429,
-    "z": 0,
+    "z": 18001,
     "height": 128.57142857142858,
     "width": 1620,
-    "tabOrder": 0
+    "tabOrder": 18001
   },
   "visual": {
     "visualType": "cardVisual",
@@ -29,21 +29,6 @@
               "queryRef": "_Measures.Compliance Rate %",
               "nativeQueryRef": "COMPLIANCE RATE %",
               "displayName": "COMPLIANCE RATE %"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Measures"
-                    }
-                  },
-                  "Property": "Non-Compliant Checks"
-                }
-              },
-              "queryRef": "_Measures.Non-Compliant Checks",
-              "nativeQueryRef": "CURRENT FINDINGS",
-              "displayName": "CURRENT FINDINGS"
             },
             {
               "field": {
@@ -333,49 +318,6 @@
             ],
             "metadata": "_Measures.Right First Time %",
             "id": "field-34538941-5173-0557-4450-82982c8025cc",
-            "order": 0
-          }
-        },
-        {
-          "properties": {},
-          "selector": {
-            "data": [
-              {
-                "dataViewWildcard": {
-                  "matchingOption": 0
-                }
-              }
-            ],
-            "metadata": "_Measures.Non-Compliant Checks",
-            "id": "field-a063eee9-07f1-50be-71f9-b65daab766b1",
-            "order": 0
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Measures"
-                    }
-                  },
-                  "Property": "Avg Detected Findings / Month"
-                }
-              }
-            }
-          },
-          "selector": {
-            "data": [
-              {
-                "dataViewWildcard": {
-                  "matchingOption": 0
-                }
-              }
-            ],
-            "metadata": "_Measures.Non-Compliant Checks",
-            "id": "field-be266233-bc06-889c-a4e5-ddcec3b3f90f",
             "order": 0
           }
         },
@@ -879,54 +821,6 @@
             }
           },
           "selector": {
-            "metadata": "_Measures.Non-Compliant Checks"
-          }
-        },
-        {
-          "properties": {
-            "titleContentType": {
-              "expr": {
-                "Literal": {
-                  "Value": "'custom'"
-                }
-              }
-            },
-            "titleText": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Findings leading to deviation'"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Measures.Non-Compliant Checks",
-            "id": "field-a063eee9-07f1-50be-71f9-b65daab766b1"
-          }
-        },
-        {
-          "properties": {
-            "titleFontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "10D"
-                }
-              }
-            },
-            "titleFontColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": -0.6
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
             "metadata": "_Measures.Count Aging Deviation"
           }
         },
@@ -1090,39 +984,6 @@
           },
           "selector": {
             "metadata": "_Measures.Right First Time %"
-          }
-        },
-        {
-          "properties": {
-            "valueFontFamily": {
-              "expr": {
-                "Literal": {
-                  "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
-                }
-              }
-            },
-            "valueFontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "10D"
-                }
-              }
-            },
-            "valueFontColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": -0.6
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Measures.Non-Compliant Checks"
           }
         },
         {

@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "85041c6c315b03359434",
   "position": {
-    "x": 294.28571428571428,
-    "y": 282.85714285714289,
+    "x": 294.83303602165677,
+    "y": 283.29609113385283,
     "z": 0,
-    "height": 742.85714285714289,
-    "width": 1020.0000000000001,
+    "height": 742.21012111538823,
+    "width": 1010.1236190655025,
     "tabOrder": 0
   },
   "visual": {
@@ -43,7 +43,7 @@
               },
               "queryRef": "fact_qcchecks.Record ID",
               "nativeQueryRef": "Record ID",
-              "active": true
+              "active": false
             }
           ]
         },
@@ -68,6 +68,21 @@
               "queryRef": "Min(fact_qcchecks.Country)",
               "nativeQueryRef": "Country",
               "displayName": "Country"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Total Checks"
+                }
+              },
+              "queryRef": "_Measures.Total Checks",
+              "nativeQueryRef": "Impacted Records",
+              "displayName": "Impacted Records"
             },
             {
               "field": {
@@ -168,6 +183,20 @@
               "queryRef": "Min(fact_qcchecks.Medicinal Product Name)",
               "nativeQueryRef": "Medicinal Product Name",
               "displayName": "Medicinal Product Name"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Correction Progress %"
+                }
+              },
+              "queryRef": "_Measures.Correction Progress %",
+              "nativeQueryRef": "Correction Progress %"
             }
           ]
         }
@@ -176,29 +205,16 @@
         "sort": [
           {
             "field": {
-              "Column": {
+              "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "fact_qcchecks"
+                    "Entity": "_Measures"
                   }
                 },
-                "Property": "Deviation #"
+                "Property": "Correction Progress %"
               }
             },
-            "direction": "Ascending"
-          },
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "fact_qcchecks"
-                  }
-                },
-                "Property": "Record ID"
-              }
-            },
-            "direction": "Ascending"
+            "direction": "Descending"
           }
         ]
       }
@@ -213,6 +229,7 @@
             "queryRefs": [
               "fact_qcchecks.Deviation #"
             ],
+            "isCollapsed": true,
             "identityKeys": [
               {
                 "Column": {
@@ -329,13 +346,69 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "146.3691980961724D"
+                  "Value": "108.00795346318175D"
                 }
               }
             }
           },
           "selector": {
             "metadata": "Min(fact_qcchecks.Country)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "114.17234022293405D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.Correction Progress %"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "63.55011075199294D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.Total Checks"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "109.31528501988149D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Min(fact_qcchecks.Medicinal Product Name)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "134.08702124742442D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Min(dim_process.RIM Process Area)"
           }
         }
       ],
@@ -373,6 +446,13 @@
                   "Value": "10D"
                 }
               }
+            },
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
             }
           }
         }
@@ -394,6 +474,71 @@
                 }
               }
             }
+          }
+        }
+      ],
+      "columnFormatting": [
+        {
+          "properties": {
+            "dataBars": {
+              "positiveColor": {
+                "solid": {
+                  "color": {
+                    "expr": {
+                      "Literal": {
+                        "Value": "'#b7bfdb'"
+                      }
+                    }
+                  }
+                }
+              },
+              "negativeColor": {
+                "solid": {
+                  "color": {
+                    "expr": {
+                      "Literal": {
+                        "Value": "'minColor'"
+                      }
+                    }
+                  }
+                }
+              },
+              "axisColor": {
+                "solid": {
+                  "color": {
+                    "expr": {
+                      "Literal": {
+                        "Value": "'#FFFFFF'"
+                      }
+                    }
+                  }
+                }
+              },
+              "reverseDirection": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              },
+              "hideText": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              },
+              "totalMatchingOption": {
+                "expr": {
+                  "Literal": {
+                    "Value": "1L"
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.Correction Progress %"
           }
         }
       ]

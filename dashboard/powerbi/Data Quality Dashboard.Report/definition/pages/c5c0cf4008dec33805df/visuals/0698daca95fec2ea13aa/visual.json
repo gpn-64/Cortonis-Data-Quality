@@ -1,122 +1,78 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
-  "name": "517812a5ee94a5927032",
+  "name": "0698daca95fec2ea13aa",
   "position": {
     "x": 295.71428571428572,
-    "y": 282.85714285714289,
-    "z": 17000,
-    "height": 760,
-    "width": 931.42857142857144,
-    "tabOrder": 17000
+    "y": 280,
+    "z": 20000,
+    "height": 762.85714285714289,
+    "width": 930.00000000000011,
+    "tabOrder": 20000
   },
   "visual": {
-    "visualType": "columnChart",
+    "visualType": "lineStackedColumnComboChart",
     "query": {
       "queryState": {
         "Category": {
           "projections": [
             {
               "field": {
-                "HierarchyLevel": {
+                "Column": {
                   "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "fact_qcchecks"
-                            }
-                          },
-                          "Name": "Variation",
-                          "Property": "Record Created Date"
-                        }
-                      },
-                      "Hierarchy": "Date Hierarchy"
+                    "SourceRef": {
+                      "Entity": "Calendar"
                     }
                   },
-                  "Level": "Year"
+                  "Property": "Year"
                 }
               },
-              "queryRef": "fact_qcchecks.Record Created Date.Variation.Date Hierarchy.Year",
-              "nativeQueryRef": "Record Created Date Year",
+              "queryRef": "Calendar.Year",
+              "nativeQueryRef": "Year",
               "active": true
             },
             {
               "field": {
-                "HierarchyLevel": {
+                "Column": {
                   "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "fact_qcchecks"
-                            }
-                          },
-                          "Name": "Variation",
-                          "Property": "Record Created Date"
-                        }
-                      },
-                      "Hierarchy": "Date Hierarchy"
+                    "SourceRef": {
+                      "Entity": "Calendar"
                     }
                   },
-                  "Level": "Quarter"
+                  "Property": "Month Short"
                 }
               },
-              "queryRef": "fact_qcchecks.Record Created Date.Variation.Date Hierarchy.Quarter",
-              "nativeQueryRef": "Record Created Date Quarter",
+              "queryRef": "Calendar.Month Short",
+              "nativeQueryRef": "Month Short",
               "active": true
             },
             {
               "field": {
-                "HierarchyLevel": {
+                "Column": {
                   "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "fact_qcchecks"
-                            }
-                          },
-                          "Name": "Variation",
-                          "Property": "Record Created Date"
-                        }
-                      },
-                      "Hierarchy": "Date Hierarchy"
+                    "SourceRef": {
+                      "Entity": "Calendar"
                     }
                   },
-                  "Level": "Month"
+                  "Property": "Quarter"
                 }
               },
-              "queryRef": "fact_qcchecks.Record Created Date.Variation.Date Hierarchy.Month",
-              "nativeQueryRef": "Record Created Date Month",
-              "active": true
+              "queryRef": "Calendar.Quarter",
+              "nativeQueryRef": "Quarter",
+              "active": false
             },
             {
               "field": {
-                "HierarchyLevel": {
+                "Column": {
                   "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "fact_qcchecks"
-                            }
-                          },
-                          "Name": "Variation",
-                          "Property": "Record Created Date"
-                        }
-                      },
-                      "Hierarchy": "Date Hierarchy"
+                    "SourceRef": {
+                      "Entity": "Calendar"
                     }
                   },
-                  "Level": "Day"
+                  "Property": "Date"
                 }
               },
-              "queryRef": "fact_qcchecks.Record Created Date.Variation.Date Hierarchy.Day",
-              "nativeQueryRef": "Record Created Date Day",
+              "queryRef": "Calendar.Date",
+              "nativeQueryRef": "Date",
               "active": false
             }
           ]
@@ -139,6 +95,24 @@
             }
           ]
         },
+        "Tooltips": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Right First Time %"
+                }
+              },
+              "queryRef": "_Measures.Right First Time %",
+              "nativeQueryRef": "Right First Time %"
+            }
+          ]
+        },
         "Y": {
           "projections": [
             {
@@ -154,6 +128,24 @@
               },
               "queryRef": "_Measures.Total Checks",
               "nativeQueryRef": "Total Checks"
+            }
+          ]
+        },
+        "Y2": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Right First Time %"
+                }
+              },
+              "queryRef": "_Measures.Right First Time %",
+              "nativeQueryRef": "Right First Time %"
             }
           ]
         }
@@ -180,6 +172,27 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "end": {
+              "expr": {
+                "Literal": {
+                  "Value": "500D"
+                }
+              }
+            },
+            "secStart": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "secShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
@@ -312,9 +325,41 @@
               }
             ]
           }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 6,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.Right First Time %"
+          }
         }
       ],
       "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "seriesLabels": [
         {
           "properties": {
             "show": {
@@ -356,6 +401,13 @@
               "expr": {
                 "Literal": {
                   "Value": "15D"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }
