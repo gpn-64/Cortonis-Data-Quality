@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "01b5340c2b7e0199de7b",
   "position": {
     "x": 290,
     "y": 124.28571428571429,
-    "z": 18001,
+    "z": 19000,
     "height": 128.57142857142858,
     "width": 935.71428571428578,
-    "tabOrder": 18001
+    "tabOrder": 19000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -476,6 +476,44 @@
           },
           "selector": {
             "metadata": "_Measures.Compliance Rate %"
+          }
+        },
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.Corrected Checks"
+          }
+        },
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.Current Detected Checks"
           }
         }
       ],

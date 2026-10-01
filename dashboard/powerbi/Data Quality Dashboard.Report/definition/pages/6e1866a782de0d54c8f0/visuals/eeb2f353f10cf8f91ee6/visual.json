@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "eeb2f353f10cf8f91ee6",
   "position": {
     "x": 290,
@@ -32,7 +32,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Where in the world is our data least compliant?",
+                    "value": "What exactly is broken, and where do I fix it?",
                     "textStyle": {
                       "fontSize": "12pt"
                     }

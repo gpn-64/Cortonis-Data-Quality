@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "470d613c6f6d69cd300d",
   "position": {
     "x": 290,
@@ -32,7 +32,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Which process and which team generate the most deviations?",
+                    "value": "Which Processes and Fields generate the most findings?",
                     "textStyle": {
                       "fontSize": "12pt"
                     }

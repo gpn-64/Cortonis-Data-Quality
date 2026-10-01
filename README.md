@@ -21,10 +21,34 @@ Regulatory Information Management (RIM) systems hold the master data that author
 This project models a recurring **QC-check process** over that data and builds the dashboard a data-governance lead would use to run it:
 
 - **Overview** — *How compliant is our regulatory data overall?*
-- **Deviations** — *Which findings are still open, and how fast do we close them?*
-- **Process & Team** — *Which process and which team generate the most deviations?*
-- **Geography** — *Where in the world is our data least compliant?*
-- **EDA** — free pivot tables for ad-hoc exploration.
+- **Findings** — the check-level list of current findings, each linked to its record.
+- **Process & Checks** — *Which processes and fields generate the most findings?*
+- **Quality Deviations** — *Which findings are still open, and how fast do we close them?*
+- **EDA** (hidden) — free pivot tables for ad-hoc exploration.
+
+---
+
+## Screenshots
+
+### Overview
+Headline KPIs (compliance rate, current findings, open and aging deviations, MTTR, right-first-time), monthly check volume by compliance status, and a compliance breakdown that pivots across dimensions.
+
+![Overview](<reports/screenshots/1_Overview.PNG>)
+
+### Findings
+Every current finding with its deviation, DQ dimension, country, criticality, RIM process area, check and product, plus a link to the source record.
+
+![Findings](<reports/screenshots/2_Findings.PNG>)
+
+### Process & Checks
+Compliance rate and non-compliant checks per RIM process area and check, average findings detected per month, and detected vs corrected findings over time.
+
+![Process & Checks](<reports/screenshots/3_Process and Checks.PNG>)
+
+### Quality Deviations
+Deviation register with correction progress, resolution-time histogram (mean vs median time to resolve), and the open-deviation backlog by RIM process area.
+
+![Quality Deviations](<reports/screenshots/4_Quality Deviations.PNG>)
 
 ---
 
@@ -169,7 +193,7 @@ Data-Quality/
 │   └── tableau/     # (unused)
 ├── docs/            # references & bibliography (+ data-dictionary / methodology templates)
 ├── sql/ src/ scripts/ notebooks/   # scaffolding only — see "out of scope" above
-├── reports/screenshots/
+├── reports/screenshots/   # report page captures (shown above)
 └── LICENSE
 ```
 
@@ -182,7 +206,6 @@ The `sql/`, `src/`, `scripts/` and `notebooks/` folders are repo scaffolding kep
 1. Clone the repo.
 2. Open `dashboard/powerbi/Data Quality Dashboard.pbip` in **Power BI Desktop** (with *Power BI Project (.pbip)* save format enabled).
 3. The model imports from the CSV in `data/raw/` via an absolute path in `expressions.tmdl` — update that path to your local clone, then **Refresh**.
-4. The **Geography** page uses a map visual and needs an internet connection (Bing/Azure Maps) on open.
 
 ---
 
